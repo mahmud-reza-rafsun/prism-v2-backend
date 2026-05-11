@@ -1,4 +1,4 @@
-model StockManagementReport {
+model StockManagement {
     id        String  @id @default(uuid())
     skuNameId String
     skuName   SkuName @relation(fields: [skuNameId], references: [id])
@@ -20,4 +20,6 @@ model StockManagementReport {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    @@map("stock_management")
 }

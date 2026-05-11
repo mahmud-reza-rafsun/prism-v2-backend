@@ -76,11 +76,20 @@ model SkuName {
     rlLs10hl      Int @default(0)
     royalsRed10hl Int @default(0)
 
-    createdAt             DateTime                @default(now())
-    updatedAt             DateTime                @updatedAt
-    shipments             Shipment[]
-    ownPointDistributions OwnPointDistribution[]
-    StockManagementReport StockManagementReport[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    // relations
+    Retailer              Retailer[]
+    Shipments             Shipment[]
+    OwnPointDistributions OwnPointDistribution[]
+    StockManagementReport StockManagement[]
+    SalesSummaryStatement SalesSummaryStatement[]
+    DsrrsReports          DsrrsReport[]
+    RouteWiseSttReport    RouteWiseStt[]
+    RouteWiseMemoReport   RouteWiseMemo[]
+    ByOutletStt           ByOutletStt[]
+    ShipmentOrder         ShipmentOrder[]
 
     @@map("sku_name")
 }

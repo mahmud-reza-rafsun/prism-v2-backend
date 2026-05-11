@@ -1,0 +1,19 @@
+model FinalSubmit {
+    id String @id @default(uuid())
+
+    // Date & Logistics
+    date  DateTime @db.Date
+    point String
+
+    // Transaction Info
+    sttNumber String  @unique
+    value     Decimal @default(0.0) @db.Decimal(15, 2)
+
+    // Status & Actions
+    status FinalSubmitStatus @default(PENDING)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("stt_records")
+}

@@ -1,0 +1,18 @@
+model ShipmentOrder {
+    id        String  @id @default(uuid())
+    skuNameId String
+    skuName   SkuName @relation(fields: [skuNameId], references: [id])
+
+    quantity   Int      @default(0)
+    targetDate DateTime @db.Date
+
+    isFinalized     Boolean   @default(false)
+    finalizedAt     DateTime?
+    unlockRequested Boolean   @default(false)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([skuNameId, targetDate])
+    @@map("shipment_orders")
+}

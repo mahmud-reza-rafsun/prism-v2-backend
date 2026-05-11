@@ -1,0 +1,21 @@
+model RouteWiseMemo {
+    id String @id @default(uuid())
+
+    region    String
+    area      String
+    territory String
+    house     String
+    point     String
+
+    route          Int @default(0)
+    target         Int @default(0)
+    successfulCall Int @default(0)
+
+    skuNameId String
+    skuName   SkuName @relation(fields: [skuNameId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("route_wise_memo")
+}

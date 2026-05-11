@@ -17,3 +17,8 @@ enum UserStatus {
     BLOCKED
     DELETED
 }
+
+enum FinalSubmitStatus {
+    PENDING
+    COMPLETED
+}

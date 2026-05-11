@@ -1,0 +1,30 @@
+model DsrrsReport {
+    id        String  @id @default(uuid())
+    skuNameId String
+    skuName   SkuName @relation(fields: [skuNameId], references: [id])
+
+    issue    Int @default(0)
+    return   Int @default(0)
+    totalStt Int @default(0)
+    memo     Int @default(0)
+
+    // Category/Tier Fields
+    platinum Int @default(0)
+    gold     Int @default(0)
+    silver   Int @default(0)
+    rcc      Int @default(0)
+    trc      Int @default(0)
+    bcc      Int @default(0)
+    gt       Int @default(0)
+
+    // Fault Fields
+    manufacturingFault Int @default(0)
+    marketingFault     Int @default(0)
+
+    amountTaka Decimal @default(0.0) @db.Decimal(10, 2)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("ds_rrs_report")
+}
