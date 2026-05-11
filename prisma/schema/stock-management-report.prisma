@@ -1,0 +1,23 @@
+model StockManagementReport {
+    id        String  @id @default(uuid())
+    skuNameId String
+    skuName   SkuName @relation(fields: [skuNameId], references: [id])
+
+    // Locations & Logistics
+    region            String?
+    area              String?
+    distributionHouse String?
+
+    // Inventory/Stock Fields
+    skuOpening  Int @default(0)
+    shipment    Int @default(0)
+    igt         Int @default(0)
+    stt         Int @default(0)
+    stolen      Int @default(0)
+    warehouseQc Int @default(0)
+    closing     Int @default(0)
+    scr         Int @default(0)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

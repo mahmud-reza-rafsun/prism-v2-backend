@@ -1,0 +1,9 @@
+model OwnPointDistribution {
+    id                 String  @id @default(uuid())
+    pointOnHandStock   Int     @default(0)
+    transferableAmount Int     @default(0)
+    skuNameId          String
+    skuName            SkuName @relation(fields: [skuNameId], references: [id])
+
+    @@map("own_point_distribution")
+}

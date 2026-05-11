@@ -37,11 +37,11 @@ if (process.env.NODE_ENV === "production") {
 // Home page route
 app.get("/", (_req: Request, res: Response) => {
   res.status(200).json({
-    title: "Welcome to your Express app",
+    title: "Welcome to Prism V2",
     description:
-      "Built with StackKit - A production-ready Express template with TypeScript, security, and best practices.",
-    version: "1.0.0",
-    docs: "https://github.com/tariqul420/stackkit",
+      "Enterprise FMCG Distribution ERP — A distribution management system with stock tracking, SKU-wise STT, outlet & route management, role-based access control, audit logs, and advanced reporting.",
+    version: "2.0.0",
+    docs: "https://github.com/mahmud-reza-rafsun/prism-v2-backend",
   });
 });
 
