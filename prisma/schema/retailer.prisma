@@ -1,0 +1,29 @@
+model Retailer {
+    id             String  @id @default(uuid())
+    prismID        String  @unique
+    partnerCode    String?
+    region         String
+    area           String
+    territory      String
+    house          String
+    point          String
+    clusterName    String
+    clusterType    String
+    geoClass       String
+    routeNumber    String
+    section        String
+    retailerName   String
+    ownerName      String
+    contactNumber  String
+    channel        String
+    subChannel     String
+    superTPG       String
+    tpg            String
+    pmmInformation String?
+    dccScope       String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("retailers")
+}
