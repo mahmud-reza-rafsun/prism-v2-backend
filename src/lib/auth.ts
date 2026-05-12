@@ -16,7 +16,7 @@ export const auth = betterAuth({
   trustedOrigins: [
     envVars.APP_URL!,
     envVars.FRONTEND_URL!,
-     envVars.BETTER_AUTH_URL!,
+    envVars.BETTER_AUTH_URL!,
     "http://localhost:3000",
   ],
   emailAndPassword: {
@@ -58,6 +58,12 @@ export const auth = betterAuth({
         required: true,
         defaultValue: UserStatus.ACTIVE,
       },
+      image: {
+        type: "string",
+        required: false,
+        defaultValue: null,
+        input: true,
+      },
       needPasswordChange: {
         type: "boolean",
         required: true,
@@ -81,13 +87,13 @@ export const auth = betterAuth({
       overrideDefaultEmailVerification: true,
       async sendVerificationOTP({ email, otp, type }) {
         if (type === "email-verification") {
-                    const user = await prisma.user.findUnique({
+          const user = await prisma.user.findUnique({
             where: {
               email,
             },
           });
-          
-          
+
+
 
           if (!user) {
             console.error(
@@ -109,13 +115,13 @@ export const auth = betterAuth({
             });
           }
         } else if (type === "forget-password") {
-                    const user = await prisma.user.findUnique({
+          const user = await prisma.user.findUnique({
             where: {
               email,
             },
           });
-          
-          
+
+
 
           if (user) {
             sendEmail({
