@@ -15,5 +15,5 @@ model FinalSubmit {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    @@map("stt_records")
+    @@map("final_submits")
 }

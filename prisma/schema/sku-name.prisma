@@ -1,6 +1,6 @@
 model SkuName {
-    id         String @id @default(uuid())
-    retailerId String @unique
+    id           String @id @default(uuid())
+    outletNameId String @unique
 
     // B&H Series
     bhSf20hl         Int @default(0)
@@ -79,8 +79,6 @@ model SkuName {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    // relations
-    Retailer              Retailer[]
     Shipments             Shipment[]
     OwnPointDistributions OwnPointDistribution[]
     StockManagementReport StockManagement[]
@@ -90,6 +88,8 @@ model SkuName {
     RouteWiseMemoReport   RouteWiseMemo[]
     ByOutletStt           ByOutletStt[]
     ShipmentOrder         ShipmentOrder[]
+    salesPlans            SalesPlan[]
+    retailers             Retailer[]
 
     @@map("sku_name")
 }

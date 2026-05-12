@@ -22,3 +22,8 @@ enum FinalSubmitStatus {
     PENDING
     COMPLETED
 }
+
+enum SalesPlanStatus {
+    ACTIVE
+    INACTIVE
+}

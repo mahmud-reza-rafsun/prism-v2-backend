@@ -1,0 +1,22 @@
+model DistributionPoints {
+    id String @id @default(uuid())
+
+    name String
+    code String? @unique
+
+    territoryId String
+
+    address String?
+    contact String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    territory Territory @relation(fields: [territoryId], references: [id])
+
+    routes     Routes[]
+    retailer   Retailer[]
+    salesPlans SalesPlan[]
+
+    @@map("distribution_points")
+}

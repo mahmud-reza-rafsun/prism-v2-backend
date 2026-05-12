@@ -1,0 +1,18 @@
+model Area {
+    id String @id @default(cuid())
+
+    name String
+    code String? @unique
+
+    regionId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    region Region @relation(fields: [regionId], references: [id])
+
+    territories Territory[]
+
+    @@unique([name, regionId])
+    @@map("area")
+}

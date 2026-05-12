@@ -8,7 +8,7 @@ import { cookieUtils } from "../../shared/utils/cookie";
 import { sendResponse } from "../../shared/utils/send-response";
 import { tokenUtils } from "../../shared/utils/token";
 import { authService } from "./auth.service";
-import type { NeedsVerification, SocialProvider } from "./auth.type";
+import type { NeedsVerification, SocialProvider } from "../../interface/auth.type";
 
 const getSocialAuthPayload = (
   provider: SocialProvider,
@@ -95,16 +95,16 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getMe = catchAsync(
-    async (req: Request, res: Response) => {
-        const user = req.user;
-        const result = await authService.getMe(user);
-        sendResponse(res, {
-          status: status.OK,
-          success: true,
-          message: "User profile fetched successfully",
-          data: result,
-        });
-    }
+  async (req: Request, res: Response) => {
+    const user = req.user;
+    const result = await authService.getMe(user);
+    sendResponse(res, {
+      status: status.OK,
+      success: true,
+      message: "User profile fetched successfully",
+      data: result,
+    });
+  }
 )
 
 const updateProfile = catchAsync(async (req: Request, res: Response) => {
@@ -122,95 +122,95 @@ const updateProfile = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getNewToken = catchAsync(
-    async (req: Request, res: Response) => {
-        const refreshToken = req.cookies.refreshToken;
-        const betterAuthSessionToken = req.cookies["better-auth.session_token"];
-        if (!refreshToken) {
-            throw new AppError(status.UNAUTHORIZED, "Refresh token is missing");
-        }
-        const result = await authService.getNewToken(refreshToken, betterAuthSessionToken);
-
-        const { accessToken, refreshToken: newRefreshToken, sessionToken } = result;
-
-        tokenUtils.setAccessTokenCookie(res, accessToken);
-        tokenUtils.setRefreshTokenCookie(res, newRefreshToken);
-        tokenUtils.setBetterAuthSessionCookie(res, sessionToken);
-
-        sendResponse(res, {
-          status: status.OK,
-          success: true,
-          message: "New tokens generated successfully",
-          data: {
-            accessToken,
-            refreshToken: newRefreshToken,
-            sessionToken,
-          },
-        });
+  async (req: Request, res: Response) => {
+    const refreshToken = req.cookies.refreshToken;
+    const betterAuthSessionToken = req.cookies["better-auth.session_token"];
+    if (!refreshToken) {
+      throw new AppError(status.UNAUTHORIZED, "Refresh token is missing");
     }
+    const result = await authService.getNewToken(refreshToken, betterAuthSessionToken);
+
+    const { accessToken, refreshToken: newRefreshToken, sessionToken } = result;
+
+    tokenUtils.setAccessTokenCookie(res, accessToken);
+    tokenUtils.setRefreshTokenCookie(res, newRefreshToken);
+    tokenUtils.setBetterAuthSessionCookie(res, sessionToken);
+
+    sendResponse(res, {
+      status: status.OK,
+      success: true,
+      message: "New tokens generated successfully",
+      data: {
+        accessToken,
+        refreshToken: newRefreshToken,
+        sessionToken,
+      },
+    });
+  }
 )
 
 const changePassword = catchAsync(
-    async (req: Request, res: Response) => {
-        const payload = req.body;
-        const betterAuthSessionToken = req.cookies["better-auth.session_token"];
+  async (req: Request, res: Response) => {
+    const payload = req.body;
+    const betterAuthSessionToken = req.cookies["better-auth.session_token"];
 
-        const result = await authService.changePassword(payload, betterAuthSessionToken);
+    const result = await authService.changePassword(payload, betterAuthSessionToken);
 
-        const { accessToken, refreshToken, token } = result;
+    const { accessToken, refreshToken, token } = result;
 
-        tokenUtils.setAccessTokenCookie(res, accessToken);
-        tokenUtils.setRefreshTokenCookie(res, refreshToken);
-        tokenUtils.setBetterAuthSessionCookie(res, token as string);
+    tokenUtils.setAccessTokenCookie(res, accessToken);
+    tokenUtils.setRefreshTokenCookie(res, refreshToken);
+    tokenUtils.setBetterAuthSessionCookie(res, token as string);
 
-        sendResponse(res, {
-          status: status.OK,
-          success: true,
-          message: "Password changed successfully",
-          data: result,
-        });
-    }
+    sendResponse(res, {
+      status: status.OK,
+      success: true,
+      message: "Password changed successfully",
+      data: result,
+    });
+  }
 )
 
 const logoutUser = catchAsync(
-    async (req: Request, res: Response) => {
-        const betterAuthSessionToken = req.cookies["better-auth.session_token"];
-        const result = await authService.logoutUser(betterAuthSessionToken);
-        cookieUtils.clearCookie(res, 'accessToken', {
-            httpOnly: true,
-            secure: true,
-            sameSite: "none",
-        });
-        cookieUtils.clearCookie(res, 'refreshToken', {
-            httpOnly: true,
-            secure: true,
-            sameSite: "none",
-        });
-        cookieUtils.clearCookie(res, 'better-auth.session_token', {
-            httpOnly: true,
-            secure: true,
-            sameSite: "none",
-        });
+  async (req: Request, res: Response) => {
+    const betterAuthSessionToken = req.cookies["better-auth.session_token"];
+    const result = await authService.logoutUser(betterAuthSessionToken);
+    cookieUtils.clearCookie(res, 'accessToken', {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    });
+    cookieUtils.clearCookie(res, 'refreshToken', {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    });
+    cookieUtils.clearCookie(res, 'better-auth.session_token', {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    });
 
-        sendResponse(res, {
-          status: status.OK,
-          success: true,
-          message: "User logged out successfully",
-          data: result,
-        });
-    }
+    sendResponse(res, {
+      status: status.OK,
+      success: true,
+      message: "User logged out successfully",
+      data: result,
+    });
+  }
 )
 
 const verifyEmail = catchAsync(
-    async (req: Request, res: Response) => {
-        const { email, otp } = req.body;
-        await authService.verifyEmail(email, otp);
+  async (req: Request, res: Response) => {
+    const { email, otp } = req.body;
+    await authService.verifyEmail(email, otp);
 
-        sendResponse(res, {
-          status: status.OK,
-          success: true,
-          message: "Email verified successfully",
-        });
-    }
+    sendResponse(res, {
+      status: status.OK,
+      success: true,
+      message: "Email verified successfully",
+    });
+  }
 )
 
 const resendOTP = catchAsync(async (req: Request, res: Response) => {
@@ -225,16 +225,16 @@ const resendOTP = catchAsync(async (req: Request, res: Response) => {
 });
 
 const forgetPassword = catchAsync(
-    async (req: Request, res: Response) => {
-        const { email } = req.body;
-        await authService.forgetPassword(email);
+  async (req: Request, res: Response) => {
+    const { email } = req.body;
+    await authService.forgetPassword(email);
 
-        sendResponse(res, {
-          status: status.OK,
-          success: true,
-          message: "Password reset OTP sent to email successfully",
-        });
-    }
+    sendResponse(res, {
+      status: status.OK,
+      success: true,
+      message: "Password reset OTP sent to email successfully",
+    });
+  }
 )
 
 const resetPassword = catchAsync(async (req: Request, res: Response) => {
@@ -327,8 +327,8 @@ const socialLoginSuccess = catchAsync(async (req: Request, res: Response) => {
 });
 
 const handleOAuthError = catchAsync((req: Request, res: Response) => {
-    const error = req.query.error as string || "oauth_failed";
-    res.redirect(`${envVars.FRONTEND_URL}/login?error=${error}`);
+  const error = req.query.error as string || "oauth_failed";
+  res.redirect(`${envVars.FRONTEND_URL}/login?error=${error}`);
 })
 
 export const authController = {
