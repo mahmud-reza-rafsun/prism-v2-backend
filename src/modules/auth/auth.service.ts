@@ -17,7 +17,7 @@ import {
 } from "../../interface/auth.type";
 
 const registerUser = async (payload: IRegisterUserPayload) => {
-  const { name, email, password } = payload;
+  const { name, email, image, password } = payload;
 
   if (email) {
     const existingUser = await prisma.user.findUnique({
@@ -37,6 +37,7 @@ const registerUser = async (payload: IRegisterUserPayload) => {
     body: {
       name,
       email,
+      image,
       password,
     },
   });

@@ -29,14 +29,16 @@ export const auth = betterAuth({
       clientSecret: envVars.GOOGLE_CLIENT_SECRET as string,
       accessType: "offline",
       prompt: "select_account consent",
-      mapProfileToUser: () => {
+      mapProfileToUser: (profile) => {
         return {
           role: Role.USER,
           status: UserStatus.ACTIVE,
+          image: profile.picture,
           needPasswordChange: false,
           emailVerified: true,
           isDeleted: false,
           deletedAt: null,
+
         };
       },
     },
@@ -61,7 +63,6 @@ export const auth = betterAuth({
       image: {
         type: "string",
         required: false,
-        defaultValue: null,
         input: true,
       },
       needPasswordChange: {

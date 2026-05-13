@@ -1,9 +1,10 @@
-import status from "http-status";
+import { status } from "http-status";
+import { ICreateRegionPayload } from "../../interface/region.interface";
 import { prisma } from "../../database/prisma";
 import { AppError } from "../../shared/errors/app-error";
-import { ICreateRegionPayload } from "../../interface/region.interface";
 
 const createRegions = async (payload: ICreateRegionPayload, userId: string) => {
+    // Verify user existence
     const user = await prisma.user.findUnique({
         where: { id: userId },
     });
@@ -12,8 +13,9 @@ const createRegions = async (payload: ICreateRegionPayload, userId: string) => {
         throw new AppError(status.UNAUTHORIZED, "User not found");
     }
 
-    if (!payload.regions || payload.regions.length === 0) {
-        throw new AppError(status.BAD_REQUEST, "No region data provided");
+    // Robust validation to catch the "Invalid or empty" error
+    if (!payload || !payload.regions || !Array.isArray(payload.regions) || payload.regions.length === 0) {
+        throw new AppError(status.BAD_REQUEST, "Invalid or empty region data provided");
     }
 
     const result = await prisma.region.createMany({
@@ -29,4 +31,4 @@ const createRegions = async (payload: ICreateRegionPayload, userId: string) => {
 
 export const regionService = {
     createRegions
-}
+};

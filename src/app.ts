@@ -39,7 +39,7 @@ app.get("/", (_req: Request, res: Response) => {
   res.status(200).json({
     title: "Welcome to Prism V2",
     description:
-      "Enterprise FMCG Distribution ERP — A distribution management system with stock tracking, SKU-wise STT, outlet & route management, role-based access control, audit logs, and advanced reporting.",
+      "Enterprise FMCG Distribution ERP — A distribution management system.",
     version: "2.0.0",
     docs: "https://github.com/mahmud-reza-rafsun/prism-v2-backend",
   });
