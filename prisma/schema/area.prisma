@@ -4,16 +4,14 @@ model Area {
     name String
     code String? @unique
 
-    regionId   String
-    regionCode String
-    regionName String
+    regionId String
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
     region Region @relation(fields: [regionId], references: [id])
 
-    territories Territory[]
+    distributionHouses DistributionHouse[]
 
     @@unique([name, regionId])
     @@map("area")

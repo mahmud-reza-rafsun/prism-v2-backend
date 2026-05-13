@@ -1,0 +1,21 @@
+model DistributionHouse {
+    id String @id @default(uuid())
+
+    name String
+    code String? @unique
+
+    areaId String
+
+    address String?
+    contact String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    area Area @relation(fields: [areaId], references: [id])
+
+    territories Territory[]
+
+    @@unique([name, areaId])
+    @@map("distribution_houses")
+}

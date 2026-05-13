@@ -4,15 +4,15 @@ model Territory {
     name String
     code String? @unique
 
-    areaId String
+    distributionHouseId String
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    area Area @relation(fields: [areaId], references: [id])
+    distributionHouse DistributionHouse @relation(fields: [distributionHouseId], references: [id])
 
     distributionPoints DistributionPoints[]
 
-    @@unique([name, areaId])
+    @@unique([name, distributionHouseId])
     @@map("territory")
 }
