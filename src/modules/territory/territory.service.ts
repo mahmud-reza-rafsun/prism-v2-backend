@@ -1,27 +1,38 @@
 import { status } from "http-status";
-import { ICreateRegionPayload } from "../../interface/region.interface";
 import { prisma } from "../../database/prisma";
 import { AppError } from "../../shared/errors/app-error";
+import { ICreateTerritoryPayload } from "../../interface/territory.interface";
 
-const createTerritory = async (payload: ICreateRegionPayload, userId: string) => {
-    // Verify user existence
+const createTerritory = async (
+    payload: ICreateTerritoryPayload,
+    userId: string,
+    distributionId: string // Received from params
+) => {
     const user = await prisma.user.findUnique({
         where: { id: userId },
     });
 
     if (!user) {
-        throw new AppError(status.UNAUTHORIZED, "Admin not found");
+        throw new AppError(status.UNAUTHORIZED, "User not found");
     }
 
-    // Robust validation to catch the "Invalid or empty" error
-    if (!payload || !payload.regions || !Array.isArray(payload.regions) || payload.regions.length === 0) {
-        throw new AppError(status.BAD_REQUEST, "Invalid or empty territory data provided");
+    const distribution = await prisma.distributionHouse.findUnique({
+        where: { id: distributionId },
+    });
+
+    if (!distribution) {
+        throw new AppError(status.NOT_FOUND, "Target Distribution not found");
     }
 
-    const result = await prisma.region.createMany({
-        data: payload.regions.map((region) => ({
-            name: region.name,
-            code: region.code,
+    if (!payload?.territories?.length) {
+        throw new AppError(status.BAD_REQUEST, "No Territory data provided");
+    }
+
+    const result = await prisma.territory.createMany({
+        data: payload.territories.map((territory) => ({
+            name: territory.name,
+            code: territory.code,
+            distributionHouseId: distributionId,
         })),
         skipDuplicates: true,
     });
@@ -29,6 +40,19 @@ const createTerritory = async (payload: ICreateRegionPayload, userId: string) =>
     return result;
 };
 
+const getAllTerritory = async () => {
+    const [totalCount, territories] = await prisma.$transaction([
+        prisma.territory.count(),
+        prisma.territory.findMany()
+    ]);
+
+    return {
+        territories,
+        totalCount
+    };
+};
+
 export const territoryService = {
-    createTerritory
+    createTerritory,
+    getAllTerritory
 };

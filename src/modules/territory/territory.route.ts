@@ -5,10 +5,16 @@ import { territoryController } from "./territory.controller";
 
 const router = Router();
 
+router.get(
+    "/get-all-territory",
+    checkAuth(Role.SUPER_ADMIN),
+    territoryController.getAllTerritory
+);
+
 router.post(
-    "/create-territory",
+    "/create-territory/:distributionId",
     checkAuth(Role.SUPER_ADMIN),
     territoryController.createTerritory
 );
 
-export const regionRoutes = router;
+export const territoryRoutes = router;

@@ -44,8 +44,8 @@ const createDistribution = async (
 
 const getAllDistribution = async () => {
     const [distributions, totalCount] = await prisma.$transaction([
-        prisma.distributionHouse.findMany(),
-        prisma.distributionHouse.count()
+        prisma.distributionHouse.count(),
+        prisma.distributionHouse.findMany()
     ]);
 
     return {
