@@ -1,12 +1,13 @@
-model Retailer {
-    id             String  @id @default(uuid())
-    prismID        String  @unique
+model OutletName {
+    id             String   @id @default(uuid())
+    prismID        String   @unique
     partnerCode    String?
     region         String
     area           String
     territory      String
     house          String
     point          String
+    route          Routes[]
     clusterName    String
     clusterType    String
     geoClass       String

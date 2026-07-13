@@ -1,7 +1,7 @@
 model User {
     id                 String     @id @default(uuid())
     name               String
-    email              String
+    email              String @unique
     emailVerified      Boolean    @default(false)
     role               Role       @default(USER)
     status             UserStatus @default(ACTIVE)
@@ -14,8 +14,28 @@ model User {
     sessions           Session[]
     accounts           Account[]
 
-    @@unique([email])
+    regionId String?
+    region   Region? @relation(fields: [regionId], references: [id])
+
+    areaId String?
+    area   Area?   @relation(fields: [areaId], references: [id])
+
+    distributionHouseId String?
+    distributionHouse   DistributionHouse? @relation(fields: [distributionHouseId], references: [id])
+
+    territoryId String?
+    territory   Territory? @relation(fields: [territoryId], references: [id])
+
+    distributionPointId String?
+    distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id])
+
     @@map("user")
+
+    @@index([regionId])
+  @@index([areaId])
+  @@index([distributionHouseId])
+  @@index([territoryId])
+  @@index([distributionPointId])
 }
 
 model Session {

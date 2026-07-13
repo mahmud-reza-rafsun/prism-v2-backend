@@ -12,6 +12,7 @@ model Area {
     region Region @relation(fields: [regionId], references: [id])
 
     distributionHouses DistributionHouse[]
+    users              User[]
 
     @@unique([name, regionId])
     @@map("area")

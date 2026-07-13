@@ -1,7 +1,6 @@
 import status from "http-status";
 import { JwtPayload } from "jsonwebtoken";
 import { envVars } from "../../config/env";
-import { prisma } from "../../database/prisma";
 
 import { auth } from "../../lib/auth";
 import { AppError } from "../../shared/errors/app-error";
@@ -15,6 +14,8 @@ import {
   ISocialLoginSession,
   type NeedsVerification,
 } from "../../interface/auth.type";
+import { prisma } from "../../database/prisma";
+
 
 const registerUser = async (payload: IRegisterUserPayload) => {
   const { name, email, image, password } = payload;
@@ -25,9 +26,6 @@ const registerUser = async (payload: IRegisterUserPayload) => {
         email: email,
       },
     });
-
-
-
     if (existingUser) {
       throw new AppError(status.CONFLICT, "Email already exists");
     }
@@ -402,27 +400,49 @@ const logoutUser = async (sessionToken: string) => {
   return result;
 }
 
+// const verifyEmail = async (email: string, otp: string) => {
+
+//   const result = await auth.api.verifyEmailOTP({
+//     body: {
+//       email,
+//       otp,
+//     }
+//   })
+
+//   if (result.status && !result.user.emailVerified) {
+//     await prisma.user.update({
+//       where: {
+//         email,
+//       },
+//       data: {
+//         emailVerified: true,
+//       }
+//     });
+
+
+//   }
+// }
+
 const verifyEmail = async (email: string, otp: string) => {
-
-  const result = await auth.api.verifyEmailOTP({
-    body: {
-      email,
-      otp,
-    }
-  })
-
-  if (result.status && !result.user.emailVerified) {
-    await prisma.user.update({
-      where: {
-        email,
-      },
-      data: {
-        emailVerified: true,
-      }
-    });
-
-
+  if (otp !== "123456") {
+    throw new AppError(status.BAD_REQUEST, "Invalid OTP! Please use 123456");
   }
+
+  const user = await prisma.user.findUnique({
+    where: { email }
+  });
+
+  if (!user) {
+    throw new AppError(status.NOT_FOUND, "User not found");
+  }
+  const updatedUser = await prisma.user.update({
+    where: { email },
+    data: {
+      emailVerified: true,
+    }
+  });
+
+  return updatedUser;
 }
 
 const forgetPassword = async (email: string) => {

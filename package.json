@@ -13,7 +13,9 @@
     "prisma:seed": "tsx prisma/seed.ts",
     "generate": "bun x prisma generate",
     "migrate": "prisma migrate dev",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "export:data": "tsx scripts/export.ts",
+    "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",

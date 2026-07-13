@@ -14,7 +14,9 @@ model DistributionHouse {
 
     area Area @relation(fields: [areaId], references: [id])
 
-    territories Territory[]
+    distributionPoints DistributionPoints[]
+    territories        Territory[]
+    users              User[]
 
     @@unique([name, areaId])
     @@map("distribution_houses")

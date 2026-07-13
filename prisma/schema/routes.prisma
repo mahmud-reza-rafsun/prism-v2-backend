@@ -4,5 +4,10 @@ model Routes {
     distributionPointsId String
     distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id])
 
+    outlets OutletName[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
     @@map("routes")
 }

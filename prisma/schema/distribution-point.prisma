@@ -4,7 +4,7 @@ model DistributionPoints {
     name String
     code String? @unique
 
-    territoryId String
+    distributionId String
 
     address String?
     contact String?
@@ -12,11 +12,14 @@ model DistributionPoints {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    territory Territory @relation(fields: [territoryId], references: [id])
+    distributionHouse DistributionHouse @relation(fields: [distributionId], references: [id])
 
-    routes     Routes[]
-    retailer   Retailer[]
-    salesPlans SalesPlan[]
+    routes      Routes[]
+    outlet      OutletName[]
+    salesPlans  SalesPlan[]
+    users       User[]
+    territory   Territory?   @relation(fields: [territoryId], references: [id])
+    territoryId String?
 
     @@map("distribution_points")
 }

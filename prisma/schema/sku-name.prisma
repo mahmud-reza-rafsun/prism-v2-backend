@@ -89,7 +89,7 @@ model SkuName {
     ByOutletStt           ByOutletStt[]
     ShipmentOrder         ShipmentOrder[]
     salesPlans            SalesPlan[]
-    retailers             Retailer[]
+    outlets               OutletName[]
 
     @@map("sku_name")
 }

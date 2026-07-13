@@ -1,0 +1,1649 @@
+{
+  "regions": [
+    {
+      "id": "eb3b4152-9adc-4e05-8323-fa427ca1fd94",
+      "name": "Barishal",
+      "code": "BAR-4829156",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    },
+    {
+      "id": "3f2f4f1d-82d8-486c-8836-cd81b03f63b4",
+      "name": "Chittagong",
+      "code": "CTG-9928374",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    },
+    {
+      "id": "03fc6eb5-baba-491c-823d-6cb0fbc1f714",
+      "name": "Dhaka North",
+      "code": "DHK-N-1029384",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    },
+    {
+      "id": "0b6c91fe-ffe8-4de1-a3ce-2edacc5f3b71",
+      "name": "Dhaka South",
+      "code": "DHK-S-5566778",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    },
+    {
+      "id": "57b5b7f4-4077-4575-8815-a59270c62f87",
+      "name": "Khulna",
+      "code": "KHU-2233445",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    },
+    {
+      "id": "9fe239c5-ed83-4128-a06d-7fdd3807804b",
+      "name": "Rajshahi",
+      "code": "RAJ-3884687",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    },
+    {
+      "id": "c8a4672b-bd42-4dd7-b61a-f22fdf733592",
+      "name": "Sylhet",
+      "code": "SYL-7788990",
+      "createdAt": "2026-05-13T09:36:01.669Z",
+      "updatedAt": "2026-05-13T09:36:01.669Z"
+    }
+  ],
+  "areas": [
+    {
+      "id": "f6bf56a5-133c-449f-88e5-100604eeadc5",
+      "name": "Barishal",
+      "code": "BAR-721034",
+      "regionId": "eb3b4152-9adc-4e05-8323-fa427ca1fd94",
+      "createdAt": "2026-05-13T18:22:21.402Z",
+      "updatedAt": "2026-05-13T18:22:21.402Z"
+    },
+    {
+      "id": "bb54ca9f-706c-4a0d-bbe3-4b040a00a5a8",
+      "name": "Faridpur",
+      "code": "FAR-882190",
+      "regionId": "eb3b4152-9adc-4e05-8323-fa427ca1fd94",
+      "createdAt": "2026-05-13T18:22:21.402Z",
+      "updatedAt": "2026-05-13T18:22:21.402Z"
+    },
+    {
+      "id": "47c83877-2765-4224-a83a-0327c940898b",
+      "name": "B. Baria",
+      "code": "BBA-552718",
+      "regionId": "c8a4672b-bd42-4dd7-b61a-f22fdf733592",
+      "createdAt": "2026-05-13T18:23:02.757Z",
+      "updatedAt": "2026-05-13T18:23:02.757Z"
+    },
+    {
+      "id": "9e7a005d-fbb5-4e11-ad7e-ad926b91bf10",
+      "name": "Mymensingh",
+      "code": "MYM-991023",
+      "regionId": "c8a4672b-bd42-4dd7-b61a-f22fdf733592",
+      "createdAt": "2026-05-13T18:23:02.757Z",
+      "updatedAt": "2026-05-13T18:23:02.757Z"
+    },
+    {
+      "id": "4a138fd5-f784-4026-a1c7-64649ea7dcf4",
+      "name": "Narsingdi",
+      "code": "NAR-228371",
+      "regionId": "c8a4672b-bd42-4dd7-b61a-f22fdf733592",
+      "createdAt": "2026-05-13T18:23:02.757Z",
+      "updatedAt": "2026-05-13T18:23:02.757Z"
+    },
+    {
+      "id": "c412f50c-64a6-4eb6-84ec-dc33d21f6568",
+      "name": "Sylhet",
+      "code": "SYL-772810",
+      "regionId": "c8a4672b-bd42-4dd7-b61a-f22fdf733592",
+      "createdAt": "2026-05-13T18:23:02.757Z",
+      "updatedAt": "2026-05-13T18:23:02.757Z"
+    },
+    {
+      "id": "1981f15e-d302-4197-875c-47e087d97d91",
+      "name": "Bogura",
+      "code": "BOG-882731",
+      "regionId": "9fe239c5-ed83-4128-a06d-7fdd3807804b",
+      "createdAt": "2026-05-13T18:23:42.902Z",
+      "updatedAt": "2026-05-13T18:23:42.902Z"
+    },
+    {
+      "id": "9b18a290-e59f-495d-80cd-d36e6c78ab55",
+      "name": "Dinajpur",
+      "code": "DIN-449281",
+      "regionId": "9fe239c5-ed83-4128-a06d-7fdd3807804b",
+      "createdAt": "2026-05-13T18:23:42.902Z",
+      "updatedAt": "2026-05-13T18:23:42.902Z"
+    },
+    {
+      "id": "b7111697-4568-46eb-a211-cef255a21b4b",
+      "name": "Rajshahi",
+      "code": "RAJ-110293",
+      "regionId": "9fe239c5-ed83-4128-a06d-7fdd3807804b",
+      "createdAt": "2026-05-13T18:23:42.902Z",
+      "updatedAt": "2026-05-13T18:23:42.902Z"
+    },
+    {
+      "id": "3c3a3ad8-60cb-4774-8679-25165a725373",
+      "name": "Rangpur",
+      "code": "RAN-338274",
+      "regionId": "9fe239c5-ed83-4128-a06d-7fdd3807804b",
+      "createdAt": "2026-05-13T18:23:42.902Z",
+      "updatedAt": "2026-05-13T18:23:42.902Z"
+    },
+    {
+      "id": "ec455e4f-253c-4c3d-ac9a-a388f18e2a25",
+      "name": "Dhaka Central",
+      "code": "DHC-773829",
+      "regionId": "0b6c91fe-ffe8-4de1-a3ce-2edacc5f3b71",
+      "createdAt": "2026-05-13T18:25:39.163Z",
+      "updatedAt": "2026-05-13T18:25:39.163Z"
+    },
+    {
+      "id": "a65cc330-d6b2-4b4c-8f96-9edf7285b37d",
+      "name": "Dhaka East",
+      "code": "DHE-449102",
+      "regionId": "0b6c91fe-ffe8-4de1-a3ce-2edacc5f3b71",
+      "createdAt": "2026-05-13T18:25:39.163Z",
+      "updatedAt": "2026-05-13T18:25:39.163Z"
+    },
+    {
+      "id": "745db430-50ec-42d1-94aa-a26f0b66242b",
+      "name": "Dhaka South",
+      "code": "DHS-662910",
+      "regionId": "0b6c91fe-ffe8-4de1-a3ce-2edacc5f3b71",
+      "createdAt": "2026-05-13T18:25:39.163Z",
+      "updatedAt": "2026-05-13T18:25:39.163Z"
+    },
+    {
+      "id": "eafd4164-b72d-4b2b-8322-ab88f11549fc",
+      "name": "Dhaka North",
+      "code": "DHN-992031",
+      "regionId": "03fc6eb5-baba-491c-823d-6cb0fbc1f714",
+      "createdAt": "2026-05-13T18:26:16.695Z",
+      "updatedAt": "2026-05-13T18:26:16.695Z"
+    },
+    {
+      "id": "1d825c8f-6ace-41ee-bff3-3d195f01bf1d",
+      "name": "Dhaka West",
+      "code": "DHW-118273",
+      "regionId": "03fc6eb5-baba-491c-823d-6cb0fbc1f714",
+      "createdAt": "2026-05-13T18:26:16.695Z",
+      "updatedAt": "2026-05-13T18:26:16.695Z"
+    },
+    {
+      "id": "91cdeac6-164b-423b-a52d-4ae8f3976e4a",
+      "name": "CTG North",
+      "code": "CTG-N-441209",
+      "regionId": "3f2f4f1d-82d8-486c-8836-cd81b03f63b4",
+      "createdAt": "2026-05-13T19:00:07.122Z",
+      "updatedAt": "2026-05-13T19:00:07.122Z"
+    },
+    {
+      "id": "ca86e5ec-166d-44ac-ab7b-e243279f7d65",
+      "name": "CTG South",
+      "code": "CTG-S-559381",
+      "regionId": "3f2f4f1d-82d8-486c-8836-cd81b03f63b4",
+      "createdAt": "2026-05-13T19:00:07.122Z",
+      "updatedAt": "2026-05-13T19:00:07.122Z"
+    },
+    {
+      "id": "3c591a8a-dc7f-4d63-9055-31624323c2fe",
+      "name": "Khulna",
+      "code": "KHU-552910",
+      "regionId": "57b5b7f4-4077-4575-8815-a59270c62f87",
+      "createdAt": "2026-05-13T19:09:08.932Z",
+      "updatedAt": "2026-05-13T19:09:08.932Z"
+    },
+    {
+      "id": "30bb4c30-e835-464a-aa71-e30e6aba6d73",
+      "name": "Kushtia",
+      "code": "KUS-112039",
+      "regionId": "57b5b7f4-4077-4575-8815-a59270c62f87",
+      "createdAt": "2026-05-13T19:09:08.932Z",
+      "updatedAt": "2026-05-13T19:09:08.932Z"
+    },
+    {
+      "id": "f5641105-17fb-4d55-9516-6ce9bb24214b",
+      "name": "Cumilla",
+      "code": "CUM-221094",
+      "regionId": "3f2f4f1d-82d8-486c-8836-cd81b03f63b4",
+      "createdAt": "2026-05-13T19:41:16.462Z",
+      "updatedAt": "2026-05-13T19:41:16.462Z"
+    },
+    {
+      "id": "adb6de94-a74c-4a02-baf6-4fd0c9a11bf4",
+      "name": "Feni",
+      "code": "FEN-338271",
+      "regionId": "3f2f4f1d-82d8-486c-8836-cd81b03f63b4",
+      "createdAt": "2026-05-13T19:41:16.462Z",
+      "updatedAt": "2026-05-13T19:41:16.462Z"
+    }
+  ],
+  "distributionHouses": [
+    {
+      "id": "290bf319-f9cc-4e85-9a43-4ea33f52ac7a",
+      "name": "Daffodils",
+      "code": "BOG-DAF-3382",
+      "areaId": "1981f15e-d302-4197-875c-47e087d97d91",
+      "address": "Ishwardi, Rajshahi Division",
+      "contact": "01733000111",
+      "createdAt": "2026-05-13T19:32:49.251Z",
+      "updatedAt": "2026-05-13T19:32:49.251Z"
+    },
+    {
+      "id": "8487119b-9ef5-4229-9964-265c61da8a63",
+      "name": "Sales Connect Limited.",
+      "code": "BOG-SCL-5519",
+      "areaId": "1981f15e-d302-4197-875c-47e087d97d91",
+      "address": "Pabna Sadar, Rajshahi Division",
+      "contact": "01733000222",
+      "createdAt": "2026-05-13T19:32:49.251Z",
+      "updatedAt": "2026-05-13T19:32:49.251Z"
+    },
+    {
+      "id": "47d55656-1ce0-4773-814d-98281f38ad38",
+      "name": "Mr Brothers",
+      "code": "BOG-MRB-9910",
+      "areaId": "1981f15e-d302-4197-875c-47e087d97d91",
+      "address": "Bogura, Rajshahi Division",
+      "contact": "01733000333",
+      "createdAt": "2026-05-13T19:32:49.251Z",
+      "updatedAt": "2026-05-13T19:32:49.251Z"
+    },
+    {
+      "id": "ff46b472-b4c0-4d48-8e20-df3e797de82b",
+      "name": "Bhagawan Chandra Paul",
+      "code": "BBA-BCP-4821",
+      "areaId": "47c83877-2765-4224-a83a-0327c940898b",
+      "address": "Gokarna Road, Brahmanbaria Sadar",
+      "contact": "01711000111",
+      "createdAt": "2026-05-13T19:33:32.118Z",
+      "updatedAt": "2026-05-13T19:33:32.118Z"
+    },
+    {
+      "id": "37f63ba4-27eb-43c2-a986-3afc188f0bd0",
+      "name": "Sharif Stores",
+      "code": "BBA-SHA-7392",
+      "areaId": "47c83877-2765-4224-a83a-0327c940898b",
+      "address": "Kandirpar, Brahmanbaria",
+      "contact": "01711000222",
+      "createdAt": "2026-05-13T19:33:32.118Z",
+      "updatedAt": "2026-05-13T19:33:32.118Z"
+    },
+    {
+      "id": "31022c41-557a-490a-b2c9-a0657548b030",
+      "name": "South Sylhet Co.",
+      "code": "BBA-SSC-1054",
+      "areaId": "47c83877-2765-4224-a83a-0327c940898b",
+      "address": "Station Road, Brahmanbaria",
+      "contact": "01711000333",
+      "createdAt": "2026-05-13T19:33:32.118Z",
+      "updatedAt": "2026-05-13T19:33:32.118Z"
+    },
+    {
+      "id": "5678bafe-9d48-45f0-81da-0a90cba8de8b",
+      "name": "A. Rahman & Sons",
+      "code": "BAR-ARS-2910",
+      "areaId": "f6bf56a5-133c-449f-88e5-100604eeadc5",
+      "address": "Sadar Road, Barishal",
+      "contact": "01722000111",
+      "createdAt": "2026-05-13T19:34:00.132Z",
+      "updatedAt": "2026-05-13T19:34:00.132Z"
+    },
+    {
+      "id": "45acd67f-c313-4c3c-a240-2bf08b9831ad",
+      "name": "Hajee & Sons",
+      "code": "BAR-HJS-8827",
+      "areaId": "f6bf56a5-133c-449f-88e5-100604eeadc5",
+      "address": "Hatkhola, Barishal",
+      "contact": "01722000222",
+      "createdAt": "2026-05-13T19:34:00.132Z",
+      "updatedAt": "2026-05-13T19:34:00.132Z"
+    },
+    {
+      "id": "8f3d080a-949b-40c2-8bab-ecb172775444",
+      "name": "Hajee & Sons, Barguna",
+      "code": "BAR-HSB-4491",
+      "areaId": "f6bf56a5-133c-449f-88e5-100604eeadc5",
+      "address": "Barguna Sadar, Barishal Division",
+      "contact": "01722000333",
+      "createdAt": "2026-05-13T19:34:00.132Z",
+      "updatedAt": "2026-05-13T19:34:00.132Z"
+    },
+    {
+      "id": "9e1081c6-bae5-4cdc-b93d-1f8660fe0700",
+      "name": "M/S BARISHAL J AHMED & CO.",
+      "code": "BAR-BJA-6623",
+      "areaId": "f6bf56a5-133c-449f-88e5-100604eeadc5",
+      "address": "Chawk Bazar, Barishal",
+      "contact": "01722000444",
+      "createdAt": "2026-05-13T19:34:00.132Z",
+      "updatedAt": "2026-05-13T19:34:00.132Z"
+    },
+    {
+      "id": "6d8ad599-8655-473a-8ef8-7d7aa31015c5",
+      "name": "Arafa Store",
+      "code": "CTGN-ARF-2283",
+      "areaId": "91cdeac6-164b-423b-a52d-4ae8f3976e4a",
+      "address": "Hathazari, Chattogram",
+      "contact": "01811000111",
+      "createdAt": "2026-05-13T19:36:44.204Z",
+      "updatedAt": "2026-05-13T19:36:44.204Z"
+    },
+    {
+      "id": "dfc7ec43-94f8-451e-b57b-2e8d4d2e4fdf",
+      "name": "Zawad Enterprise",
+      "code": "CTGN-ZAW-7712",
+      "areaId": "91cdeac6-164b-423b-a52d-4ae8f3976e4a",
+      "address": "Sitakunda, Chattogram",
+      "contact": "01811000222",
+      "createdAt": "2026-05-13T19:36:44.204Z",
+      "updatedAt": "2026-05-13T19:36:44.204Z"
+    },
+    {
+      "id": "372d783a-b990-4117-b317-b5aa490bd431",
+      "name": "M/S Al-Amin Store",
+      "code": "CTGS-AAS-5504",
+      "areaId": "ca86e5ec-166d-44ac-ab7b-e243279f7d65",
+      "address": "Agrabad, Chattogram",
+      "contact": "01822000111",
+      "createdAt": "2026-05-13T19:37:05.676Z",
+      "updatedAt": "2026-05-13T19:37:05.676Z"
+    },
+    {
+      "id": "bc998bae-2c0f-48ca-ac7c-1914452fed16",
+      "name": "MAQ Distribution",
+      "code": "CTGS-MAQ-1182",
+      "areaId": "ca86e5ec-166d-44ac-ab7b-e243279f7d65",
+      "address": "Laldighi, Chattogram",
+      "contact": "01822000222",
+      "createdAt": "2026-05-13T19:37:05.676Z",
+      "updatedAt": "2026-05-13T19:37:05.676Z"
+    },
+    {
+      "id": "75d38e49-9227-426f-a2be-e76006ec48d8",
+      "name": "MT-CTG",
+      "code": "CTGS-MTC-8837",
+      "areaId": "ca86e5ec-166d-44ac-ab7b-e243279f7d65",
+      "address": "Khatunganj, Chattogram",
+      "contact": "01822000333",
+      "createdAt": "2026-05-13T19:37:05.676Z",
+      "updatedAt": "2026-05-13T19:37:05.676Z"
+    },
+    {
+      "id": "99030907-71e2-482c-94d4-3b970e886835",
+      "name": "Abdul Latif Chowdhury",
+      "code": "CUM-ALC-3319",
+      "areaId": "f5641105-17fb-4d55-9516-6ce9bb24214b",
+      "address": "Kandirpar, Cumilla",
+      "contact": "01744000111",
+      "createdAt": "2026-05-13T19:42:29.318Z",
+      "updatedAt": "2026-05-13T19:42:29.318Z"
+    },
+    {
+      "id": "a302840f-03cf-4814-923b-d52cb44f262f",
+      "name": "M/S Rupali Traders",
+      "code": "CUM-MRT-6628",
+      "areaId": "f5641105-17fb-4d55-9516-6ce9bb24214b",
+      "address": "Rajgonj, Cumilla",
+      "contact": "01744000222",
+      "createdAt": "2026-05-13T19:42:29.318Z",
+      "updatedAt": "2026-05-13T19:42:29.318Z"
+    },
+    {
+      "id": "4f3d98f6-cff3-48b6-9877-c8df30c7155c",
+      "name": "M/S. Abdul Latif Chowdhury, Chandpur",
+      "code": "CUM-ALC-9941",
+      "areaId": "f5641105-17fb-4d55-9516-6ce9bb24214b",
+      "address": "Puran Bazar, Chandpur",
+      "contact": "01744000333",
+      "createdAt": "2026-05-13T19:42:29.318Z",
+      "updatedAt": "2026-05-13T19:42:29.318Z"
+    },
+    {
+      "id": "d670b831-c326-4238-b723-b26866b13759",
+      "name": "Agrani Trading Corporation, Gulshan",
+      "code": "DHC-ATG-1102",
+      "areaId": "ec455e4f-253c-4c3d-ac9a-a388f18e2a25",
+      "address": "Gulshan-1, Dhaka",
+      "contact": "01911000111",
+      "createdAt": "2026-05-13T19:42:47.556Z",
+      "updatedAt": "2026-05-13T19:42:47.556Z"
+    },
+    {
+      "id": "659d419b-44f6-4ecb-afe7-f6ab09444cd8",
+      "name": "Agrani Trading Corporation, Mirpur",
+      "code": "DHC-ATM-4492",
+      "areaId": "ec455e4f-253c-4c3d-ac9a-a388f18e2a25",
+      "address": "Mirpur-10, Dhaka",
+      "contact": "01911000222",
+      "createdAt": "2026-05-13T19:42:47.556Z",
+      "updatedAt": "2026-05-13T19:42:47.556Z"
+    },
+    {
+      "id": "23e1b1cc-3e11-4632-a9f7-912f6534f290",
+      "name": "Agrani Trading Corporation, Mogbazar",
+      "code": "DHC-ATB-7738",
+      "areaId": "ec455e4f-253c-4c3d-ac9a-a388f18e2a25",
+      "address": "Mogbazar, Dhaka",
+      "contact": "01911000333",
+      "createdAt": "2026-05-13T19:42:47.556Z",
+      "updatedAt": "2026-05-13T19:42:47.556Z"
+    },
+    {
+      "id": "cac27c29-09b3-4833-8194-864489d23ead",
+      "name": "MT-Dhaka",
+      "code": "DHC-MTD-2210",
+      "areaId": "ec455e4f-253c-4c3d-ac9a-a388f18e2a25",
+      "address": "Motijheel, Dhaka",
+      "contact": "01911000444",
+      "createdAt": "2026-05-13T19:42:47.556Z",
+      "updatedAt": "2026-05-13T19:42:47.556Z"
+    },
+    {
+      "id": "bb3f8b08-8de3-497b-a261-23f7baefa931",
+      "name": "The Jamal & Co - Narayanganj",
+      "code": "DHE-TJC-5582",
+      "areaId": "a65cc330-d6b2-4b4c-8f96-9edf7285b37d",
+      "address": "Nitaiganj, Narayanganj",
+      "contact": "01922000111",
+      "createdAt": "2026-05-13T19:43:27.909Z",
+      "updatedAt": "2026-05-13T19:43:27.909Z"
+    },
+    {
+      "id": "320686f1-9903-46e5-abc0-627f7756fbcc",
+      "name": "Agrani Trading Corporation Savar",
+      "code": "DHN-ATS-8819",
+      "areaId": "eafd4164-b72d-4b2b-8322-ab88f11549fc",
+      "address": "Savar Bazar, Dhaka",
+      "contact": "01933000111",
+      "createdAt": "2026-05-13T19:43:57.246Z",
+      "updatedAt": "2026-05-13T19:43:57.246Z"
+    },
+    {
+      "id": "d3f1e6f4-ba61-4649-b28d-26ee6f5c26ec",
+      "name": "Agrani Trading Corporation, Tangail",
+      "code": "DHN-ATT-3371",
+      "areaId": "eafd4164-b72d-4b2b-8322-ab88f11549fc",
+      "address": "Main Road, Tangail",
+      "contact": "01933000222",
+      "createdAt": "2026-05-13T19:43:57.246Z",
+      "updatedAt": "2026-05-13T19:43:57.246Z"
+    },
+    {
+      "id": "c77dd622-d2a1-4db7-a225-acb30dadbd30",
+      "name": "Alam Corporation Ltd.",
+      "code": "DHS-ACL-6641",
+      "areaId": "745db430-50ec-42d1-94aa-a26f0b66242b",
+      "address": "Chawkbazar, Dhaka",
+      "contact": "01944000111",
+      "createdAt": "2026-05-13T19:44:22.948Z",
+      "updatedAt": "2026-05-13T19:44:22.948Z"
+    },
+    {
+      "id": "8d0fc8f2-33f2-484a-9ab1-63da6705e887",
+      "name": "Sales Promotion Service",
+      "code": "DHS-SPS-1120",
+      "areaId": "745db430-50ec-42d1-94aa-a26f0b66242b",
+      "address": "Old Dhaka, Lalbagh",
+      "contact": "01944000222",
+      "createdAt": "2026-05-13T19:44:22.948Z",
+      "updatedAt": "2026-05-13T19:44:22.948Z"
+    },
+    {
+      "id": "900e71a7-2d42-49fa-a6c7-4f45db50bbce",
+      "name": "The Jamal & Co - Dhanmondi",
+      "code": "DHS-TJC-9928",
+      "areaId": "745db430-50ec-42d1-94aa-a26f0b66242b",
+      "address": "Dhanmondi, Dhaka",
+      "contact": "01944000333",
+      "createdAt": "2026-05-13T19:44:22.948Z",
+      "updatedAt": "2026-05-13T19:44:22.948Z"
+    },
+    {
+      "id": "39316301-fe42-4ef8-9ba2-6b4b402aa1d2",
+      "name": "Azahar Trading Ltd.",
+      "code": "DHW-ATL-4472",
+      "areaId": "1d825c8f-6ace-41ee-bff3-3d195f01bf1d",
+      "address": "Gabtoli, Dhaka",
+      "contact": "01955000111",
+      "createdAt": "2026-05-13T19:44:47.499Z",
+      "updatedAt": "2026-05-13T19:44:47.499Z"
+    },
+    {
+      "id": "a9376f96-169e-4d95-bbbd-b7805611db1d",
+      "name": "M/S. A.M.I & Company",
+      "code": "DHW-AMI-7731",
+      "areaId": "1d825c8f-6ace-41ee-bff3-3d195f01bf1d",
+      "address": "Mohammadpur, Dhaka",
+      "contact": "01955000222",
+      "createdAt": "2026-05-13T19:44:47.499Z",
+      "updatedAt": "2026-05-13T19:44:47.499Z"
+    },
+    {
+      "id": "61ef2cf9-ab37-4031-a84f-44bb93a440a9",
+      "name": "M/S. Spectrum Trading Corporation",
+      "code": "DIN-STC-2291",
+      "areaId": "9b18a290-e59f-495d-80cd-d36e6c78ab55",
+      "address": "Nimtola, Dinajpur",
+      "contact": "01755000111",
+      "createdAt": "2026-05-13T19:45:07.827Z",
+      "updatedAt": "2026-05-13T19:45:07.827Z"
+    },
+    {
+      "id": "05ceac30-14d5-4ce6-9276-8219292b4238",
+      "name": "Moulovi Brothers",
+      "code": "DIN-MBR-5583",
+      "areaId": "9b18a290-e59f-495d-80cd-d36e6c78ab55",
+      "address": "Station Road, Dinajpur",
+      "contact": "01755000222",
+      "createdAt": "2026-05-13T19:45:07.827Z",
+      "updatedAt": "2026-05-13T19:45:07.827Z"
+    },
+    {
+      "id": "2cacbeca-3879-4e39-a2ef-aa5abced4bea",
+      "name": "AKHTER ENTERPRISE",
+      "code": "FAR-AKE-8827",
+      "areaId": "bb54ca9f-706c-4a0d-bbe3-4b040a00a5a8",
+      "address": "Goalchamot, Faridpur",
+      "contact": "01766000111",
+      "createdAt": "2026-05-13T19:45:38.844Z",
+      "updatedAt": "2026-05-13T19:45:38.844Z"
+    },
+    {
+      "id": "9551dc3e-ddc4-4400-80e6-82420a5f1093",
+      "name": "Kazi Sayed Ali",
+      "code": "FAR-KSA-1102",
+      "areaId": "bb54ca9f-706c-4a0d-bbe3-4b040a00a5a8",
+      "address": "Faridpur Sadar",
+      "contact": "01766000222",
+      "createdAt": "2026-05-13T19:45:38.844Z",
+      "updatedAt": "2026-05-13T19:45:38.844Z"
+    },
+    {
+      "id": "9a99a67b-c0db-4aa2-adcc-7adf4a88ae94",
+      "name": "Lubna Traders",
+      "code": "FAR-LUB-4419",
+      "areaId": "bb54ca9f-706c-4a0d-bbe3-4b040a00a5a8",
+      "address": "Jhiltuly, Faridpur",
+      "contact": "01766000333",
+      "createdAt": "2026-05-13T19:45:38.844Z",
+      "updatedAt": "2026-05-13T19:45:38.844Z"
+    },
+    {
+      "id": "50ff09a9-f20a-4797-bae4-ff63a3619aee",
+      "name": "M/S Tarique Ahmed (Dipu)",
+      "code": "FAR-TAD-7754",
+      "areaId": "bb54ca9f-706c-4a0d-bbe3-4b040a00a5a8",
+      "address": "Chawk Bazar, Faridpur",
+      "contact": "01766000444",
+      "createdAt": "2026-05-13T19:45:38.844Z",
+      "updatedAt": "2026-05-13T19:45:38.844Z"
+    },
+    {
+      "id": "7eaa8b30-f5f2-4840-b323-84dcdbbc77e6",
+      "name": "M/S Sanjib Mazumder",
+      "code": "FEN-SZM-2231",
+      "areaId": "adb6de94-a74c-4a02-baf6-4fd0c9a11bf4",
+      "address": "Trunk Road, Feni",
+      "contact": "01833000111",
+      "createdAt": "2026-05-13T19:45:59.025Z",
+      "updatedAt": "2026-05-13T19:45:59.025Z"
+    },
+    {
+      "id": "6f546f65-f3b5-4499-9156-dddcc8f0b5d0",
+      "name": "M/S. Momin Store",
+      "code": "FEN-MMS-5582",
+      "areaId": "adb6de94-a74c-4a02-baf6-4fd0c9a11bf4",
+      "address": "Feni Sadar",
+      "contact": "01833000222",
+      "createdAt": "2026-05-13T19:45:59.025Z",
+      "updatedAt": "2026-05-13T19:45:59.025Z"
+    },
+    {
+      "id": "21d2e703-27e4-49c0-8865-63912f2843c0",
+      "name": "Rokeya & Sons",
+      "code": "FEN-RNS-9910",
+      "areaId": "adb6de94-a74c-4a02-baf6-4fd0c9a11bf4",
+      "address": "Grand Trunk Road, Feni",
+      "contact": "01833000333",
+      "createdAt": "2026-05-13T19:45:59.025Z",
+      "updatedAt": "2026-05-13T19:45:59.025Z"
+    },
+    {
+      "id": "d5139469-cd96-4631-a19e-ccb3052d3fbe",
+      "name": "M/S Azizur Rahman",
+      "code": "KHU-AZR-3371",
+      "areaId": "3c591a8a-dc7f-4d63-9055-31624323c2fe",
+      "address": "Khulna Shipyard Road",
+      "contact": "01777000111",
+      "createdAt": "2026-05-13T19:46:11.274Z",
+      "updatedAt": "2026-05-13T19:46:11.274Z"
+    },
+    {
+      "id": "46efa2e8-a888-4af6-aaf3-d5ee9522e247",
+      "name": "M/S Sheikh Brothers",
+      "code": "KHU-MSB-6641",
+      "areaId": "3c591a8a-dc7f-4d63-9055-31624323c2fe",
+      "address": "Dakbangla, Khulna",
+      "contact": "01777000222",
+      "createdAt": "2026-05-13T19:46:11.274Z",
+      "updatedAt": "2026-05-13T19:46:11.274Z"
+    },
+    {
+      "id": "e7962db4-ee03-408f-b9cd-ea26d5cb8b2f",
+      "name": "Rafiq Enterprise",
+      "code": "KHU-RFE-1120",
+      "areaId": "3c591a8a-dc7f-4d63-9055-31624323c2fe",
+      "address": "Daulatpur, Khulna",
+      "contact": "01777000333",
+      "createdAt": "2026-05-13T19:46:11.274Z",
+      "updatedAt": "2026-05-13T19:46:11.274Z"
+    },
+    {
+      "id": "f310a510-81f2-4b85-adcf-5f8dd44592bf",
+      "name": "Akram Enterprise",
+      "code": "KUS-AKE-4482",
+      "areaId": "30bb4c30-e835-464a-aa71-e30e6aba6d73",
+      "address": "NS Road, Kushtia",
+      "contact": "01788000111",
+      "createdAt": "2026-05-13T19:46:32.744Z",
+      "updatedAt": "2026-05-13T19:46:32.744Z"
+    },
+    {
+      "id": "7031cea9-bb0c-4711-a4f6-ce1026ddc19d",
+      "name": "Desh Trade Link",
+      "code": "KUS-DTL-7791",
+      "areaId": "30bb4c30-e835-464a-aa71-e30e6aba6d73",
+      "address": "Majampur, Kushtia",
+      "contact": "01788000222",
+      "createdAt": "2026-05-13T19:46:32.744Z",
+      "updatedAt": "2026-05-13T19:46:32.744Z"
+    },
+    {
+      "id": "54b911fc-ae38-4f7a-b4a3-83803888db26",
+      "name": "Joarder Traders",
+      "code": "KUS-JTR-2238",
+      "areaId": "30bb4c30-e835-464a-aa71-e30e6aba6d73",
+      "address": "Kushtia Sadar",
+      "contact": "01788000333",
+      "createdAt": "2026-05-13T19:46:32.744Z",
+      "updatedAt": "2026-05-13T19:46:32.744Z"
+    },
+    {
+      "id": "67a3eab9-a406-4e1c-99ad-4f92c1f4a9eb",
+      "name": "Sanaullah Traders",
+      "code": "KUS-SNT-5504",
+      "areaId": "30bb4c30-e835-464a-aa71-e30e6aba6d73",
+      "address": "Bazar Road, Kushtia",
+      "contact": "01788000444",
+      "createdAt": "2026-05-13T19:46:32.744Z",
+      "updatedAt": "2026-05-13T19:46:32.744Z"
+    },
+    {
+      "id": "deab139d-e378-4a23-bb0f-ae775f9aaaf1",
+      "name": "Amin Distribution Company Ltd.",
+      "code": "MYM-ADC-8819",
+      "areaId": "9e7a005d-fbb5-4e11-ad7e-ad926b91bf10",
+      "address": "Ganginarpar, Mymensingh",
+      "contact": "01799000111",
+      "createdAt": "2026-05-13T19:46:54.009Z",
+      "updatedAt": "2026-05-13T19:46:54.009Z"
+    },
+    {
+      "id": "7a63c02a-0ffb-4088-b1a4-980fb8f8c870",
+      "name": "Noor Sons",
+      "code": "MYM-NRS-1182",
+      "areaId": "9e7a005d-fbb5-4e11-ad7e-ad926b91bf10",
+      "address": "Charpara, Mymensingh",
+      "contact": "01799000222",
+      "createdAt": "2026-05-13T19:46:54.009Z",
+      "updatedAt": "2026-05-13T19:46:54.009Z"
+    },
+    {
+      "id": "1151b9fe-eb37-40bd-9212-fdedcd1cf3b0",
+      "name": "Shashi Mohan Roy",
+      "code": "MYM-SMR-4437",
+      "areaId": "9e7a005d-fbb5-4e11-ad7e-ad926b91bf10",
+      "address": "Station Road, Mymensingh",
+      "contact": "01799000333",
+      "createdAt": "2026-05-13T19:46:54.009Z",
+      "updatedAt": "2026-05-13T19:46:54.009Z"
+    },
+    {
+      "id": "f33de44c-bfab-4b46-a9e7-ecb5f85af195",
+      "name": "J.R. Corporation, Bhairab",
+      "code": "NAR-JRC-7721",
+      "areaId": "4a138fd5-f784-4026-a1c7-64649ea7dcf4",
+      "address": "Bhairab Bazar, Kishoreganj",
+      "contact": "01844000111",
+      "createdAt": "2026-05-13T19:47:14.440Z",
+      "updatedAt": "2026-05-13T19:47:14.440Z"
+    },
+    {
+      "id": "b1caaabf-d0cb-41b8-bd7e-96c5605ad42a",
+      "name": "JR Corporation LTD",
+      "code": "NAR-JRL-2258",
+      "areaId": "4a138fd5-f784-4026-a1c7-64649ea7dcf4",
+      "address": "Narsingdi Sadar",
+      "contact": "01844000222",
+      "createdAt": "2026-05-13T19:47:14.440Z",
+      "updatedAt": "2026-05-13T19:47:14.440Z"
+    },
+    {
+      "id": "6457c468-002e-4e8e-9b2d-ea088e3cab95",
+      "name": "M. Islam Trade Co. Ltd.",
+      "code": "NAR-MIT-5593",
+      "areaId": "4a138fd5-f784-4026-a1c7-64649ea7dcf4",
+      "address": "Velanagar, Narsingdi",
+      "contact": "01844000333",
+      "createdAt": "2026-05-13T19:47:14.440Z",
+      "updatedAt": "2026-05-13T19:47:14.440Z"
+    },
+    {
+      "id": "60bdfadb-7c6a-4143-a3a0-2ae4fa70f32c",
+      "name": "Channa & Brothers",
+      "code": "RAJ-CNB-1192",
+      "areaId": "b7111697-4568-46eb-a211-cef255a21b4b",
+      "address": "Saheb Bazar, Rajshahi",
+      "contact": "01711222333",
+      "createdAt": "2026-05-13T19:47:32.728Z",
+      "updatedAt": "2026-05-13T19:47:32.728Z"
+    },
+    {
+      "id": "e07d3820-1a00-4837-91d7-ed90c9343d7e",
+      "name": "M/S Abul Hossain",
+      "code": "RAJ-MAH-4482",
+      "areaId": "b7111697-4568-46eb-a211-cef255a21b4b",
+      "address": "Ranibazar, Rajshahi",
+      "contact": "01711222444",
+      "createdAt": "2026-05-13T19:47:32.728Z",
+      "updatedAt": "2026-05-13T19:47:32.728Z"
+    },
+    {
+      "id": "dea9b2aa-1c77-4496-9b3a-377d0d0727a3",
+      "name": "M/S Haque & Co.",
+      "code": "RAJ-MHC-7731",
+      "areaId": "b7111697-4568-46eb-a211-cef255a21b4b",
+      "address": "New Market, Rajshahi",
+      "contact": "01711222555",
+      "createdAt": "2026-05-13T19:47:32.728Z",
+      "updatedAt": "2026-05-13T19:47:32.728Z"
+    },
+    {
+      "id": "b2dc0176-d71c-4096-bb85-25cca8be0704",
+      "name": "Sumon Trading Corporation",
+      "code": "RAJ-STC-2204",
+      "areaId": "b7111697-4568-46eb-a211-cef255a21b4b",
+      "address": "Seroil, Rajshahi",
+      "contact": "01711222666",
+      "createdAt": "2026-05-13T19:47:32.728Z",
+      "updatedAt": "2026-05-13T19:47:32.728Z"
+    },
+    {
+      "id": "9aefc96f-e51f-45b0-901e-7dae9ff071ec",
+      "name": "Asiatic Distributions Limited – Lalmonirhat",
+      "code": "RAN-ADL-5519",
+      "areaId": "3c3a3ad8-60cb-4774-8679-25165a725373",
+      "address": "Mission Road, Lalmonirhat",
+      "contact": "01722333444",
+      "createdAt": "2026-05-13T19:48:00.080Z",
+      "updatedAt": "2026-05-13T19:48:00.080Z"
+    },
+    {
+      "id": "2f838d06-fa19-4532-b7ba-dab9898db8c9",
+      "name": "Asiatic Distributions Limited, Kurigram",
+      "code": "RAN-ADK-8837",
+      "areaId": "3c3a3ad8-60cb-4774-8679-25165a725373",
+      "address": "Kurigram Sadar",
+      "contact": "01722333555",
+      "createdAt": "2026-05-13T19:48:00.080Z",
+      "updatedAt": "2026-05-13T19:48:00.080Z"
+    },
+    {
+      "id": "2202f9dc-981b-4aee-899c-a458fe62fcaf",
+      "name": "Shaireen Enterprise, Rangpur",
+      "code": "RAN-SER-4491",
+      "areaId": "3c3a3ad8-60cb-4774-8679-25165a725373",
+      "address": "Jahaj Company More, Rangpur",
+      "contact": "01722333777",
+      "createdAt": "2026-05-13T19:48:00.080Z",
+      "updatedAt": "2026-05-13T19:48:00.080Z"
+    },
+    {
+      "id": "86ffa531-82cd-4b4c-8e85-cbce92846573",
+      "name": "Moula Baksh Karim Boksh",
+      "code": "SYL-MKB-7712",
+      "areaId": "c412f50c-64a6-4eb6-84ec-dc33d21f6568",
+      "address": "Bondor Bazar, Sylhet",
+      "contact": "01733444555",
+      "createdAt": "2026-05-13T19:48:41.460Z",
+      "updatedAt": "2026-05-13T19:48:41.460Z"
+    },
+    {
+      "id": "e4fa2588-05d2-48ff-b70b-3268ee167db2",
+      "name": "Moula Baksh Karim Boksh Ltd.",
+      "code": "SYL-MKL-2283",
+      "areaId": "c412f50c-64a6-4eb6-84ec-dc33d21f6568",
+      "address": "Zindabazar, Sylhet",
+      "contact": "01733444666",
+      "createdAt": "2026-05-13T19:48:41.460Z",
+      "updatedAt": "2026-05-13T19:48:41.460Z"
+    },
+    {
+      "id": "d9b6f554-ce07-447c-8776-c10e607fabee",
+      "name": "Shaireen Enterprise, Nilphamary",
+      "code": "RAN-SER-4492",
+      "areaId": "3c3a3ad8-60cb-4774-8679-25165a725373",
+      "address": "Saidpur, Nilphamari",
+      "contact": "01711052000",
+      "createdAt": "2026-05-15T11:43:42.855Z",
+      "updatedAt": "2026-05-15T11:43:42.855Z"
+    },
+    {
+      "id": "8ad774f1-690b-4cdd-aac6-988af4cd0386",
+      "name": "Shaireen Enterprise, Nilphamari",
+      "code": "RAN-SEN-1102",
+      "areaId": "3c3a3ad8-60cb-4774-8679-25165a725373",
+      "address": "Saidpur, Nilphamari",
+      "contact": "01722333666",
+      "createdAt": "2026-05-13T19:48:00.080Z",
+      "updatedAt": "2026-05-13T19:48:00.080Z"
+    }
+  ],
+  "territories": [
+    {
+      "id": "51804e51-cd88-4b85-894d-8a3a64461696",
+      "name": "DEPZ",
+      "code": "DEPZ-5821",
+      "distributionHouseId": "320686f1-9903-46e5-abc0-627f7756fbcc",
+      "createdAt": "2026-05-15T10:40:26.534Z",
+      "updatedAt": "2026-05-15T10:40:26.534Z"
+    },
+    {
+      "id": "f518c0af-6037-4915-8bc6-e73a9554b182",
+      "name": "Manikganj",
+      "code": "MANI-3392",
+      "distributionHouseId": "320686f1-9903-46e5-abc0-627f7756fbcc",
+      "createdAt": "2026-05-15T10:40:26.534Z",
+      "updatedAt": "2026-05-15T10:40:26.534Z"
+    },
+    {
+      "id": "52d2d4a2-cd4c-4adc-90d8-d0a61013603a",
+      "name": "Savar",
+      "code": "SAVR-1054",
+      "distributionHouseId": "320686f1-9903-46e5-abc0-627f7756fbcc",
+      "createdAt": "2026-05-15T10:40:26.534Z",
+      "updatedAt": "2026-05-15T10:40:26.534Z"
+    },
+    {
+      "id": "7a0ed350-fa89-4ff1-810e-211d536ec607",
+      "name": "Matuail",
+      "code": "MATU-8827",
+      "distributionHouseId": "23e1b1cc-3e11-4632-a9f7-912f6534f290",
+      "createdAt": "2026-05-15T10:42:26.162Z",
+      "updatedAt": "2026-05-15T10:42:26.162Z"
+    },
+    {
+      "id": "604c4496-87fd-4247-b8e1-20f281f69349",
+      "name": "Mogbazar",
+      "code": "MOGB-4491",
+      "distributionHouseId": "23e1b1cc-3e11-4632-a9f7-912f6534f290",
+      "createdAt": "2026-05-15T10:42:26.162Z",
+      "updatedAt": "2026-05-15T10:42:26.162Z"
+    },
+    {
+      "id": "7de968dc-db03-49ed-9dad-5d10874f273e",
+      "name": "Motijheel",
+      "code": "MOTI-6623",
+      "distributionHouseId": "23e1b1cc-3e11-4632-a9f7-912f6534f290",
+      "createdAt": "2026-05-15T10:42:26.162Z",
+      "updatedAt": "2026-05-15T10:42:26.162Z"
+    },
+    {
+      "id": "368b33e7-c333-49bf-a99d-383f5b25d3eb",
+      "name": "Tongi",
+      "code": "TONG-3382",
+      "distributionHouseId": "39316301-fe42-4ef8-9ba2-6b4b402aa1d2",
+      "createdAt": "2026-05-15T10:42:54.052Z",
+      "updatedAt": "2026-05-15T10:42:54.052Z"
+    },
+    {
+      "id": "73c01cba-8203-413b-b27b-b18c32bdbc37",
+      "name": "Uttara",
+      "code": "UTTA-5519",
+      "distributionHouseId": "39316301-fe42-4ef8-9ba2-6b4b402aa1d2",
+      "createdAt": "2026-05-15T10:42:54.052Z",
+      "updatedAt": "2026-05-15T10:42:54.052Z"
+    },
+    {
+      "id": "213ad402-e2ad-4a5f-abcb-1a3f216dfbd1",
+      "name": "Chuadanga",
+      "code": "CHUA-2283",
+      "distributionHouseId": "7031cea9-bb0c-4711-a4f6-ce1026ddc19d",
+      "createdAt": "2026-05-15T10:43:12.083Z",
+      "updatedAt": "2026-05-15T10:43:12.083Z"
+    },
+    {
+      "id": "ce852cd5-7f63-4278-a9a8-cef44931256b",
+      "name": "Meherpur",
+      "code": "MEHE-7712",
+      "distributionHouseId": "7031cea9-bb0c-4711-a4f6-ce1026ddc19d",
+      "createdAt": "2026-05-15T10:43:12.083Z",
+      "updatedAt": "2026-05-15T10:43:12.083Z"
+    },
+    {
+      "id": "b426371b-c117-4ae2-a3f3-21cc2e51134b",
+      "name": "Narsingdi 1",
+      "code": "NAR1-5504",
+      "distributionHouseId": "b1caaabf-d0cb-41b8-bd7e-96c5605ad42a",
+      "createdAt": "2026-05-15T10:43:39.977Z",
+      "updatedAt": "2026-05-15T10:43:39.977Z"
+    },
+    {
+      "id": "af078c25-a9d0-44cd-98c6-8c4fdcbc0d28",
+      "name": "Narsingdi 2",
+      "code": "NAR2-1182",
+      "distributionHouseId": "b1caaabf-d0cb-41b8-bd7e-96c5605ad42a",
+      "createdAt": "2026-05-15T10:43:39.977Z",
+      "updatedAt": "2026-05-15T10:43:39.977Z"
+    },
+    {
+      "id": "b2448816-8239-4efe-b295-541b6b3d6bb7",
+      "name": "Cox's Bazar-1",
+      "code": "COB1-3319",
+      "distributionHouseId": "372d783a-b990-4117-b317-b5aa490bd431",
+      "createdAt": "2026-05-15T10:45:11.148Z",
+      "updatedAt": "2026-05-15T10:45:11.148Z"
+    },
+    {
+      "id": "5ea05b3e-6390-4d7e-afa2-6ef7a3d86662",
+      "name": "Cox's Bazar-2",
+      "code": "COB2-6628",
+      "distributionHouseId": "372d783a-b990-4117-b317-b5aa490bd431",
+      "createdAt": "2026-05-15T10:45:11.148Z",
+      "updatedAt": "2026-05-15T10:45:11.148Z"
+    },
+    {
+      "id": "e93b54b1-7540-450e-89bc-53af051861c3",
+      "name": "Patiya",
+      "code": "PATI-9941",
+      "distributionHouseId": "372d783a-b990-4117-b317-b5aa490bd431",
+      "createdAt": "2026-05-15T10:45:11.148Z",
+      "updatedAt": "2026-05-15T10:45:11.148Z"
+    },
+    {
+      "id": "c59aa688-3fb8-46e6-a71d-2e1770128034",
+      "name": "Laxmipur",
+      "code": "LAXM-1102",
+      "distributionHouseId": "7eaa8b30-f5f2-4840-b323-84dcdbbc77e6",
+      "createdAt": "2026-05-15T10:45:38.162Z",
+      "updatedAt": "2026-05-15T10:45:38.162Z"
+    },
+    {
+      "id": "72163c99-1b8e-4845-865c-d629dd08fcf4",
+      "name": "Maijdee",
+      "code": "MAIJ-4492",
+      "distributionHouseId": "7eaa8b30-f5f2-4840-b323-84dcdbbc77e6",
+      "createdAt": "2026-05-15T10:45:38.162Z",
+      "updatedAt": "2026-05-15T10:45:38.162Z"
+    },
+    {
+      "id": "b24980ee-a07c-4bd4-a392-47696befed34",
+      "name": "Joydebpur",
+      "code": "JOYD-7738",
+      "distributionHouseId": "a9376f96-169e-4d95-bbbd-b7805611db1d",
+      "createdAt": "2026-05-15T10:45:56.732Z",
+      "updatedAt": "2026-05-15T10:45:56.732Z"
+    },
+    {
+      "id": "4550af28-65bf-4a9a-ad7b-bea631d3d6cd",
+      "name": "Mawna",
+      "code": "MAWN-2210",
+      "distributionHouseId": "a9376f96-169e-4d95-bbbd-b7805611db1d",
+      "createdAt": "2026-05-15T10:45:56.732Z",
+      "updatedAt": "2026-05-15T10:45:56.732Z"
+    },
+    {
+      "id": "b83ccd55-9394-4ae7-8c5c-e93f138b6389",
+      "name": "Shafipur",
+      "code": "SHAF-5582",
+      "distributionHouseId": "a9376f96-169e-4d95-bbbd-b7805611db1d",
+      "createdAt": "2026-05-15T10:45:56.732Z",
+      "updatedAt": "2026-05-15T10:45:56.732Z"
+    },
+    {
+      "id": "1f31585e-b445-42a0-9c8c-878586751eaf",
+      "name": "Mymensingh 1",
+      "code": "MYM1-8819",
+      "distributionHouseId": "7a63c02a-0ffb-4088-b1a4-980fb8f8c870",
+      "createdAt": "2026-05-15T10:46:23.796Z",
+      "updatedAt": "2026-05-15T10:46:23.796Z"
+    },
+    {
+      "id": "1d3a220b-6fdd-4292-91a7-9791ff80879a",
+      "name": "Mymensingh 2",
+      "code": "MYM2-3371",
+      "distributionHouseId": "7a63c02a-0ffb-4088-b1a4-980fb8f8c870",
+      "createdAt": "2026-05-15T10:46:23.796Z",
+      "updatedAt": "2026-05-15T10:46:23.796Z"
+    },
+    {
+      "id": "05abbaa1-050b-4c94-b0bc-15597ad02022",
+      "name": "Sylhet Metro 1",
+      "code": "SYL1-6641",
+      "distributionHouseId": "7a63c02a-0ffb-4088-b1a4-980fb8f8c870",
+      "createdAt": "2026-05-15T10:46:23.796Z",
+      "updatedAt": "2026-05-15T10:46:23.796Z"
+    },
+    {
+      "id": "3937ca12-fbda-46e2-ad4f-5ec30557f711",
+      "name": "Bayezid",
+      "code": "BAYE-1120",
+      "distributionHouseId": "dfc7ec43-94f8-451e-b57b-2e8d4d2e4fdf",
+      "createdAt": "2026-05-15T10:46:48.807Z",
+      "updatedAt": "2026-05-15T10:46:48.807Z"
+    },
+    {
+      "id": "9565401f-60e4-47aa-b4a6-546702dd4c34",
+      "name": "CTG Port",
+      "code": "CTGP-9928",
+      "distributionHouseId": "dfc7ec43-94f8-451e-b57b-2e8d4d2e4fdf",
+      "createdAt": "2026-05-15T10:46:48.807Z",
+      "updatedAt": "2026-05-15T10:46:48.807Z"
+    },
+    {
+      "id": "9b55a0a8-4ae7-4b89-b802-a7c4edaa3c84",
+      "name": "Khagrachhari",
+      "code": "KHAG-4472",
+      "distributionHouseId": "dfc7ec43-94f8-451e-b57b-2e8d4d2e4fdf",
+      "createdAt": "2026-05-15T10:46:48.807Z",
+      "updatedAt": "2026-05-15T10:46:48.807Z"
+    },
+    {
+      "id": "c548f919-cfa9-4305-911f-625b185800c9",
+      "name": "Rangamati",
+      "code": "RANG-7731",
+      "distributionHouseId": "dfc7ec43-94f8-451e-b57b-2e8d4d2e4fdf",
+      "createdAt": "2026-05-15T10:46:48.807Z",
+      "updatedAt": "2026-05-15T10:46:48.807Z"
+    },
+    {
+      "id": "e890c9f8-3041-4d3d-a8f5-aef656f5eb97",
+      "name": "Bogura-1",
+      "code": "BOG1-2291",
+      "distributionHouseId": "47d55656-1ce0-4773-814d-98281f38ad38",
+      "createdAt": "2026-05-15T10:47:08.265Z",
+      "updatedAt": "2026-05-15T10:47:08.265Z"
+    },
+    {
+      "id": "891c7289-dbc5-4f13-bc60-7171985d72c6",
+      "name": "Bogura-2",
+      "code": "BOG2-5583",
+      "distributionHouseId": "47d55656-1ce0-4773-814d-98281f38ad38",
+      "createdAt": "2026-05-15T10:47:08.265Z",
+      "updatedAt": "2026-05-15T10:47:08.265Z"
+    },
+    {
+      "id": "2b8736ee-3c09-40fe-ad2f-48da17fbc80a",
+      "name": "Sirajganj",
+      "code": "SIRA-8827",
+      "distributionHouseId": "47d55656-1ce0-4773-814d-98281f38ad38",
+      "createdAt": "2026-05-15T10:47:08.265Z",
+      "updatedAt": "2026-05-15T10:47:08.265Z"
+    },
+    {
+      "id": "81625cc3-b9fc-4030-9e7e-26108506f6d6",
+      "name": "Jurain",
+      "code": "JURA-1102",
+      "distributionHouseId": "bb3f8b08-8de3-497b-a261-23f7baefa931",
+      "createdAt": "2026-05-15T10:47:34.142Z",
+      "updatedAt": "2026-05-15T10:47:34.142Z"
+    },
+    {
+      "id": "f134b5e4-ffef-4713-9a50-56e86792fef0",
+      "name": "Munshiganj",
+      "code": "MUNS-4419",
+      "distributionHouseId": "bb3f8b08-8de3-497b-a261-23f7baefa931",
+      "createdAt": "2026-05-15T10:47:34.142Z",
+      "updatedAt": "2026-05-15T10:47:34.142Z"
+    },
+    {
+      "id": "900d4866-ad55-4366-a1a7-f6c18adf68f2",
+      "name": "Narayanganj",
+      "code": "NARA-7754",
+      "distributionHouseId": "bb3f8b08-8de3-497b-a261-23f7baefa931",
+      "createdAt": "2026-05-15T10:47:34.142Z",
+      "updatedAt": "2026-05-15T10:47:34.142Z"
+    },
+    {
+      "id": "efd970c3-741d-49b9-989a-d90c3e2d3310",
+      "name": "Bhola",
+      "code": "BHO-6124",
+      "distributionHouseId": "5678bafe-9d48-45f0-81da-0a90cba8de8b",
+      "createdAt": "2026-05-15T10:54:53.973Z",
+      "updatedAt": "2026-05-15T10:54:53.973Z"
+    },
+    {
+      "id": "34e058de-177d-47bd-9fe7-4cb5e5505a0b",
+      "name": "Daudkandi",
+      "code": "DAU-8293",
+      "distributionHouseId": "99030907-71e2-482c-94d4-3b970e886835",
+      "createdAt": "2026-05-15T11:00:48.762Z",
+      "updatedAt": "2026-05-15T11:00:48.762Z"
+    },
+    {
+      "id": "202b7645-504f-4fa6-918f-923a5e085ff0",
+      "name": "Gulshan",
+      "code": "GUL-4410",
+      "distributionHouseId": "d670b831-c326-4238-b723-b26866b13759",
+      "createdAt": "2026-05-15T11:01:07.353Z",
+      "updatedAt": "2026-05-15T11:01:07.353Z"
+    },
+    {
+      "id": "efe0fad1-1f1a-4b74-9531-e61c0ed35a42",
+      "name": "Mirpur",
+      "code": "MIR-9021",
+      "distributionHouseId": "659d419b-44f6-4ecb-afe7-f6ab09444cd8",
+      "createdAt": "2026-05-15T11:01:24.804Z",
+      "updatedAt": "2026-05-15T11:01:24.804Z"
+    },
+    {
+      "id": "1ddc10cb-45ec-404d-aff9-cf39be665e5a",
+      "name": "Madhupur",
+      "code": "MAD-5532",
+      "distributionHouseId": "d3f1e6f4-ba61-4649-b28d-26ee6f5c26ec",
+      "createdAt": "2026-05-15T11:01:45.504Z",
+      "updatedAt": "2026-05-15T11:01:45.504Z"
+    },
+    {
+      "id": "29c976b0-d4db-4b15-b235-905475012bb2",
+      "name": "Tangail",
+      "code": "TAN-7182",
+      "distributionHouseId": "d3f1e6f4-ba61-4649-b28d-26ee6f5c26ec",
+      "createdAt": "2026-05-15T11:01:45.504Z",
+      "updatedAt": "2026-05-15T11:01:45.504Z"
+    },
+    {
+      "id": "8e86f7ae-a8d1-4c3b-bc81-b04279e3484e",
+      "name": "Faridpur",
+      "code": "FAR-2294",
+      "distributionHouseId": "2cacbeca-3879-4e39-a2ef-aa5abced4bea",
+      "createdAt": "2026-05-15T11:02:03.279Z",
+      "updatedAt": "2026-05-15T11:02:03.279Z"
+    },
+    {
+      "id": "830ba0aa-6832-4c1b-ad63-3aab1cb4bcf9",
+      "name": "Magura",
+      "code": "MAG-1108",
+      "distributionHouseId": "f310a510-81f2-4b85-adcf-5f8dd44592bf",
+      "createdAt": "2026-05-15T11:02:19.928Z",
+      "updatedAt": "2026-05-15T11:02:19.928Z"
+    },
+    {
+      "id": "424bd3b1-5c06-4060-82c4-8641a7036185",
+      "name": "Kotwali (DHK)",
+      "code": "KOT-6637",
+      "distributionHouseId": "c77dd622-d2a1-4db7-a225-acb30dadbd30",
+      "createdAt": "2026-05-15T11:02:41.543Z",
+      "updatedAt": "2026-05-15T11:02:41.543Z"
+    },
+    {
+      "id": "30aebe80-2419-40f7-8f83-a8ca17075d97",
+      "name": "Jamalpur",
+      "code": "JAM-4451",
+      "distributionHouseId": "deab139d-e378-4a23-bb0f-ae775f9aaaf1",
+      "createdAt": "2026-05-15T11:03:45.235Z",
+      "updatedAt": "2026-05-15T11:03:45.235Z"
+    },
+    {
+      "id": "7ac8c4a8-14e3-4c52-82a7-a3a4104e6242",
+      "name": "Sherpur",
+      "code": "SHE-9920",
+      "distributionHouseId": "deab139d-e378-4a23-bb0f-ae775f9aaaf1",
+      "createdAt": "2026-05-15T11:03:45.235Z",
+      "updatedAt": "2026-05-15T11:03:45.235Z"
+    },
+    {
+      "id": "79cddd1a-6f2e-42cc-8d3f-3506f2774869",
+      "name": "Sitakunda",
+      "code": "SIT-3371",
+      "distributionHouseId": "6d8ad599-8655-473a-8ef8-7d7aa31015c5",
+      "createdAt": "2026-05-15T11:04:10.563Z",
+      "updatedAt": "2026-05-15T11:04:10.563Z"
+    },
+    {
+      "id": "19a9b46f-b876-4c8e-87c8-29d9c16adc67",
+      "name": "Lalmonirhat",
+      "code": "LAL-8842",
+      "distributionHouseId": "9aefc96f-e51f-45b0-901e-7dae9ff071ec",
+      "createdAt": "2026-05-15T11:04:27.691Z",
+      "updatedAt": "2026-05-15T11:04:27.691Z"
+    },
+    {
+      "id": "55f1d90e-9bc6-4234-bdb6-e1507e50c53b",
+      "name": "Kurigram",
+      "code": "KUR-5519",
+      "distributionHouseId": "2f838d06-fa19-4532-b7ba-dab9898db8c9",
+      "createdAt": "2026-05-15T11:04:50.341Z",
+      "updatedAt": "2026-05-15T11:04:50.341Z"
+    },
+    {
+      "id": "79cd1e7d-b4b6-469d-b2af-a74864ee9c68",
+      "name": "B. Baria",
+      "code": "BBA-2039",
+      "distributionHouseId": "ff46b472-b4c0-4d48-8e20-df3e797de82b",
+      "createdAt": "2026-05-15T11:05:08.049Z",
+      "updatedAt": "2026-05-15T11:05:08.049Z"
+    },
+    {
+      "id": "9ddf590a-936b-45c0-96fc-ad9020e97281",
+      "name": "Naogaon",
+      "code": "NAO-7718",
+      "distributionHouseId": "60bdfadb-7c6a-4143-a3a0-2ae4fa70f32c",
+      "createdAt": "2026-05-15T11:05:23.438Z",
+      "updatedAt": "2026-05-15T11:05:23.438Z"
+    },
+    {
+      "id": "cf445884-2ae0-4245-bbe6-01d9d3c9740c",
+      "name": "Ishwardi",
+      "code": "ISH-4402",
+      "distributionHouseId": "290bf319-f9cc-4e85-9a43-4ea33f52ac7a",
+      "createdAt": "2026-05-15T11:05:44.931Z",
+      "updatedAt": "2026-05-15T11:05:44.931Z"
+    },
+    {
+      "id": "d4f7ffe9-66c9-4f04-b6fd-a8f42f109a9b",
+      "name": "Patuakhali",
+      "code": "PAT-9931",
+      "distributionHouseId": "45acd67f-c313-4c3c-a240-2bf08b9831ad",
+      "createdAt": "2026-05-15T11:08:00.049Z",
+      "updatedAt": "2026-05-15T11:08:00.049Z"
+    },
+    {
+      "id": "faea7c1f-ae6f-41a1-b280-0bd1470df1ee",
+      "name": "Barguna",
+      "code": "BAR-1182",
+      "distributionHouseId": "8f3d080a-949b-40c2-8bab-ecb172775444",
+      "createdAt": "2026-05-15T11:08:26.250Z",
+      "updatedAt": "2026-05-15T11:08:26.250Z"
+    },
+    {
+      "id": "2dbaf9de-b3de-452e-9782-4b7588a82c9f",
+      "name": "Bhairab",
+      "code": "BHA-6641",
+      "distributionHouseId": "f33de44c-bfab-4b46-a9e7-ecb5f85af195",
+      "createdAt": "2026-05-15T11:08:55.925Z",
+      "updatedAt": "2026-05-15T11:08:55.925Z"
+    },
+    {
+      "id": "106f55b5-b1f8-4015-b422-4d43049d5a3a",
+      "name": "Kushtia",
+      "code": "KUS-3371",
+      "distributionHouseId": "54b911fc-ae38-4f7a-b4a3-83803888db26",
+      "createdAt": "2026-05-15T11:09:24.266Z",
+      "updatedAt": "2026-05-15T11:09:24.266Z"
+    },
+    {
+      "id": "dca6e9f8-cf17-4f5b-8917-e318e2781ce2",
+      "name": "Meherpur",
+      "code": "MEH-5504",
+      "distributionHouseId": "54b911fc-ae38-4f7a-b4a3-83803888db26",
+      "createdAt": "2026-05-15T11:09:24.266Z",
+      "updatedAt": "2026-05-15T11:09:24.266Z"
+    },
+    {
+      "id": "675652b8-a24b-4a5f-8d8b-1b59b0932b0e",
+      "name": "Madaripur-1",
+      "code": "MAD-1120",
+      "distributionHouseId": "9551dc3e-ddc4-4400-80e6-82420a5f1093",
+      "createdAt": "2026-05-15T11:10:27.761Z",
+      "updatedAt": "2026-05-15T11:10:27.761Z"
+    },
+    {
+      "id": "797e3e6e-076e-42e1-a5be-3264285c1a78",
+      "name": "Madaripur-1",
+      "code": "MAD-7731",
+      "distributionHouseId": "9a99a67b-c0db-4aa2-adcc-7adf4a88ae94",
+      "createdAt": "2026-05-15T11:11:55.450Z",
+      "updatedAt": "2026-05-15T11:11:55.450Z"
+    },
+    {
+      "id": "cfd8c481-a821-4e67-882b-3dce49626d55",
+      "name": "Madaripur-2",
+      "code": "MAD-4491",
+      "distributionHouseId": "9a99a67b-c0db-4aa2-adcc-7adf4a88ae94",
+      "createdAt": "2026-05-15T11:11:55.450Z",
+      "updatedAt": "2026-05-15T11:11:55.450Z"
+    },
+    {
+      "id": "8326b487-566a-44d2-ad5f-0eebe92b1c00",
+      "name": "Kishoreganj",
+      "code": "KIS-8819",
+      "distributionHouseId": "6457c468-002e-4e8e-9b2d-ea088e3cab95",
+      "createdAt": "2026-05-15T11:12:15.491Z",
+      "updatedAt": "2026-05-15T11:12:15.491Z"
+    },
+    {
+      "id": "6568aa01-06be-4f10-aa77-77e9ba7e5368",
+      "name": "Rajshahi 1",
+      "code": "RAJ-2283",
+      "distributionHouseId": "e07d3820-1a00-4837-91d7-ed90c9343d7e",
+      "createdAt": "2026-05-15T11:12:38.625Z",
+      "updatedAt": "2026-05-15T11:12:38.625Z"
+    },
+    {
+      "id": "80fd0258-2cb4-4452-a4e1-da5511282b50",
+      "name": "Rajshahi 2",
+      "code": "RAJ-5593",
+      "distributionHouseId": "e07d3820-1a00-4837-91d7-ed90c9343d7e",
+      "createdAt": "2026-05-15T11:12:38.625Z",
+      "updatedAt": "2026-05-15T11:12:38.625Z"
+    },
+    {
+      "id": "860f78c1-5947-4f2e-8949-67320bdd7fd3",
+      "name": "Jashore-1",
+      "code": "JAS-3319",
+      "distributionHouseId": "d5139469-cd96-4631-a19e-ccb3052d3fbe",
+      "createdAt": "2026-05-15T11:12:56.600Z",
+      "updatedAt": "2026-05-15T11:12:56.600Z"
+    },
+    {
+      "id": "f621bebc-b74e-4cc0-989a-9e9ebbc2391a",
+      "name": "Jashore-2",
+      "code": "JAS-6628",
+      "distributionHouseId": "d5139469-cd96-4631-a19e-ccb3052d3fbe",
+      "createdAt": "2026-05-15T11:12:56.600Z",
+      "updatedAt": "2026-05-15T11:12:56.600Z"
+    },
+    {
+      "id": "582bc4d7-a52e-4941-baba-8aaa96f80c4e",
+      "name": "Barishal-1",
+      "code": "BAR-4472",
+      "distributionHouseId": "9e1081c6-bae5-4cdc-b93d-1f8660fe0700",
+      "createdAt": "2026-05-15T11:13:20.109Z",
+      "updatedAt": "2026-05-15T11:13:20.109Z"
+    },
+    {
+      "id": "56a4c528-8cc2-474b-becf-a771e5d8f0df",
+      "name": "Barishal-2",
+      "code": "BAR-1102",
+      "distributionHouseId": "9e1081c6-bae5-4cdc-b93d-1f8660fe0700",
+      "createdAt": "2026-05-15T11:13:20.109Z",
+      "updatedAt": "2026-05-15T11:13:20.109Z"
+    },
+    {
+      "id": "f88220f6-f06c-43aa-953e-e2031d539fe5",
+      "name": "Chapai",
+      "code": "CHA-9928",
+      "distributionHouseId": "dea9b2aa-1c77-4496-9b3a-377d0d0727a3",
+      "createdAt": "2026-05-15T11:13:41.809Z",
+      "updatedAt": "2026-05-15T11:13:41.809Z"
+    },
+    {
+      "id": "7c2bfe78-6ee4-403a-9c1d-5bee807f094a",
+      "name": "Cumilla-1",
+      "code": "CUM-5582",
+      "distributionHouseId": "a302840f-03cf-4814-923b-d52cb44f262f",
+      "createdAt": "2026-05-15T11:14:00.618Z",
+      "updatedAt": "2026-05-15T11:14:00.618Z"
+    },
+    {
+      "id": "ff406c53-8fe6-4aba-bb5f-55e7a0af6539",
+      "name": "Cumilla-2",
+      "code": "CUM-2210",
+      "distributionHouseId": "a302840f-03cf-4814-923b-d52cb44f262f",
+      "createdAt": "2026-05-15T11:14:00.618Z",
+      "updatedAt": "2026-05-15T11:14:00.618Z"
+    },
+    {
+      "id": "64945828-6cfe-42bb-a52b-40efbd6ebafa",
+      "name": "Satkhira",
+      "code": "SAT-7738",
+      "distributionHouseId": "a302840f-03cf-4814-923b-d52cb44f262f",
+      "createdAt": "2026-05-15T11:14:17.593Z",
+      "updatedAt": "2026-05-15T11:14:17.593Z"
+    },
+    {
+      "id": "52f25496-2c09-478c-8109-f54389ba04a3",
+      "name": "Rajbari",
+      "code": "RA-J-4437",
+      "distributionHouseId": "50ff09a9-f20a-4797-bae4-ff63a3619aee",
+      "createdAt": "2026-05-15T11:15:06.797Z",
+      "updatedAt": "2026-05-15T11:15:06.797Z"
+    },
+    {
+      "id": "059d721c-ddd5-411e-bc57-0938dba1d106",
+      "name": "Chandpur",
+      "code": "CHA-1192",
+      "distributionHouseId": "4f3d98f6-cff3-48b6-9877-c8df30c7155c",
+      "createdAt": "2026-05-15T11:15:29.786Z",
+      "updatedAt": "2026-05-15T11:15:29.786Z"
+    },
+    {
+      "id": "f9d48011-22d7-4255-a738-e23f1c8449ae",
+      "name": "Laksam",
+      "code": "LAK-8837",
+      "distributionHouseId": "6f546f65-f3b5-4499-9156-dddcc8f0b5d0",
+      "createdAt": "2026-05-15T11:16:14.788Z",
+      "updatedAt": "2026-05-15T11:16:14.788Z"
+    },
+    {
+      "id": "fa36f797-9f8d-4ba1-bc0a-b819179f3448",
+      "name": "Gaibandha",
+      "code": "GAI-1102",
+      "distributionHouseId": "61ef2cf9-ab37-4031-a84f-44bb93a440a9",
+      "createdAt": "2026-05-15T11:16:33.018Z",
+      "updatedAt": "2026-05-15T11:16:33.018Z"
+    },
+    {
+      "id": "758a5aa7-e2fd-4738-a827-2e38ae3e66ad",
+      "name": "Joypurhat",
+      "code": "JOY-4491",
+      "distributionHouseId": "61ef2cf9-ab37-4031-a84f-44bb93a440a9",
+      "createdAt": "2026-05-15T11:16:33.018Z",
+      "updatedAt": "2026-05-15T11:16:33.018Z"
+    },
+    {
+      "id": "84c51398-cd6a-4095-9d3a-5eca8f56f4f9",
+      "name": "Kotwali (CTG)",
+      "code": "KOT-CTG-5519",
+      "distributionHouseId": "bc998bae-2c0f-48ca-ac7c-1914452fed16",
+      "createdAt": "2026-05-15T11:17:28.142Z",
+      "updatedAt": "2026-05-15T11:17:28.142Z"
+    },
+    {
+      "id": "f0e6724a-9873-409e-9ae3-aece93b83208",
+      "name": "Patiya",
+      "code": "PAT-8837",
+      "distributionHouseId": "bc998bae-2c0f-48ca-ac7c-1914452fed16",
+      "createdAt": "2026-05-15T11:17:28.142Z",
+      "updatedAt": "2026-05-15T11:17:28.142Z"
+    },
+    {
+      "id": "bf2af04d-a120-422a-9df4-51a8d3cdcf4d",
+      "name": "Pabna",
+      "code": "PAB-3371",
+      "distributionHouseId": "8487119b-9ef5-4229-9964-265c61da8a63",
+      "createdAt": "2026-05-15T11:18:06.410Z",
+      "updatedAt": "2026-05-15T11:18:06.410Z"
+    },
+    {
+      "id": "ba42fe5b-c4f8-453e-bcdd-37d4af873999",
+      "name": "Sunamganj",
+      "code": "SUN-6641",
+      "distributionHouseId": "86ffa531-82cd-4b4c-8e85-cbce92846573",
+      "createdAt": "2026-05-15T11:18:49.369Z",
+      "updatedAt": "2026-05-15T11:18:49.369Z"
+    },
+    {
+      "id": "042bbf37-05d2-40bf-9bad-41b769938819",
+      "name": "Sylhet Metro 1",
+      "code": "SYL-1120",
+      "distributionHouseId": "e4fa2588-05d2-48ff-b70b-3268ee167db2",
+      "createdAt": "2026-05-15T11:19:07.428Z",
+      "updatedAt": "2026-05-15T11:19:07.428Z"
+    },
+    {
+      "id": "be676fe4-13ae-4051-ad02-00fad5408fa2",
+      "name": "Sylhet Metro 2",
+      "code": "SYL-9928",
+      "distributionHouseId": "e4fa2588-05d2-48ff-b70b-3268ee167db2",
+      "createdAt": "2026-05-15T11:19:07.428Z",
+      "updatedAt": "2026-05-15T11:19:07.428Z"
+    },
+    {
+      "id": "aab90207-0084-4a5c-b91a-ce900b79ea64",
+      "name": "Dinajpur",
+      "code": "DIN-4472",
+      "distributionHouseId": "05ceac30-14d5-4ce6-9276-8219292b4238",
+      "createdAt": "2026-05-15T11:19:22.021Z",
+      "updatedAt": "2026-05-15T11:19:22.021Z"
+    },
+    {
+      "id": "64fb24c9-63e7-416b-a8de-d814cd67f7ab",
+      "name": "Thakurgaon",
+      "code": "THA-7731",
+      "distributionHouseId": "05ceac30-14d5-4ce6-9276-8219292b4238",
+      "createdAt": "2026-05-15T11:19:22.021Z",
+      "updatedAt": "2026-05-15T11:19:22.021Z"
+    },
+    {
+      "id": "b0b4517e-f5cd-4bd6-b84a-6b1d32a26973",
+      "name": "Kotwali (CTG)",
+      "code": "KOT-2291",
+      "distributionHouseId": "75d38e49-9227-426f-a2be-e76006ec48d8",
+      "createdAt": "2026-05-15T11:19:36.742Z",
+      "updatedAt": "2026-05-15T11:19:36.742Z"
+    },
+    {
+      "id": "d1f705b9-65bc-479a-a99c-cdd80fc21620",
+      "name": "Gulshan",
+      "code": "GUL-5583",
+      "distributionHouseId": "cac27c29-09b3-4833-8194-864489d23ead",
+      "createdAt": "2026-05-15T11:20:19.701Z",
+      "updatedAt": "2026-05-15T11:20:19.701Z"
+    },
+    {
+      "id": "9d527d57-ed41-44f9-866c-14d6900595ef",
+      "name": "Khulna Metro-1",
+      "code": "KHU-1102",
+      "distributionHouseId": "e7962db4-ee03-408f-b9cd-ea26d5cb8b2f",
+      "createdAt": "2026-05-15T11:20:48.309Z",
+      "updatedAt": "2026-05-15T11:20:48.309Z"
+    },
+    {
+      "id": "4f10855b-d008-4e00-9942-c5c9f72a07ad",
+      "name": "Khulna Metro-2",
+      "code": "KHU-4419",
+      "distributionHouseId": "e7962db4-ee03-408f-b9cd-ea26d5cb8b2f",
+      "createdAt": "2026-05-15T11:20:48.309Z",
+      "updatedAt": "2026-05-15T11:20:48.309Z"
+    },
+    {
+      "id": "86bae659-f067-4108-93ad-4e2798722ebe",
+      "name": "Feni-1",
+      "code": "FEN-7754",
+      "distributionHouseId": "21d2e703-27e4-49c0-8865-63912f2843c0",
+      "createdAt": "2026-05-15T11:21:02.973Z",
+      "updatedAt": "2026-05-15T11:21:02.973Z"
+    },
+    {
+      "id": "67d61cce-6ccc-4f65-9431-d7465d15f4d9",
+      "name": "Feni-2",
+      "code": "FEN-1120",
+      "distributionHouseId": "21d2e703-27e4-49c0-8865-63912f2843c0",
+      "createdAt": "2026-05-15T11:21:02.973Z",
+      "updatedAt": "2026-05-15T11:21:02.973Z"
+    },
+    {
+      "id": "9bff1924-3723-4e8c-939c-82496ed1e0dc",
+      "name": "Sreenagar",
+      "code": "SRE-5582",
+      "distributionHouseId": "8d0fc8f2-33f2-484a-9ab1-63da6705e887",
+      "createdAt": "2026-05-15T11:21:18.123Z",
+      "updatedAt": "2026-05-15T11:21:18.123Z"
+    },
+    {
+      "id": "39d6c445-40c1-455f-ad3b-a696caa39da1",
+      "name": "Sutrapur",
+      "code": "SUT-9910",
+      "distributionHouseId": "8d0fc8f2-33f2-484a-9ab1-63da6705e887",
+      "createdAt": "2026-05-15T11:21:18.123Z",
+      "updatedAt": "2026-05-15T11:21:18.123Z"
+    },
+    {
+      "id": "d7be5665-296f-479e-9e86-a713543b6f42",
+      "name": "Rangpur",
+      "code": "RAN-1120",
+      "distributionHouseId": "2202f9dc-981b-4aee-899c-a458fe62fcaf",
+      "createdAt": "2026-05-15T11:29:50.206Z",
+      "updatedAt": "2026-05-15T11:29:50.206Z"
+    },
+    {
+      "id": "29ad1264-d969-49ef-8693-3f5f055202a2",
+      "name": "Habiganj",
+      "code": "HAB-4482",
+      "distributionHouseId": "37f63ba4-27eb-43c2-a986-3afc188f0bd0",
+      "createdAt": "2026-05-15T11:30:12.970Z",
+      "updatedAt": "2026-05-15T11:30:12.970Z"
+    },
+    {
+      "id": "0d2213de-5d91-4e1d-b9f9-ace79dae8410",
+      "name": "Netrokona",
+      "code": "NET-7791",
+      "distributionHouseId": "1151b9fe-eb37-40bd-9212-fdedcd1cf3b0",
+      "createdAt": "2026-05-15T11:30:30.924Z",
+      "updatedAt": "2026-05-15T11:30:30.924Z"
+    },
+    {
+      "id": "b129bdde-0500-4abf-933d-eccfa8801817",
+      "name": "Moulvibazar",
+      "code": "MOU-2238",
+      "distributionHouseId": "31022c41-557a-490a-b2c9-a0657548b030",
+      "createdAt": "2026-05-15T11:30:55.864Z",
+      "updatedAt": "2026-05-15T11:30:55.864Z"
+    },
+    {
+      "id": "920ae3a9-02b5-459d-8c04-0bf380151b57",
+      "name": "Natore",
+      "code": "NAT-5504",
+      "distributionHouseId": "b2dc0176-d71c-4096-bb85-25cca8be0704",
+      "createdAt": "2026-05-15T11:31:17.582Z",
+      "updatedAt": "2026-05-15T11:31:17.582Z"
+    },
+    {
+      "id": "8caa0494-eece-4411-8cc0-7d8f612b91cc",
+      "name": "Rajshahi 2",
+      "code": "RAJ-8819",
+      "distributionHouseId": "b2dc0176-d71c-4096-bb85-25cca8be0704",
+      "createdAt": "2026-05-15T11:31:17.582Z",
+      "updatedAt": "2026-05-15T11:31:17.582Z"
+    },
+    {
+      "id": "f8a9087b-ff13-43e7-b83c-d5cfb50e09a3",
+      "name": "Dhanmondi",
+      "code": "DHA-1182",
+      "distributionHouseId": "900e71a7-2d42-49fa-a6c7-4f45db50bbce",
+      "createdAt": "2026-05-15T11:31:40.375Z",
+      "updatedAt": "2026-05-15T11:31:40.375Z"
+    },
+    {
+      "id": "a36a4925-a096-4a80-afa2-fe20db46758f",
+      "name": "Jhenaidah",
+      "code": "JHE-3371",
+      "distributionHouseId": "67a3eab9-a406-4e1c-99ad-4f92c1f4a9eb",
+      "createdAt": "2026-05-15T11:38:43.242Z",
+      "updatedAt": "2026-05-15T11:38:43.242Z"
+    },
+    {
+      "id": "79286c48-981a-4ba7-a87a-6535673cf48a",
+      "name": "Saidpur",
+      "code": "SAI-6641",
+      "distributionHouseId": "d9b6f554-ce07-447c-8776-c10e607fabee",
+      "createdAt": "2026-05-15T11:45:34.343Z",
+      "updatedAt": "2026-05-15T11:45:34.343Z"
+    }
+  ]
+}

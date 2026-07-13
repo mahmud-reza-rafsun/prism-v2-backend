@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Role } from "@prisma/client";
 
 export interface IRequestUser {

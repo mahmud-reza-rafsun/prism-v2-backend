@@ -53,7 +53,33 @@ export const auth = betterAuth({
       role: {
         type: "string",
         required: true,
+        input: true,
         defaultValue: Role.USER,
+      },
+      regionId: {
+        type: "string",
+        input: true,
+        required: false,
+      },
+      areaId: {
+        type: "string",
+        input: true,
+        required: false,
+      },
+      distributionHouseId: {
+        input: true,
+        type: "string",
+        required: false,
+      },
+      territoryId: {
+        input: true,
+        type: "string",
+        required: false,
+      },
+      distributionPointId: {
+        input: true,
+        type: "string",
+        required: false,
       },
       status: {
         type: "string",
@@ -93,16 +119,12 @@ export const auth = betterAuth({
               email,
             },
           });
-
-
-
           if (!user) {
             console.error(
               `User with email ${email} not found. Cannot send verification OTP.`,
             );
             return;
           }
-
           if (user && !user.emailVerified) {
             sendEmail({
               to: email,
@@ -121,9 +143,6 @@ export const auth = betterAuth({
               email,
             },
           });
-
-
-
           if (user) {
             sendEmail({
               to: email,
