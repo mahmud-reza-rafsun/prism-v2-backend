@@ -5,41 +5,54 @@ import { AppError } from "../../shared/errors/app-error";
 
 const createDistributionPoint = async (
     payload: ICreateDistributionPointPayload,
-    userId: string,
-    distributionId: string
+    userId: string
 ) => {
+    // Check logged-in user
     const user = await prisma.user.findUnique({
-        where: { id: userId },
+        where: {
+            id: userId,
+        },
     });
 
     if (!user) {
         throw new AppError(status.UNAUTHORIZED, "User not found");
     }
 
-    const distribution = await prisma.distributionHouse.findUnique({
-        where: { id: distributionId },
+    // Check Distribution House
+    const distributionHouse = await prisma.distributionHouse.findUnique({
+        where: {
+            id: payload.distributionHouseId,
+        },
     });
 
-    if (!distribution) {
-        throw new AppError(status.NOT_FOUND, "Target Distribution not found");
+    if (!distributionHouse) {
+        throw new AppError(
+            status.NOT_FOUND,
+            "Distribution House not found"
+        );
     }
 
-    // Step 1: create
+    // Create Distribution Points
     await prisma.distributionPoints.createMany({
         data: payload.points.map((point) => ({
             name: point.name,
             code: point.code,
             address: point.address,
             contact: point.contact,
-            distributionId: distributionId,
-            territoryId: point.territoryId
+            distributionId: payload.distributionHouseId,
+            territoryId: point.territoryId,
         })),
         skipDuplicates: true,
     });
 
-    // Step 2: fetch created points
-    const distributionPoints = await prisma.distributionHouse.findMany({
-        where: { id: distributionId },
+    // Return created points
+    const distributionPoints = await prisma.distributionPoints.findMany({
+        where: {
+            distributionId: payload.distributionHouseId,
+        },
+        orderBy: {
+            createdAt: "asc",
+        },
     });
 
     return distributionPoints;

@@ -23,26 +23,6 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: true,
   },
-  socialProviders: {
-    google: {
-      clientId: envVars.GOOGLE_CLIENT_ID as string,
-      clientSecret: envVars.GOOGLE_CLIENT_SECRET as string,
-      accessType: "offline",
-      prompt: "select_account consent",
-      mapProfileToUser: (profile) => {
-        return {
-          role: Role.USER,
-          status: UserStatus.ACTIVE,
-          image: profile.picture,
-          needPasswordChange: false,
-          emailVerified: true,
-          isDeleted: false,
-          deletedAt: null,
-
-        };
-      },
-    },
-  },
   emailVerification: {
     sendOnSignUp: true,
     sendOnSignIn: true,
@@ -54,7 +34,7 @@ export const auth = betterAuth({
         type: "string",
         required: true,
         input: true,
-        defaultValue: Role.USER,
+        defaultValue: Role.COMPUTER_OPERATOR,
       },
       regionId: {
         type: "string",

@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { prisma } from "../src/database/prisma";
+import { prisma } from "../../src/database/prisma";
 
 const backup = JSON.parse(fs.readFileSync("backup.json", "utf8"));
 

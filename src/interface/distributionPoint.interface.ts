@@ -1,5 +1,3 @@
-// interface/distributionPoint.interface.ts
-
 export interface IDistributionPointItem {
     name: string;
     code?: string;
@@ -9,5 +7,6 @@ export interface IDistributionPointItem {
 }
 
 export interface ICreateDistributionPointPayload {
+    distributionHouseId: string;
     points: IDistributionPointItem[];
 }

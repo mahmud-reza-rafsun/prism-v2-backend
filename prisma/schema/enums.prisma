@@ -10,6 +10,7 @@ enum Role {
     TERRITORY_OFFICER
     BUSINESS_MANAGER
     POINT_IN_CHARGE
+    COMPUTER_OPERATOR
 }
 
 enum UserStatus {

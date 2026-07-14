@@ -5,11 +5,13 @@ import { distributionPointService } from "./distributionPoint.service";
 import status from "http-status";
 
 const createDistributionPoint = catchAsync(async (req: Request, res: Response) => {
-    const { areaId } = req.params; // Extract from URL
     const payload = req.body;
     const userId = req.user.id;
 
-    const result = await distributionPointService.createDistributionPoint(payload, userId, areaId as string);
+    const result = await distributionPointService.createDistributionPoint(
+        payload,
+        userId
+    );
 
     sendResponse(res, {
         status: status.OK,
