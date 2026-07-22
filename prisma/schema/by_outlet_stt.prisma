@@ -20,6 +20,9 @@ model ByOutletStt {
     skuNameId String
     skuName   SkuName @relation(fields: [skuNameId], references: [id])
 
+    businessDateId String
+    businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
+
     // Numeric Fields
     stt  Int @default(0)
     memo Int @default(0)

@@ -7,7 +7,7 @@ import { jwtUtils } from "../utils/jwt";
 import { Role, UserStatus } from "@prisma/client";
 import { prisma } from "../../database/prisma";
 
-  export const checkAuth = (...authRoles: Role[]) =>
+export const checkAuth = (...authRoles: Role[]) =>
 
   async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -56,8 +56,6 @@ import { prisma } from "../../database/prisma";
 
             console.log("Session Expiring Soon!!");
           }
-
-
 
           if (
             user.status === UserStatus.BLOCKED ||

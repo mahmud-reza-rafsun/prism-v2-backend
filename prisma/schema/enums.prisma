@@ -9,7 +9,6 @@ enum Role {
     AREA_MANAGER
     TERRITORY_OFFICER
     BUSINESS_MANAGER
-    POINT_IN_CHARGE
     COMPUTER_OPERATOR
 }
 
@@ -27,4 +26,15 @@ enum FinalSubmitStatus {
 enum SalesPlanStatus {
     ACTIVE
     INACTIVE
+}
+
+enum OutletStatus {
+    ACTIVE
+    INACTIVE
+}
+
+enum SectionType {
+    A
+    B
+    D
 }

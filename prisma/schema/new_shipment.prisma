@@ -1,0 +1,9 @@
+model NewShipment {
+    id               String  @id @default(uuid())
+    skuName          SkuName @relation(fields: [skuNameId], references: [id])
+    onHandStock      Int     @default(0)
+    skuNameId        String
+    ShipmentQuantity Int     @default(0)
+
+    @@map("new_shipment")
+}

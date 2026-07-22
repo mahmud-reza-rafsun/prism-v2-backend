@@ -1,7 +1,7 @@
 model SalesSummaryStatement {
     id                  String  @id @default(uuid())
-    route               Int     @default(0)
-    rRName              String
+    sectionId           String
+    section             Section @relation(fields: [sectionId], references: [id])
     noOfOutlets         Int     @default(0)
     noOfMemos           Int     @default(0)
     skuNameId           String
@@ -13,6 +13,9 @@ model SalesSummaryStatement {
     discountAmount      Decimal @default(0.0) @db.Decimal(10, 2)
     unnotiReimbursement Decimal @default(0.0) @db.Decimal(10, 2)
     netValue            Decimal @default(0.0) @db.Decimal(10, 2)
+
+    businessDateId String
+    businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt

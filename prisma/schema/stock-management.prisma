@@ -18,6 +18,9 @@ model StockManagement {
     closing     Int @default(0)
     scr         Int @default(0)
 
+    businessDateId String
+    businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 

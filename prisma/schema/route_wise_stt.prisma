@@ -12,6 +12,9 @@ model RouteWiseStt {
     skuNameId String
     skuName   SkuName @relation(fields: [skuNameId], references: [id])
 
+    businessDateId String
+    businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
+
     totalStt Int @default(0)
 
     createdAt DateTime @default(now())

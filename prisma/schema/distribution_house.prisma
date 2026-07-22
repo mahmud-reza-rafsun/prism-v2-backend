@@ -5,6 +5,7 @@ model DistributionHouse {
     code String? @unique
 
     areaId String
+    area   Area   @relation(fields: [areaId], references: [id])
 
     address String?
     contact String?
@@ -12,8 +13,7 @@ model DistributionHouse {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    area Area @relation(fields: [areaId], references: [id])
-
+    shipmentOrder      ShipmentOrder[]
     distributionPoints DistributionPoints[]
     territories        Territory[]
     users              User[]
