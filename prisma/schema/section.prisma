@@ -1,13 +1,11 @@
 model Section {
-    id   String      @id @default(uuid())
-    name String      @unique
-    type SectionType
+  id                     String                  @id @default(uuid())
+  name                   String                  @unique
+  type                   SectionType
+  createdAt              DateTime                @default(now())
+  updatedAt              DateTime                @updatedAt
+  finalSubmits           FinalSubmit[]
+  salesSummaryStatements SalesSummaryStatement[]
 
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    finalSubmits           FinalSubmit[]
-    salesSummaryStatements SalesSummaryStatement[]
-
-    @@map("section")
+  @@map("section")
 }

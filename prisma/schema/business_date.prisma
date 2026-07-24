@@ -1,15 +1,13 @@
 model BusinessDate {
-    id           String   @id @default(uuid())
-    businessDate DateTime @unique
-    isClosed     Boolean  @default(false)
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    routeWiseStt          RouteWiseStt[]
-    routeWiseMemo         RouteWiseMemo[]
-    stockManagement       StockManagement[]
-    salesSummaryStatement SalesSummaryStatement[]
-    byOutletStt           ByOutletStt[]
-    finalSubmit           FinalSubmit[]
+  id                    String                  @id @default(uuid())
+  businessDate          DateTime                @unique
+  isClosed              Boolean                 @default(false)
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @updatedAt
+  byOutletStt           ByOutletStt[]
+  finalSubmit           FinalSubmit[]
+  routeWiseMemo         RouteWiseMemo[]
+  routeWiseStt          RouteWiseStt[]
+  salesSummaryStatement SalesSummaryStatement[]
+  stockManagement       StockManagement[]
 }

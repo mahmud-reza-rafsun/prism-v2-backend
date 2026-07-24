@@ -1,11 +1,12 @@
-model Region {
+model SttSku {
   id        String   @id @default(uuid())
   name      String   @unique
   code      String?  @unique
+  packSize  String?
+  brandId   String
+  isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  areas     Area[]
-  users     User[]
 
-  @@map("region")
+  @@index([brandId])
 }

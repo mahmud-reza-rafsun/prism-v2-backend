@@ -1,35 +1,32 @@
 model OutletName {
-    id             String   @id @default(uuid())
-    prismID        String   @unique
-    partnerCode    String?
-    region         String
-    area           String
-    territory      String
-    house          String
-    point          String
-    route          Routes[]
-    clusterName    String
-    clusterType    String
-    geoClass       String
-    routeNumber    String
-    section        String
-    retailerName   String
-    ownerName      String
-    contactNumber  String
-    channel        String
-    subChannel     String
-    superTPG       String
-    tpg            String
-    pmmInformation String?
-    dccScope       String?
+  id                   String              @id @default(uuid())
+  prismID              String              @unique
+  partnerCode          String?
+  region               String
+  area                 String
+  territory            String
+  house                String
+  point                String
+  clusterName          String
+  clusterType          String
+  geoClass             String
+  routeNumber          String
+  section              String
+  retailerName         String
+  ownerName            String
+  contactNumber        String
+  channel              String
+  subChannel           String
+  superTPG             String
+  tpg                  String
+  pmmInformation       String?
+  dccScope             String?
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  distributionPointsId String?
+  sttSkuId             String
+  distributionPoints   DistributionPoints? @relation(fields: [distributionPointsId], references: [id])
+  route                Routes[]            @relation("OutletNameToRoutes")
 
-    skuNameId String
-    skuName   SkuName @relation(fields: [skuNameId], references: [id])
-
-    createdAt            DateTime            @default(now())
-    updatedAt            DateTime            @updatedAt
-    distributionPoints   DistributionPoints? @relation(fields: [distributionPointsId], references: [id])
-    distributionPointsId String?
-
-    @@map("outlet_name")
+  @@map("outlet_name")
 }

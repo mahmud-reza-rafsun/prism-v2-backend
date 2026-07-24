@@ -1,23 +1,13 @@
 model DistributionHouse {
-    id String @id @default(uuid())
+  id        String   @id @default(uuid())
+  name      String
+  code      String?  @unique
+  areaId    String
+  address   String?
+  contact   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-    name String
-    code String? @unique
-
-    areaId String
-    area   Area   @relation(fields: [areaId], references: [id])
-
-    address String?
-    contact String?
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    shipmentOrder      ShipmentOrder[]
-    distributionPoints DistributionPoints[]
-    territories        Territory[]
-    users              User[]
-
-    @@unique([name, areaId])
-    @@map("distribution_houses")
+  @@unique([name, areaId])
+  @@map("distribution_houses")
 }

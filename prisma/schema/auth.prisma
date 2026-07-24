@@ -1,86 +1,79 @@
 model User {
-    id                 String     @id @default(uuid())
-    name               String
-    email              String @unique
-    emailVerified      Boolean    @default(false)
-    role               Role
-    status             UserStatus @default(ACTIVE)
-    needPasswordChange Boolean    @default(false)
-    isDeleted          Boolean    @default(false)
-    deletedAt          DateTime?
-    image              String?
-    createdAt          DateTime   @default(now())
-    updatedAt          DateTime   @updatedAt
-    sessions           Session[]
-    accounts           Account[]
+  id                  String              @id @default(uuid())
+  name                String
+  email               String              @unique
+  emailVerified       Boolean             @default(false)
+  role                Role
+  status              UserStatus          @default(ACTIVE)
+  needPasswordChange  Boolean             @default(false)
+  isDeleted           Boolean             @default(false)
+  deletedAt           DateTime?
+  image               String?
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+  areaId              String?
+  distributionHouseId String?
+  distributionPointId String?
+  regionId            String?
+  territoryId         String?
+  accounts            Account[]
+  sessions            Session[]
+  area                Area?               @relation(fields: [areaId], references: [id])
+  distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id])
+  region              Region?             @relation(fields: [regionId], references: [id])
+  territory           Territory?          @relation(fields: [territoryId], references: [id])
 
-    regionId String?
-    region   Region? @relation(fields: [regionId], references: [id])
-
-    areaId String?
-    area   Area?   @relation(fields: [areaId], references: [id])
-
-    distributionHouseId String?
-    distributionHouse   DistributionHouse? @relation(fields: [distributionHouseId], references: [id])
-
-    territoryId String?
-    territory   Territory? @relation(fields: [territoryId], references: [id])
-
-    distributionPointId String?
-    distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id])
-
-    @@map("user")
-
-    @@index([regionId])
+  @@index([regionId])
   @@index([areaId])
   @@index([distributionHouseId])
   @@index([territoryId])
   @@index([distributionPointId])
+  @@map("user")
 }
 
 model Session {
-    id        String   @id @default(uuid())
-    expiresAt DateTime
-    token     String   @unique
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    ipAddress String?
-    userAgent String?
-    userId    String
-    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String   @id @default(uuid())
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-    @@index([userId])
-    @@map("session")
+  @@index([userId])
+  @@map("session")
 }
 
 model Account {
-    id                    String    @id @default(uuid())
-    accountId             String
-    providerId            String
-    userId                String
-    user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-    accessToken           String?
-    refreshToken          String?
-    idToken               String?
-    accessTokenExpiresAt  DateTime?
-    refreshTokenExpiresAt DateTime?
-    scope                 String?
-    password              String?
-    createdAt             DateTime  @default(now())
-    updatedAt             DateTime  @updatedAt
+  id                    String    @id @default(uuid())
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-    @@index([userId])
-    @@map("account")
+  @@index([userId])
+  @@map("account")
 }
 
 model Verification {
-    id         String   @id @default(uuid())
-    identifier String
-    value      String
-    expiresAt  DateTime
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
+  id         String   @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
-    @@index([identifier])
-    @@map("verification")
+  @@index([identifier])
+  @@map("verification")
 }

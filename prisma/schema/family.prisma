@@ -1,11 +1,9 @@
-model Region {
+model Family {
   id        String   @id @default(uuid())
   name      String   @unique
-  code      String?  @unique
+  segmentId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  areas     Area[]
-  users     User[]
 
-  @@map("region")
+  @@index([segmentId])
 }

@@ -1,10 +1,13 @@
 import fs from "node:fs";
+import path from "node:path";
 import { prisma } from "../../src/database/prisma";
 
-const backup = JSON.parse(fs.readFileSync("backup.json", "utf8"));
+const backupFilePath = path.join(process.cwd(), "raw_data", "backup.json");
+
+const backup = JSON.parse(fs.readFileSync(backupFilePath, "utf8"));
 
 async function main() {
-    console.log("🌱 Seeding Master Data...");
+    console.log("Seeding Master Data...");
 
     await prisma.region.createMany({
         data: backup.regions,
@@ -30,12 +33,12 @@ async function main() {
     });
     console.log(`✅ Territory: ${backup.territories.length}`);
 
-    console.log("🎉 Seed Completed Successfully!");
+    console.log("Seed Completed Successfully!");
 }
 
 main()
     .catch((err) => {
-        console.error(err);
+        console.error("Seeding Error:", err);
         process.exit(1);
     })
     .finally(async () => {

@@ -1,19 +1,13 @@
 model Area {
-    id String @id @default(uuid())
+  id        String   @id @default(uuid())
+  name      String
+  code      String?  @unique
+  regionId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  region    Region   @relation(fields: [regionId], references: [id])
+  users     User[]
 
-    name String
-    code String? @unique
-
-    regionId String
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    region Region @relation(fields: [regionId], references: [id])
-
-    distributionHouses DistributionHouse[]
-    users              User[]
-
-    @@unique([name, regionId])
-    @@map("area")
+  @@unique([name, regionId])
+  @@map("area")
 }

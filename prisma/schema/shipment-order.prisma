@@ -1,23 +1,17 @@
 model ShipmentOrder {
-    id String @id @default(uuid())
+  id                  String    @id @default(uuid())
+  quantity            Int       @default(0)
+  targetDate          DateTime  @db.Date
+  isFinalized         Boolean   @default(false)
+  finalizedAt         DateTime?
+  unlockRequested     Boolean   @default(false)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  distributionHouseId String
+  shipmentSkuId       String
 
-    skuNameId String
-    skuName   SkuName @relation(fields: [skuNameId], references: [id])
-
-    quantity   Int      @default(0)
-    targetDate DateTime @db.Date
-
-    distributionHouseId String
-    distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id])
-    isFinalized         Boolean           @default(false)
-    finalizedAt         DateTime?
-    unlockRequested     Boolean           @default(false)
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@unique([skuNameId, targetDate, distributionHouseId])
-    @@index([skuNameId])
-    @@index([distributionHouseId])
-    @@map("shipment_orders")
+  @@unique([shipmentSkuId, targetDate, distributionHouseId])
+  @@index([shipmentSkuId])
+  @@index([distributionHouseId])
+  @@map("shipment_orders")
 }

@@ -1,28 +1,21 @@
 model StockManagement {
-    id        String  @id @default(uuid())
-    skuNameId String
-    skuName   SkuName @relation(fields: [skuNameId], references: [id])
+  id                   String       @id @default(uuid())
+  region               String?
+  area                 String?
+  distributionHouse    String?
+  skuOpening           Int          @default(0)
+  shipment             Int          @default(0)
+  igt                  Int          @default(0)
+  stt                  Int          @default(0)
+  stolen               Int          @default(0)
+  warehouseQc          Int          @default(0)
+  closing              Int          @default(0)
+  scr                  Int          @default(0)
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+  businessDateId       String
+  stockManagementSkuId String
+  businessDate         BusinessDate @relation(fields: [businessDateId], references: [id])
 
-    // Locations & Logistics
-    region            String?
-    area              String?
-    distributionHouse String?
-
-    // Inventory/Stock Fields
-    skuOpening  Int @default(0)
-    shipment    Int @default(0)
-    igt         Int @default(0)
-    stt         Int @default(0)
-    stolen      Int @default(0)
-    warehouseQc Int @default(0)
-    closing     Int @default(0)
-    scr         Int @default(0)
-
-    businessDateId String
-    businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@map("stock_management")
+  @@map("stock_management")
 }

@@ -1,36 +1,26 @@
 model ByOutletStt {
-    id String @id @default(uuid())
+  id             String       @id @default(uuid())
+  region         String
+  area           String
+  house          String
+  territory      String
+  point          String
+  route          String
+  retailerCode   String       @unique
+  retailerName   String
+  channel        String
+  subChannel     String
+  cluster        String
+  clusterType    String
+  tpg            String
+  stt            Int          @default(0)
+  memo           Int          @default(0)
+  total          Int          @default(0)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  businessDateId String
+  sttSkuId       String
+  businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
 
-    region    String
-    area      String
-    house     String
-    territory String
-    point     String
-    route     String
-
-    // Retailer Specific Info
-    retailerCode String @unique
-    retailerName String
-    channel      String
-    subChannel   String
-    cluster      String
-    clusterType  String
-    tpg          String
-
-    skuNameId String
-    skuName   SkuName @relation(fields: [skuNameId], references: [id])
-
-    businessDateId String
-    businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
-
-    // Numeric Fields
-    stt  Int @default(0)
-    memo Int @default(0)
-
-    total Int @default(0)
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@map("by-outlet-stt")
+  @@map("by-outlet-stt")
 }

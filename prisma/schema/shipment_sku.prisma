@@ -1,11 +1,9 @@
-model Region {
+model ShipmentSku {
   id        String   @id @default(uuid())
   name      String   @unique
   code      String?  @unique
+  packSize  String?
+  isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  areas     Area[]
-  users     User[]
-
-  @@map("region")
 }

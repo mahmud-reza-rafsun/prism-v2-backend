@@ -1,18 +1,13 @@
 model Territory {
-    id String @id @default(uuid())
+  id                  String               @id @default(uuid())
+  name                String
+  code                String?              @unique
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  distributionHouseId String
+  distributionPoints  DistributionPoints[]
+  users               User[]
 
-    name String
-    code String? @unique
-
-    distributionHouseId String
-
-    createdAt         DateTime          @default(now())
-    updatedAt         DateTime          @updatedAt
-    distributionHouse DistributionHouse @relation(fields: [distributionHouseId], references: [id])
-
-    distributionPoints DistributionPoints[]
-    users              User[]
-
-    @@unique([name, distributionHouseId])
-    @@map("territory")
+  @@unique([name, distributionHouseId])
+  @@map("territory")
 }

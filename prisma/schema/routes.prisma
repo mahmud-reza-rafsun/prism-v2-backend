@@ -1,13 +1,11 @@
 model Routes {
-    id                   String             @id @default(uuid())
-    routeNumber          Int                @default(0)
-    distributionPointsId String
-    distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id])
+  id                   String             @id @default(uuid())
+  routeNumber          Int                @default(0)
+  distributionPointsId String
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+  distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id])
+  outlets              OutletName[]       @relation("OutletNameToRoutes")
 
-    outlets OutletName[]
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@map("routes")
+  @@map("routes")
 }

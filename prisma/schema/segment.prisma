@@ -1,11 +1,6 @@
-model Region {
+model Segment {
   id        String   @id @default(uuid())
   name      String   @unique
-  code      String?  @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  areas     Area[]
-  users     User[]
-
-  @@map("region")
 }

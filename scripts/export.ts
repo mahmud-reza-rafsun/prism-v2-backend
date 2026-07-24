@@ -18,7 +18,7 @@ async function main() {
 
     fs.writeFileSync("backup.json", JSON.stringify(data, null, 2), "utf8");
 
-    console.log("✅ Export completed!");
+    console.log("Export completed!");
 }
 
 main()

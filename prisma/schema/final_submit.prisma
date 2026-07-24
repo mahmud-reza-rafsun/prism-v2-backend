@@ -1,23 +1,16 @@
 model FinalSubmit {
-    id String @id @default(uuid())
+  id             String            @id @default(uuid())
+  date           DateTime          @db.Date
+  point          String
+  sttNumber      String            @unique
+  value          Decimal           @default(0.0) @db.Decimal(15, 2)
+  status         FinalSubmitStatus @default(PENDING)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  businessDateId String
+  sectionId      String
+  businessDate   BusinessDate      @relation(fields: [businessDateId], references: [id])
+  section        Section           @relation(fields: [sectionId], references: [id])
 
-    // Date & Logistics
-    date  DateTime @db.Date
-    point String
-
-    // Transaction Info
-    sttNumber String  @unique
-    value     Decimal @default(0.0) @db.Decimal(15, 2)
-
-    // Status & Actions
-    status         FinalSubmitStatus @default(PENDING)
-    businessDateId String
-    businessDate   BusinessDate      @relation(fields: [businessDateId], references: [id])
-    sectionId      String
-    section        Section           @relation(fields: [sectionId], references: [id])
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@map("final_submits")
+  @@map("final_submits")
 }

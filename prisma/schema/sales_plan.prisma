@@ -1,23 +1,16 @@
 model SalesPlan {
-    id String @id @default(uuid())
+  id                 String             @id @default(uuid())
+  pointId            String
+  status             SalesPlanStatus    @default(ACTIVE)
+  effectiveFrom      DateTime?
+  effectiveTo        DateTime?
+  createdById        String?
+  updatedById        String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  sttSkuId           String
+  distributionPoints DistributionPoints @relation(fields: [pointId], references: [id])
 
-    pointId   String
-    skuNameId String
-
-    status SalesPlanStatus @default(ACTIVE)
-
-    effectiveFrom DateTime?
-    effectiveTo   DateTime?
-
-    createdById String?
-    updatedById String?
-
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    distributionPoints DistributionPoints @relation(fields: [pointId], references: [id])
-    skuName            SkuName            @relation(fields: [skuNameId], references: [id])
-
-    @@unique([pointId, skuNameId])
-    @@map("sales_plan")
+  @@unique([pointId, sttSkuId])
+  @@map("sales_plan")
 }
