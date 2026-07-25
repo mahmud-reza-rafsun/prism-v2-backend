@@ -22,6 +22,4 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 
-backup.json
-points.josn
 raw_data

@@ -1,9 +1,7 @@
 import { prisma } from "../../database/prisma";
 import { DhCreateShipmentOrder } from "../../interface/shipmentOrder.interface";
 
-
-
-const createShipmentOder = async (dhId: string, payload: DhCreateShipmentOrder) => {
+const createShipmentOder = async (distributionHouseId: string, payload: DhCreateShipmentOrder) => {
     const operations = payload.orders.flatMap((orderGroup) => {
         const formattedTargetDate = new Date(orderGroup.targetDate);
 
@@ -13,7 +11,7 @@ const createShipmentOder = async (dhId: string, payload: DhCreateShipmentOrder) 
                     shipmentSkuId_targetDate_distributionHouseId: {
                         shipmentSkuId: item.shipmentSkuId,
                         targetDate: formattedTargetDate,
-                        distributionHouseId: dhId,
+                        distributionHouseId: distributionHouseId,
                     },
                 },
                 update: {
@@ -23,7 +21,7 @@ const createShipmentOder = async (dhId: string, payload: DhCreateShipmentOrder) 
                     shipmentSkuId: item.shipmentSkuId,
                     quantity: Math.round(item.quantity),
                     targetDate: formattedTargetDate,
-                    distributionHouseId: dhId,
+                    distributionHouseId: distributionHouseId,
                 },
             })
         );
@@ -33,6 +31,26 @@ const createShipmentOder = async (dhId: string, payload: DhCreateShipmentOrder) 
     return result;
 };
 
+const getShipmentOrdersByDate = async (distributionHouseId: string) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const result = await prisma.shipmentOrder.findMany({
+        where: {
+            distributionHouseId: distributionHouseId,
+            targetDate: {
+                gte: today,
+            },
+        },
+        orderBy: {
+            targetDate: 'asc',
+        },
+    });
+
+    return result;
+};
+
 export const shipmentOrderService = {
     createShipmentOder,
+    getShipmentOrdersByDate
 };

@@ -17,6 +17,6 @@ router.use("/territory", territoryRoutes);
 router.use("/distribution", distributionRoutes);
 router.use("/distribution-point", distributionPointRoutes);
 router.use("/create-outlet", outletRoutes);
-router.use("/create-order", shipmentOrderRoutes);
+router.use("/shipment", shipmentOrderRoutes);
 
 export const apiRoutes = router;

@@ -5,8 +5,8 @@ import { sendResponse } from "../../shared/utils/send-response";
 import status from "http-status";
 
 const createShipmentOder = catchAsync(async (req: Request, res: Response) => {
-    const { dhId } = req.params;
-    const result = await shipmentOrderService.createShipmentOder(dhId as string, req.body);
+    const distributionHouseId = req.user?.distributionHouseId as string;
+    const result = await shipmentOrderService.createShipmentOder(distributionHouseId, req.body);
 
     sendResponse(res, {
         status: status.OK,
@@ -16,6 +16,19 @@ const createShipmentOder = catchAsync(async (req: Request, res: Response) => {
     });
 });
 
+const getShipmentOrdersByDate = catchAsync(async (req: Request, res: Response) => {
+    const distributionHouseId = req.user?.distributionHouseId as string;
+    const result = await shipmentOrderService.getShipmentOrdersByDate(distributionHouseId);
+
+    sendResponse(res, {
+        status: status.OK,
+        success: true,
+        message: 'Shipment orders fetched successfully',
+        data: result,
+    });
+});
+
 export const shipmentOrderController = {
-    createShipmentOder
+    createShipmentOder,
+    getShipmentOrdersByDate
 }
