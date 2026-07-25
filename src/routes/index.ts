@@ -6,6 +6,7 @@ import { distributionRoutes } from "../modules/distribution/distribution.route";
 import { territoryRoutes } from "../modules/territory/territory.route";
 import { distributionPointRoutes } from "../modules/distributionPoint/distributionPoint.route";
 import { outletRoutes } from "../modules/outlet/outlet.route";
+import { shipmentOrderRoutes } from "../modules/shipment-order/shipment-order.route";
 
 const router = Router();
 
@@ -16,5 +17,6 @@ router.use("/territory", territoryRoutes);
 router.use("/distribution", distributionRoutes);
 router.use("/distribution-point", distributionPointRoutes);
 router.use("/create-outlet", outletRoutes);
+router.use("/create-order", shipmentOrderRoutes);
 
 export const apiRoutes = router;
