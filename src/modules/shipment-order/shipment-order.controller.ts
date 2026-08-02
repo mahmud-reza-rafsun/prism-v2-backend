@@ -28,7 +28,19 @@ const getShipmentOrdersByDate = catchAsync(async (req: Request, res: Response) =
     });
 });
 
+const getShipmentOrdersSku = catchAsync(async (req: Request, res: Response) => {
+    const result = await shipmentOrderService.getShipmentSku();
+
+    sendResponse(res, {
+        status: status.OK,
+        success: true,
+        message: 'Shipment orders fetched successfully',
+        data: result,
+    });
+});
+
 export const shipmentOrderController = {
     createShipmentOder,
-    getShipmentOrdersByDate
+    getShipmentOrdersByDate,
+    getShipmentOrdersSku
 }

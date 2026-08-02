@@ -8,6 +8,13 @@ model DistributionHouse {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  shipmentOrders     ShipmentOrder[]
+  distributionPoints DistributionPoints[]
+  byOutletStts       ByOutletStt[]
+
+  area Area @relation(fields: [areaId], references: [id], onDelete: Restrict)
+
   @@unique([name, areaId])
-  @@map("distribution_houses")
+  @@index([areaId])
+  @@map("distribution_house")
 }

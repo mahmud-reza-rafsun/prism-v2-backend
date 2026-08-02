@@ -14,8 +14,8 @@ model SalesSummaryStatement {
   businessDateId      String
   sectionId           String
   sttSkuId            String
-  businessDate        BusinessDate @relation(fields: [businessDateId], references: [id])
-  section             Section      @relation(fields: [sectionId], references: [id])
+  businessDate        BusinessDate @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
+  section             Section      @relation(fields: [sectionId], references: [id], onDelete: Restrict)
 
   @@map("sales_summary_statement")
 }

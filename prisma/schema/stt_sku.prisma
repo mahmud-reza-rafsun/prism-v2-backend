@@ -1,12 +1,22 @@
 model SttSku {
-  id        String   @id @default(uuid())
-  name      String   @unique
-  code      String?  @unique
-  packSize  String?
-  brandId   String
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                   String                 @id @default(uuid())
+  name                 String                 @unique
+  code                 String?                @unique
+  packSize             String?
+  brandId              String
+  brand                Brand                  @relation(fields: [brandId], references: [id], onDelete: Restrict)
+  familyId             String
+  family               Family                 @relation(fields: [familyId], references: [id], onDelete: Restrict)
+  segmentId            String
+  segment              Segment                @relation(fields: [segmentId], references: [id], onDelete: Restrict)
+  isActive             SttSkuStatus           @default(ACTIVE)
+  ownPointDistribution OwnPointDistribution[]
+  routeWiseMemo        RouteWiseMemo[]
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
 
+  @@index([segmentId])
+  @@index([familyId])
   @@index([brandId])
+  @@map("stt_sku")
 }

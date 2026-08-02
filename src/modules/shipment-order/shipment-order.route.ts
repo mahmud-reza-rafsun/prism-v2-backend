@@ -7,7 +7,7 @@ const router = Router();
 
 router.post('/create-shipment-orders', checkAuth(Role.BUSINESS_MANAGER), shipmentOrderController.createShipmentOder);
 router.get('/get-all-shipment-orders', checkAuth(Role.BUSINESS_MANAGER, Role.TERRITORY_OFFICER), shipmentOrderController.getShipmentOrdersByDate);
-
+router.use("/get-shipment-order-sku", shipmentOrderController.getShipmentOrdersSku)
 
 
 export const shipmentOrderRoutes = router;

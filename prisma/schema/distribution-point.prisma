@@ -1,18 +1,22 @@
 model DistributionPoints {
-  id             String       @id @default(uuid())
-  name           String
-  code           String?      @unique
-  territoryId    String?
-  address        String?
-  contact        String?
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @updatedAt
-  distributionId String
-  territory      Territory?   @relation(fields: [territoryId], references: [id])
-  outlet         OutletName[]
-  routes         Routes[]
-  salesPlans     SalesPlan[]
-  users          User[]
+  id                   String                 @id @default(uuid())
+  name                 String
+  code                 String?                @unique
+  territoryId          String?
+  address              String?
+  contact              String?
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+  distributionHouseId  String
+  distributionHouse    DistributionHouse      @relation(fields: [distributionHouseId], references: [id], onDelete: Restrict)
+  territory            Territory?             @relation(fields: [territoryId], references: [id], onDelete: Restrict)
+  ownPointdistribution OwnPointDistribution[]
+  outlet               OutletName[]
+  routes               Routes[]
+  salesPlans           SalesPlan[]
+  routeWiseMemo        RouteWiseMemo[]
+  users                User[]
+  finalSubmits         FinalSubmit[]
 
   @@map("distribution_points")
 }

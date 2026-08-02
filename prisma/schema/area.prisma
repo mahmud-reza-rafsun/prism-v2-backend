@@ -5,9 +5,13 @@ model Area {
   regionId  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  region    Region   @relation(fields: [regionId], references: [id])
+  region    Region   @relation(fields: [regionId], references: [id], onDelete: Restrict)
   users     User[]
 
+  distributionHouse DistributionHouse[]
+  territory         Territory[]
+
   @@unique([name, regionId])
+  @@index([regionId])
   @@map("area")
 }

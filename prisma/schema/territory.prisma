@@ -5,9 +5,13 @@ model Territory {
   createdAt           DateTime             @default(now())
   updatedAt           DateTime             @updatedAt
   distributionHouseId String
+  areaId              String
+  area                Area                 @relation(fields: [areaId], references: [id], onDelete: Restrict)
   distributionPoints  DistributionPoints[]
+  byOutletStt         ByOutletStt[]
   users               User[]
 
   @@unique([name, distributionHouseId])
+  @@index([distributionHouseId, areaId])
   @@map("territory")
 }

@@ -4,8 +4,9 @@ model Routes {
   distributionPointsId String
   createdAt            DateTime           @default(now())
   updatedAt            DateTime           @updatedAt
-  distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id])
+  distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id], onDelete: Restrict)
   outlets              OutletName[]       @relation("OutletNameToRoutes")
+  finalSubmits         FinalSubmit[]
 
   @@map("routes")
 }

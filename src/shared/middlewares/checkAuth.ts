@@ -11,7 +11,7 @@ export const checkAuth = (...authRoles: Role[]) =>
 
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      //Session Token Verification
+      //Session Token Verificationw
       const sessionToken = cookieUtils.getCookie(
         req,
         "better-auth.session_token",
@@ -38,9 +38,6 @@ export const checkAuth = (...authRoles: Role[]) =>
 
         if (sessionExists && sessionExists.user) {
           const user = sessionExists.user;
-
-
-
           const now = new Date();
           const expiresAt = new Date(sessionExists.expiresAt);
           const createdAt = new Date(sessionExists.createdAt);
@@ -88,6 +85,7 @@ export const checkAuth = (...authRoles: Role[]) =>
             name: user.name,
             email: user.email,
             role: user.role,
+            distributionHouseId: user.distributionHouseId as string
           };
         }
 
@@ -141,6 +139,7 @@ export const checkAuth = (...authRoles: Role[]) =>
           name: String(tokenData.name || ""),
           email: String(tokenData.email || ""),
           role: (tokenData.role as Role) || Role.USER,
+          distributionHouseId: String(tokenData.id || ""),
         };
       }
 

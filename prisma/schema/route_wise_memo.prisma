@@ -1,18 +1,24 @@
 model RouteWiseMemo {
-  id             String       @id @default(uuid())
-  region         String
-  area           String
-  territory      String
-  house          String
-  point          String
-  route          Int          @default(0)
-  target         Int          @default(0)
-  successfulCall Int          @default(0)
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @updatedAt
-  businessDateId String
-  sttSkuId       String
-  businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
+  id                  String             @id @default(uuid())
+  region              String
+  area                String
+  territory           String
+  house               String
+  point               String
+  route               Int                @default(0)
+  target              Int                @default(0)
+  successfulCall      Int                @default(0)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  businessDateId      String
+  sttSkuId            String
+  distributionPointId String
+  distributionPoints  DistributionPoints @relation(fields: [distributionPointId], references: [id], onDelete: Restrict)
+  businessDate        BusinessDate       @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
+  sttSku              SttSku             @relation(fields: [sttSkuId], references: [id], onDelete: Restrict)
 
+  @@index([distributionPointId])
+  @@index([businessDateId])
+  @@index([sttSkuId])
   @@map("route_wise_memo")
 }

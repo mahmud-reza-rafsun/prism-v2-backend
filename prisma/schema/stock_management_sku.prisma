@@ -8,5 +8,8 @@ model StockManagementSku {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  stockManagements StockManagement[]
+
   @@index([brandId])
+  @@map("stock_management_sku")
 }

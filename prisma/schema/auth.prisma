@@ -18,10 +18,10 @@ model User {
   territoryId         String?
   accounts            Account[]
   sessions            Session[]
-  area                Area?               @relation(fields: [areaId], references: [id])
-  distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id])
-  region              Region?             @relation(fields: [regionId], references: [id])
-  territory           Territory?          @relation(fields: [territoryId], references: [id])
+  area                Area?               @relation(fields: [areaId], references: [id], onDelete: Restrict)
+  distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id], onDelete: Restrict)
+  region              Region?             @relation(fields: [regionId], references: [id], onDelete: Restrict)
+  territory           Territory?          @relation(fields: [territoryId], references: [id], onDelete: Restrict)
 
   @@index([regionId])
   @@index([areaId])

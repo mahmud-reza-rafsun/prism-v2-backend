@@ -3,4 +3,6 @@ model Segment {
   name      String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  family    Family[]
+  sttSkus   SttSku[]
 }

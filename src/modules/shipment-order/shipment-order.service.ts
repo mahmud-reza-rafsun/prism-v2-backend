@@ -50,7 +50,14 @@ const getShipmentOrdersByDate = async (distributionHouseId: string) => {
     return result;
 };
 
+const getShipmentSku = async () => {
+    const result = await prisma.shipmentSku.findMany();
+    return result;
+}
+
+
 export const shipmentOrderService = {
     createShipmentOder,
-    getShipmentOrdersByDate
+    getShipmentOrdersByDate,
+    getShipmentSku
 };

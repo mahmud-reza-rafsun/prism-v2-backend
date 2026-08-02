@@ -1,13 +1,7 @@
 import { prisma } from '../../src/database/prisma';
 import fs from 'fs';
 import path from 'path';
-
-interface StockManagementSkuData {
-    name: string;
-    code?: string;
-    packSize?: string;
-    brandId: string;
-}
+import { StockManagementSkuData } from '../../src/interface/stock.management.sku.interface';
 
 async function main() {
     const filePath = path.join(process.cwd(), 'raw_data', 'stock-management-sku.json');

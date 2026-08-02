@@ -1,11 +1,11 @@
 enum Role {
   SUPER_ADMIN
   ADMIN
-  USER
   HEAD_OF_TRADE
   FINANCE_CONTROLLER
   ACCOUNTS_OFFICER
   REGIONAL_MANAGER
+  REGIONAL_REPORTING_OFFICER
   AREA_MANAGER
   TERRITORY_OFFICER
   BUSINESS_MANAGER
@@ -28,6 +28,11 @@ enum SalesPlanStatus {
   INACTIVE
 }
 
+enum SttSkuStatus {
+  ACTIVE
+  INACTIVE
+}
+
 enum OutletStatus {
   ACTIVE
   INACTIVE
@@ -37,4 +42,9 @@ enum SectionType {
   A
   B
   D
+}
+
+enum BusinessDateStatus {
+  TRUE
+  FALSE
 }

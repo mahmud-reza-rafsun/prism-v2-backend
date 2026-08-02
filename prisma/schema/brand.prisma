@@ -2,6 +2,8 @@ model Brand {
   id        String   @id @default(uuid())
   name      String   @unique
   familyId  String
+  family    Family   @relation(fields: [familyId], references: [id], onDelete: Restrict)
+  sttSkus   SttSku[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

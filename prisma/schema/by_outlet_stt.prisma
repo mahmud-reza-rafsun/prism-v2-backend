@@ -1,26 +1,28 @@
 model ByOutletStt {
-  id             String       @id @default(uuid())
-  region         String
-  area           String
-  house          String
-  territory      String
-  point          String
-  route          String
-  retailerCode   String       @unique
-  retailerName   String
-  channel        String
-  subChannel     String
-  cluster        String
-  clusterType    String
-  tpg            String
-  stt            Int          @default(0)
-  memo           Int          @default(0)
-  total          Int          @default(0)
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @updatedAt
-  businessDateId String
-  sttSkuId       String
-  businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
+  id                  String            @id @default(uuid())
+  region              String
+  area                String
+  distributionHouseId String
+  distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id])
+  territoryId         String
+  territory           Territory         @relation(fields: [territoryId], references: [id])
+  point               String
+  route               String
+  retailerCode        String            @unique
+  retailerName        String
+  channel             String
+  subChannel          String
+  cluster             String
+  clusterType         String
+  tpg                 String
+  stt                 Int               @default(0)
+  memo                Int               @default(0)
+  total               Int               @default(0)
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+  businessDateId      String
+  sttSkuId            String
+  businessDate        BusinessDate      @relation(fields: [businessDateId], references: [id])
 
-  @@map("by-outlet-stt")
+  @@map("by_outlet_stt")
 }

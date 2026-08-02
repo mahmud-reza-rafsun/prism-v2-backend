@@ -1,10 +1,13 @@
 model OwnPointDistribution {
-  id                 String   @id @default(uuid()) @map("own_point_dist_id")
-  pointOnHandStock   Int      @default(0)
-  transferableAmount Int      @default(0)
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
-  sttSkuId           String
+  id                  String             @id @default(uuid()) @map("own_point_dist_id")
+  pointOnHandStock    Int                @default(0)
+  transferableAmount  Int                @default(0)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  sttSkuId            String
+  distributionPointId String
+  distributionPoints  DistributionPoints @relation(fields: [distributionPointId], references: [id])
+  sttSku              SttSku             @relation(fields: [sttSkuId], references: [id])
 
   @@map("own_point_distribution")
 }

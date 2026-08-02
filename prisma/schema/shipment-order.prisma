@@ -1,14 +1,16 @@
 model ShipmentOrder {
-  id                  String    @id @default(uuid())
-  quantity            Int       @default(0)
-  targetDate          DateTime  @db.Date
-  isFinalized         Boolean   @default(false)
+  id                  String            @id @default(uuid())
+  quantity            Int               @default(0)
+  targetDate          DateTime          @db.Date
+  isFinalized         Boolean           @default(false)
   finalizedAt         DateTime?
-  unlockRequested     Boolean   @default(false)
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
+  unlockRequested     Boolean           @default(false)
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
   distributionHouseId String
+  distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id], onDelete: Restrict)
   shipmentSkuId       String
+  shipmentSku         ShipmentSku       @relation(fields: [shipmentSkuId], references: [id], onDelete: Restrict)
 
   @@unique([shipmentSkuId, targetDate, distributionHouseId])
   @@index([shipmentSkuId])

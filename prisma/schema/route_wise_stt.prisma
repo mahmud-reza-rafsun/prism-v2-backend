@@ -11,7 +11,7 @@ model RouteWiseStt {
   updatedAt      DateTime     @updatedAt
   businessDateId String
   sttSkuId       String
-  businessDate   BusinessDate @relation(fields: [businessDateId], references: [id])
+  businessDate   BusinessDate @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
 
   @@map("route_wise_stt")
 }
