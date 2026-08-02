@@ -12,16 +12,18 @@ model User {
   createdAt           DateTime            @default(now())
   updatedAt           DateTime            @updatedAt
   areaId              String?
-  distributionHouseId String?
-  distributionPointId String?
   regionId            String?
+  distributionHouseId String?
   territoryId         String?
-  accounts            Account[]
-  sessions            Session[]
-  area                Area?               @relation(fields: [areaId], references: [id], onDelete: Restrict)
-  distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id], onDelete: Restrict)
+  distributionPointId String?
   region              Region?             @relation(fields: [regionId], references: [id], onDelete: Restrict)
+  area                Area?               @relation(fields: [areaId], references: [id], onDelete: Restrict)
+  distributionHouse   DistributionHouse?  @relation(fields: [distributionHouseId], references: [id], onDelete: Restrict)
   territory           Territory?          @relation(fields: [territoryId], references: [id], onDelete: Restrict)
+  distributionPoint   DistributionPoints? @relation(fields: [distributionPointId], references: [id], onDelete: Restrict)
+
+  accounts Account[]
+  sessions Session[]
 
   @@index([regionId])
   @@index([areaId])
