@@ -17,6 +17,7 @@
     "resolve": "prisma migrate resolve --applied fix_schema_relations",
     "status": "prisma migrate status",
     "studio": "prisma studio",
+    "reset": "bunx prisma migrate reset",
     "export:data": "tsx scripts/export.ts",
     "db:seed": "tsx prisma/seed/seed.ts",
     "seed:points": "tsx prisma/seed/points.seed.ts",

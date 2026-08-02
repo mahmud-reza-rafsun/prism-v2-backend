@@ -1,0 +1,10 @@
+model AddNewIgt {
+    id                  String            @id @default(uuid())
+    distributionHouseId String
+    distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id], onDelete: Cascade)
+    AvailableAmount     Float
+    PendingTransfer     IGTStatus         @default(NO_PENDING)
+
+    @@index([distributionHouseId])
+    @@map("add_new_igt")
+}

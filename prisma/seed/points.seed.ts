@@ -23,7 +23,7 @@ type PointData = {
 };
 
 async function seedPoints() {
-    const filePath = path.join(process.cwd(), "raw_data", "points.json");
+    const filePath = path.join(process.cwd(), "raw_data", "points2.json");
 
     const data: PointData[] = JSON.parse(
         fs.readFileSync(filePath, "utf-8")
@@ -102,8 +102,8 @@ async function seedPoints() {
                         name: point.name,
                         code: point.code,
                         address: point.address,
+                        distributionHouseId: dh.distributionHouseId,
                         contact: point.contact,
-                        distributionId: dh.distributionHouseId,
                         territoryId: point.territoryId,
                     },
                 });

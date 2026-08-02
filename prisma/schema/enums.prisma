@@ -48,3 +48,8 @@ enum BusinessDateStatus {
   TRUE
   FALSE
 }
+
+enum IGTStatus {
+  PENDING
+  NO_PENDING
+}

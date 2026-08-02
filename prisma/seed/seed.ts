@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { prisma } from "../../src/database/prisma";
 
-const backupFilePath = path.join(process.cwd(), "raw_data", "backup.json");
+const backupFilePath = path.join(process.cwd(), "raw_data", "backup2.json");
 
 const backup = JSON.parse(fs.readFileSync(backupFilePath, "utf8"));
 
