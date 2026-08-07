@@ -1,13 +1,11 @@
 model DistributorPrice {
-    id                  String            @id @default(uuid())
-    price               Float
-    distributionHouseId String
-    distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id], onDelete: Restrict)
-    shipmentOrderId     String?
-    shipmentOrder       ShipmentOrder?    @relation(fields: [shipmentOrderId], references: [id], onDelete: Restrict)
-    updatedAt           DateTime          @updatedAt
-    ShipmentSku         ShipmentSku[]
+    id              String         @id @default(uuid())
+    price           Float
+    shipmentOrderId String?
+    shipmentOrder   ShipmentOrder? @relation(fields: [shipmentOrderId], references: [id], onDelete: Restrict)
+    updatedAt       DateTime       @updatedAt
+    ShipmentSku     ShipmentSku[]
 
-    @@index([distributionHouseId, shipmentOrderId])
+    @@index([shipmentOrderId])
     @@map("distributor_price")
 }
