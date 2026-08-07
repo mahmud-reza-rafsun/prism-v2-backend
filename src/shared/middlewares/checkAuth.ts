@@ -85,7 +85,8 @@ export const checkAuth = (...authRoles: Role[]) =>
             name: user.name,
             email: user.email,
             role: user.role,
-            distributionHouseId: user.distributionHouseId as string
+            distributionHouseId: user.distributionHouseId as string,
+            regionId: user.regionId as string,
           };
         }
 
@@ -139,7 +140,8 @@ export const checkAuth = (...authRoles: Role[]) =>
           name: String(tokenData.name || ""),
           email: String(tokenData.email || ""),
           role: (tokenData.role as Role) || Role.ADMIN,
-          distributionHouseId: String(tokenData.id || ""),
+          distributionHouseId: String(tokenData.distributionHouseId || ""),
+          regionId: String(tokenData.regionId || ""),
         };
       }
 

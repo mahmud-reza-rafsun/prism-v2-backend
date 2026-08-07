@@ -8,7 +8,8 @@ declare global {
         name: string;
         email: string;
         role: Role;
-        distributionHouseId: string
+        distributionHouseId: string;
+        regionId: string;
       };
     }
   }

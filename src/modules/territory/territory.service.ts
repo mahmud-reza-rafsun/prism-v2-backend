@@ -33,6 +33,7 @@ const createTerritory = async (
             name: territory.name,
             code: territory.code,
             distributionHouseId: distributionId,
+            areaId: territory.areaId,
         })),
         skipDuplicates: true,
     });

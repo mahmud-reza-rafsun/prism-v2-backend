@@ -39,7 +39,7 @@ const createDistributionPoint = async (
             code: point.code,
             address: point.address,
             contact: point.contact,
-            distributionId: payload.distributionHouseId,
+            distributionHouseId: payload.distributionHouseId,
             territoryId: point.territoryId,
         })),
         skipDuplicates: true,
@@ -48,7 +48,7 @@ const createDistributionPoint = async (
     // Return created points
     const distributionPoints = await prisma.distributionPoints.findMany({
         where: {
-            distributionId: payload.distributionHouseId,
+            distributionHouseId: payload.distributionHouseId,
         },
         orderBy: {
             createdAt: "asc",

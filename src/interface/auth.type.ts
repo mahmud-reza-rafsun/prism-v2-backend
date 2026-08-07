@@ -5,7 +5,8 @@ export interface IRequestUser {
   id: string;
   role: Role | string;
   email: string;
-  regionId: string
+  distributionHouseId: string;
+  regionId: string;
 }
 
 export interface ILoginUserPayload {

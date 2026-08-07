@@ -7,4 +7,7 @@ export interface UserData {
     password: string;
     role: Role;
     distributionHouseId: string;
+    regionId: string;
+    areaId: string;
+    distributionPointId: string;
 };
