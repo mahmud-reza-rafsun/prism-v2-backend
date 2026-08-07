@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import status from "http-status";
 import { prisma } from "../../database/prisma";
-import { DhCreateShipmentOrder } from "../../interface/shipmentOrder.interface";
 import { AppError } from "../../shared/errors/app-error";
+import { DhCreateShipmentOrder } from "../../interface/shipment.interface";
 
 const createShipmentOder = async (distributionHouseId: string, payload: DhCreateShipmentOrder) => {
     if (!distributionHouseId) {

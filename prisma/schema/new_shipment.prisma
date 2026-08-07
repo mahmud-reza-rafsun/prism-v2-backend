@@ -1,10 +1,14 @@
 model NewShipment {
-  id               String @id @default(uuid())
-  sttSkuId         String
-  sttSku           SttSku @relation(fields: [sttSkuId], references: [id], onDelete: Restrict)
-  onHandStock      Float  @default(0.00)
-  ShipmentQuantity Float  @default(0.00)
+  id                  String            @id @default(uuid())
+  distributionHouseId String
+  distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id], onDelete: Restrict)
+  sttSku              SttSku[]
+  onHandStock         Float             @default(0.00)
+  ShipmentQuantity    Float             @default(0.00)
 
-  @@index([sttSkuId])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([distributionHouseId])
   @@map("new_shipment")
 }

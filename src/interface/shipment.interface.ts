@@ -13,3 +13,13 @@ export interface TDateOrderGroup {
 export interface DhCreateShipmentOrder {
     orders: TDateOrderGroup[];
 }
+
+export interface INewShipmentItem {
+    sttSkuId: string;
+    onHandStock?: number;
+    shipmentQuantity: number;
+}
+
+export interface INewShipmentPayload {
+    items: INewShipmentItem[];
+}

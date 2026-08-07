@@ -5,6 +5,7 @@ import { Role } from "@prisma/client";
 import validateRequest from "../../shared/middlewares/validateRequest";
 import { createOrderSchema } from "../../zod/shipment-order.validation";
 
+
 const router = Router();
 
 router.post('/create-shipment-orders/:distributionHouseId', validateRequest(createOrderSchema), checkAuth(Role.BUSINESS_MANAGER, Role.SUPER_ADMIN), shipmentOrderController.createShipmentOder);

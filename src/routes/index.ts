@@ -8,6 +8,7 @@ import { distributionPointRoutes } from "../modules/distributionPoint/distributi
 import { outletRoutes } from "../modules/outlet/outlet.route";
 import { shipmentOrderRoutes } from "../modules/shipment-order/shipment-order.route";
 import { distributorPriceRoutes } from "../modules/distributorPrice/distributorPrice.route";
+import { newShipmentRoutes } from "../modules/new-shipment/new-shipment.route";
 
 const router = Router();
 
@@ -20,5 +21,6 @@ router.use("/distribution-point", distributionPointRoutes);
 router.use("/create-outlet", outletRoutes);
 router.use("/shipment", shipmentOrderRoutes);
 router.use("/distributor-price", distributorPriceRoutes);
+router.use("/new-shipment", newShipmentRoutes);
 
 export const apiRoutes = router;

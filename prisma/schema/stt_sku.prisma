@@ -11,6 +11,8 @@ model SttSku {
   segment              Segment                @relation(fields: [segmentId], references: [id], onDelete: Restrict)
   retailerPrice        RetailerPrice?         @relation(fields: [retailerPriceId], references: [id], onDelete: Restrict)
   retailerPriceId      String?
+  newShipmentId        String?
+  newShipment          NewShipment?           @relation(fields: [newShipmentId], references: [id], onDelete: Cascade)
   isActive             SttSkuStatus           @default(ACTIVE)
   ownPointDistribution OwnPointDistribution[]
   routeWiseMemo        RouteWiseMemo[]
@@ -18,7 +20,6 @@ model SttSku {
   updatedAt            DateTime               @updatedAt
   routeWiseStts        RouteWiseStt[]
   byOutletStts         ByOutletStt[]
-  newShipments         NewShipment[]
 
   @@index([segmentId, familyId, brandId, retailerPriceId])
   @@map("stt_sku")
