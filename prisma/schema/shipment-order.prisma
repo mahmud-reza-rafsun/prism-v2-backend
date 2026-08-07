@@ -1,9 +1,8 @@
 model ShipmentOrder {
   id                  String             @id @default(uuid())
-  quantity            Int                @default(0)
+  quantity            Float              @default(0.00)
   targetDate          DateTime           @db.Date
-  isFinalized         Boolean            @default(false)
-  finalizedAt         DateTime?
+  isFinalized         Boolean            @default(true)
   unlockRequested     Boolean            @default(false)
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt

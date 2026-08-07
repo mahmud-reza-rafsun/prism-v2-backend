@@ -5,8 +5,9 @@ import { sendResponse } from "../../shared/utils/send-response";
 import status from "http-status";
 
 const createShipmentOder = catchAsync(async (req: Request, res: Response) => {
-    const distributionHouseId = req.user?.distributionHouseId as string;
-    const result = await shipmentOrderService.createShipmentOder(distributionHouseId, req.body);
+    const distributionHouseId = req.params?.distributionHouseId as string;
+    const payload = req.body;
+    const result = await shipmentOrderService.createShipmentOder(distributionHouseId, payload);
 
     sendResponse(res, {
         status: status.OK,
@@ -16,25 +17,30 @@ const createShipmentOder = catchAsync(async (req: Request, res: Response) => {
     });
 });
 
-const getShipmentOrdersByDate = catchAsync(async (req: Request, res: Response) => {
-    const distributionHouseId = req.user?.distributionHouseId as string;
-    const result = await shipmentOrderService.getShipmentOrdersByDate(distributionHouseId);
+const getAllShipmentOrders = catchAsync(async (req: Request, res: Response) => {
+    const result = await shipmentOrderService.getAllShipmentOrders();
 
     sendResponse(res, {
         status: status.OK,
         success: true,
-        message: 'Shipment orders fetched successfully',
+        message: "All shipment orders retrieved successfully",
         data: result,
     });
 });
 
-const getShipmentOrdersSku = catchAsync(async (req: Request, res: Response) => {
-    const result = await shipmentOrderService.getShipmentSku();
+// Controller 2: Get Shipment Orders By Date
+const getShipmentOrdersByDate = catchAsync(async (req: Request, res: Response) => {
+    const { distributionHouseId, date } = req.params;
+
+    const result = await shipmentOrderService.getShipmentOrdersByDate(
+        distributionHouseId as string,
+        date as string
+    );
 
     sendResponse(res, {
         status: status.OK,
         success: true,
-        message: 'Shipment orders fetched successfully',
+        message: "Shipment orders retrieved successfully",
         data: result,
     });
 });
@@ -42,5 +48,5 @@ const getShipmentOrdersSku = catchAsync(async (req: Request, res: Response) => {
 export const shipmentOrderController = {
     createShipmentOder,
     getShipmentOrdersByDate,
-    getShipmentOrdersSku
+    getAllShipmentOrders,
 }

@@ -1,6 +1,8 @@
 export interface TSkuOrderItem {
-    shipmentSkuId: string; // Payload অনুযায়ী code/skuId আসছে
-    quantity: number;
+    shipmentSkuId: string;
+    quantity: number | string;
+    isFinalized: boolean;
+    unlockRequested: boolean;
 }
 
 export interface TDateOrderGroup {
