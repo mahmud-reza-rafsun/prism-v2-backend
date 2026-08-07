@@ -43,6 +43,23 @@ const createDistributorPrices = async (payload: TDistributorPricePayload) => {
     }));
 };
 
+const getDistributorPrices = async () => {
+    const result = await prisma.distributorPrice.findMany({
+        include: {
+            ShipmentSku: {
+                select: {
+                    code: true
+                }
+            }
+        }
+    });
+
+    return result.map((res) => ({
+        code: res.ShipmentSku[0]?.code || '',
+        price: res.price,
+    }));
+};
+
 const updateDistributorPrices = async (payload: TDistributorPricePayload) => {
     const codes = [
         ...new Set(
@@ -55,7 +72,6 @@ const updateDistributorPrices = async (payload: TDistributorPricePayload) => {
     if (codes.length === 0) {
         throw new AppError(status.NOT_FOUND, "No valid SKU codes provided in payload items.");
     }
-
     const skusWithPrice = await prisma.shipmentSku.findMany({
         where: { code: { in: codes } },
         select: {
@@ -101,5 +117,6 @@ const updateDistributorPrices = async (payload: TDistributorPricePayload) => {
 
 export const distributorPriceService = {
     createDistributorPrices,
+    getDistributorPrices,
     updateDistributorPrices,
 };
