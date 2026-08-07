@@ -1,0 +1,13 @@
+model RetailerPrice {
+    id                     String                  @id @default(uuid())
+    price                  Float
+    distributionPointId    String
+    distributionPoint      DistributionPoints      @relation(fields: [distributionPointId], references: [id], onDelete: Restrict)
+    updatedAt              DateTime                @updatedAt
+    sttSkus                SttSku[]
+    salesSummeryStatements SalesSummaryStatement[]
+    byOutletStts           ByOutletStt[]
+
+    @@index([distributionPointId])
+    @@map("retailer_price")
+}

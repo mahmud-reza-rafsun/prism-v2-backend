@@ -8,4 +8,5 @@ model Brand {
   updatedAt DateTime @updatedAt
 
   @@index([familyId])
+  @@map("brand")
 }

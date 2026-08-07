@@ -116,14 +116,14 @@ CREATE TABLE "verification" (
 );
 
 -- CreateTable
-CREATE TABLE "Brand" (
+CREATE TABLE "brand" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "familyId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "Brand_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "brand_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -161,6 +161,7 @@ CREATE TABLE "by_outlet_stt" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "businessDateId" TEXT NOT NULL,
     "sttSkuId" TEXT NOT NULL,
+    "retailerPriceId" TEXT,
 
     CONSTRAINT "by_outlet_stt_pkey" PRIMARY KEY ("id")
 );
@@ -192,6 +193,17 @@ CREATE TABLE "distribution_house" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "distribution_house_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "distributor_price" (
+    "id" TEXT NOT NULL,
+    "price" DOUBLE PRECISION NOT NULL,
+    "distributionHouseId" TEXT NOT NULL,
+    "shipmentOrderId" TEXT,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "distributor_price_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -241,7 +253,7 @@ CREATE TABLE "final_submit" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "businessDateId" TEXT NOT NULL,
     "sectionId" TEXT NOT NULL,
-    "roueteId" TEXT NOT NULL,
+    "routeSectionId" TEXT NOT NULL,
     "distributionPointId" TEXT NOT NULL,
 
     CONSTRAINT "final_submit_pkey" PRIMARY KEY ("id")
@@ -314,6 +326,29 @@ CREATE TABLE "region" (
 );
 
 -- CreateTable
+CREATE TABLE "retailer_price" (
+    "id" TEXT NOT NULL,
+    "price" DOUBLE PRECISION NOT NULL,
+    "distributionPointId" TEXT NOT NULL,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "retailer_price_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "route_sections" (
+    "id" TEXT NOT NULL,
+    "routeNumber" INTEGER NOT NULL DEFAULT 0,
+    "distributionPointsId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "routeWiseMemosId" TEXT NOT NULL,
+    "routeWiseSttsId" TEXT NOT NULL,
+
+    CONSTRAINT "route_sections_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "route_wise_memo" (
     "id" TEXT NOT NULL,
     "region" TEXT NOT NULL,
@@ -347,19 +382,9 @@ CREATE TABLE "route_wise_stt" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "businessDateId" TEXT NOT NULL,
     "sttSkuId" TEXT NOT NULL,
+    "distributionPointId" TEXT NOT NULL,
 
     CONSTRAINT "route_wise_stt_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "routes" (
-    "id" TEXT NOT NULL,
-    "routeNumber" INTEGER NOT NULL DEFAULT 0,
-    "distributionPointsId" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "routes_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -395,6 +420,7 @@ CREATE TABLE "sales_summary_statement" (
     "businessDateId" TEXT NOT NULL,
     "sectionId" TEXT NOT NULL,
     "sttSkuId" TEXT NOT NULL,
+    "retailerPriceId" TEXT NOT NULL,
 
     CONSTRAINT "sales_summary_statement_pkey" PRIMARY KEY ("id")
 );
@@ -411,13 +437,13 @@ CREATE TABLE "section" (
 );
 
 -- CreateTable
-CREATE TABLE "Segment" (
+CREATE TABLE "segment" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "Segment_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "segment_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -437,7 +463,7 @@ CREATE TABLE "shipment_orders" (
 );
 
 -- CreateTable
-CREATE TABLE "ShipmentSku" (
+CREATE TABLE "shipment_sku" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "code" TEXT,
@@ -445,8 +471,9 @@ CREATE TABLE "ShipmentSku" (
     "isActive" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "distributorPriceId" TEXT,
 
-    CONSTRAINT "ShipmentSku_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "shipment_sku_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -488,6 +515,7 @@ CREATE TABLE "stt_sku" (
     "brandId" TEXT NOT NULL,
     "familyId" TEXT NOT NULL,
     "segmentId" TEXT NOT NULL,
+    "retailerPriceId" TEXT,
     "isActive" "SttSkuStatus" NOT NULL DEFAULT 'ACTIVE',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
@@ -509,11 +537,11 @@ CREATE TABLE "territory" (
 );
 
 -- CreateTable
-CREATE TABLE "_OutletNameToRoutes" (
+CREATE TABLE "_OutletToRouteSection" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
 
-    CONSTRAINT "_OutletNameToRoutes_AB_pkey" PRIMARY KEY ("A","B")
+    CONSTRAINT "_OutletToRouteSection_AB_pkey" PRIMARY KEY ("A","B")
 );
 
 -- CreateIndex
@@ -559,10 +587,10 @@ CREATE INDEX "account_userId_idx" ON "account"("userId");
 CREATE INDEX "verification_identifier_idx" ON "verification"("identifier");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Brand_name_key" ON "Brand"("name");
+CREATE UNIQUE INDEX "brand_name_key" ON "brand"("name");
 
 -- CreateIndex
-CREATE INDEX "Brand_familyId_idx" ON "Brand"("familyId");
+CREATE INDEX "brand_familyId_idx" ON "brand"("familyId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "business_date_businessDate_key" ON "business_date"("businessDate");
@@ -571,7 +599,13 @@ CREATE UNIQUE INDEX "business_date_businessDate_key" ON "business_date"("busines
 CREATE UNIQUE INDEX "by_outlet_stt_retailerCode_key" ON "by_outlet_stt"("retailerCode");
 
 -- CreateIndex
+CREATE INDEX "by_outlet_stt_businessDateId_sttSkuId_retailerPriceId_idx" ON "by_outlet_stt"("businessDateId", "sttSkuId", "retailerPriceId");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "distribution_points_code_key" ON "distribution_points"("code");
+
+-- CreateIndex
+CREATE INDEX "distribution_points_territoryId_distributionHouseId_idx" ON "distribution_points"("territoryId", "distributionHouseId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "distribution_house_code_key" ON "distribution_house"("code");
@@ -581,6 +615,9 @@ CREATE INDEX "distribution_house_areaId_idx" ON "distribution_house"("areaId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "distribution_house_name_areaId_key" ON "distribution_house"("name", "areaId");
+
+-- CreateIndex
+CREATE INDEX "distributor_price_distributionHouseId_shipmentOrderId_idx" ON "distributor_price"("distributionHouseId", "shipmentOrderId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Family_name_key" ON "Family"("name");
@@ -598,7 +635,7 @@ CREATE INDEX "idx_final_submit_business_date_id" ON "final_submit"("businessDate
 CREATE INDEX "idx_final_submit_section_id" ON "final_submit"("sectionId");
 
 -- CreateIndex
-CREATE INDEX "idx_final_submit_route_id" ON "final_submit"("roueteId");
+CREATE INDEX "idx_final_submit_route_id" ON "final_submit"("routeSectionId");
 
 -- CreateIndex
 CREATE INDEX "idx_final_submit_distribution_point_id" ON "final_submit"("distributionPointId");
@@ -607,10 +644,19 @@ CREATE INDEX "idx_final_submit_distribution_point_id" ON "final_submit"("distrib
 CREATE UNIQUE INDEX "outlet_name_prismID_key" ON "outlet_name"("prismID");
 
 -- CreateIndex
+CREATE INDEX "outlet_name_distributionPointsId_idx" ON "outlet_name"("distributionPointsId");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "region_name_key" ON "region"("name");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "region_code_key" ON "region"("code");
+
+-- CreateIndex
+CREATE INDEX "retailer_price_distributionPointId_idx" ON "retailer_price"("distributionPointId");
+
+-- CreateIndex
+CREATE INDEX "route_sections_distributionPointsId_idx" ON "route_sections"("distributionPointsId");
 
 -- CreateIndex
 CREATE INDEX "route_wise_memo_distributionPointId_idx" ON "route_wise_memo"("distributionPointId");
@@ -622,28 +668,31 @@ CREATE INDEX "route_wise_memo_businessDateId_idx" ON "route_wise_memo"("business
 CREATE INDEX "route_wise_memo_sttSkuId_idx" ON "route_wise_memo"("sttSkuId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "sales_plan_pointId_sttSkuId_key" ON "sales_plan"("pointId", "sttSkuId");
+CREATE INDEX "sales_plan_pointId_sttSkuId_idx" ON "sales_plan"("pointId", "sttSkuId");
+
+-- CreateIndex
+CREATE INDEX "sales_summary_statement_businessDateId_sectionId_sttSkuId_r_idx" ON "sales_summary_statement"("businessDateId", "sectionId", "sttSkuId", "retailerPriceId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "section_name_key" ON "section"("name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Segment_name_key" ON "Segment"("name");
+CREATE UNIQUE INDEX "segment_name_key" ON "segment"("name");
 
 -- CreateIndex
-CREATE INDEX "shipment_orders_shipmentSkuId_idx" ON "shipment_orders"("shipmentSkuId");
-
--- CreateIndex
-CREATE INDEX "shipment_orders_distributionHouseId_idx" ON "shipment_orders"("distributionHouseId");
+CREATE INDEX "shipment_orders_shipmentSkuId_distributionHouseId_idx" ON "shipment_orders"("shipmentSkuId", "distributionHouseId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "shipment_orders_shipmentSkuId_targetDate_distributionHouseI_key" ON "shipment_orders"("shipmentSkuId", "targetDate", "distributionHouseId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "ShipmentSku_name_key" ON "ShipmentSku"("name");
+CREATE UNIQUE INDEX "shipment_sku_name_key" ON "shipment_sku"("name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "ShipmentSku_code_key" ON "ShipmentSku"("code");
+CREATE UNIQUE INDEX "shipment_sku_code_key" ON "shipment_sku"("code");
+
+-- CreateIndex
+CREATE INDEX "shipment_sku_distributorPriceId_idx" ON "shipment_sku"("distributorPriceId");
 
 -- CreateIndex
 CREATE INDEX "stock_management_stockManagementSkuId_idx" ON "stock_management"("stockManagementSkuId");
@@ -667,13 +716,7 @@ CREATE UNIQUE INDEX "stt_sku_name_key" ON "stt_sku"("name");
 CREATE UNIQUE INDEX "stt_sku_code_key" ON "stt_sku"("code");
 
 -- CreateIndex
-CREATE INDEX "stt_sku_segmentId_idx" ON "stt_sku"("segmentId");
-
--- CreateIndex
-CREATE INDEX "stt_sku_familyId_idx" ON "stt_sku"("familyId");
-
--- CreateIndex
-CREATE INDEX "stt_sku_brandId_idx" ON "stt_sku"("brandId");
+CREATE INDEX "stt_sku_segmentId_familyId_brandId_retailerPriceId_idx" ON "stt_sku"("segmentId", "familyId", "brandId", "retailerPriceId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "territory_code_key" ON "territory"("code");
@@ -685,7 +728,7 @@ CREATE INDEX "territory_distributionHouseId_areaId_idx" ON "territory"("distribu
 CREATE UNIQUE INDEX "territory_name_distributionHouseId_key" ON "territory"("name", "distributionHouseId");
 
 -- CreateIndex
-CREATE INDEX "_OutletNameToRoutes_B_index" ON "_OutletNameToRoutes"("B");
+CREATE INDEX "_OutletToRouteSection_B_index" ON "_OutletToRouteSection"("B");
 
 -- AddForeignKey
 ALTER TABLE "add_new_igt" ADD CONSTRAINT "add_new_igt_distributionHouseId_fkey" FOREIGN KEY ("distributionHouseId") REFERENCES "distribution_house"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -715,7 +758,7 @@ ALTER TABLE "session" ADD CONSTRAINT "session_userId_fkey" FOREIGN KEY ("userId"
 ALTER TABLE "account" ADD CONSTRAINT "account_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Brand" ADD CONSTRAINT "Brand_familyId_fkey" FOREIGN KEY ("familyId") REFERENCES "Family"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "brand" ADD CONSTRAINT "brand_familyId_fkey" FOREIGN KEY ("familyId") REFERENCES "Family"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "by_outlet_stt" ADD CONSTRAINT "by_outlet_stt_distributionHouseId_fkey" FOREIGN KEY ("distributionHouseId") REFERENCES "distribution_house"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -727,6 +770,12 @@ ALTER TABLE "by_outlet_stt" ADD CONSTRAINT "by_outlet_stt_territoryId_fkey" FORE
 ALTER TABLE "by_outlet_stt" ADD CONSTRAINT "by_outlet_stt_businessDateId_fkey" FOREIGN KEY ("businessDateId") REFERENCES "business_date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "by_outlet_stt" ADD CONSTRAINT "by_outlet_stt_sttSkuId_fkey" FOREIGN KEY ("sttSkuId") REFERENCES "stt_sku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "by_outlet_stt" ADD CONSTRAINT "by_outlet_stt_retailerPriceId_fkey" FOREIGN KEY ("retailerPriceId") REFERENCES "retailer_price"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "distribution_points" ADD CONSTRAINT "distribution_points_distributionHouseId_fkey" FOREIGN KEY ("distributionHouseId") REFERENCES "distribution_house"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
@@ -736,7 +785,13 @@ ALTER TABLE "distribution_points" ADD CONSTRAINT "distribution_points_territoryI
 ALTER TABLE "distribution_house" ADD CONSTRAINT "distribution_house_areaId_fkey" FOREIGN KEY ("areaId") REFERENCES "area"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Family" ADD CONSTRAINT "Family_segmentId_fkey" FOREIGN KEY ("segmentId") REFERENCES "Segment"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "distributor_price" ADD CONSTRAINT "distributor_price_distributionHouseId_fkey" FOREIGN KEY ("distributionHouseId") REFERENCES "distribution_house"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "distributor_price" ADD CONSTRAINT "distributor_price_shipmentOrderId_fkey" FOREIGN KEY ("shipmentOrderId") REFERENCES "shipment_orders"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Family" ADD CONSTRAINT "Family_segmentId_fkey" FOREIGN KEY ("segmentId") REFERENCES "segment"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "final_submit" ADD CONSTRAINT "final_submit_businessDateId_fkey" FOREIGN KEY ("businessDateId") REFERENCES "business_date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -745,7 +800,7 @@ ALTER TABLE "final_submit" ADD CONSTRAINT "final_submit_businessDateId_fkey" FOR
 ALTER TABLE "final_submit" ADD CONSTRAINT "final_submit_sectionId_fkey" FOREIGN KEY ("sectionId") REFERENCES "section"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "final_submit" ADD CONSTRAINT "final_submit_roueteId_fkey" FOREIGN KEY ("roueteId") REFERENCES "routes"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "final_submit" ADD CONSTRAINT "final_submit_routeSectionId_fkey" FOREIGN KEY ("routeSectionId") REFERENCES "route_sections"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "final_submit" ADD CONSTRAINT "final_submit_distributionPointId_fkey" FOREIGN KEY ("distributionPointId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -760,6 +815,18 @@ ALTER TABLE "own_point_distribution" ADD CONSTRAINT "own_point_distribution_dist
 ALTER TABLE "own_point_distribution" ADD CONSTRAINT "own_point_distribution_sttSkuId_fkey" FOREIGN KEY ("sttSkuId") REFERENCES "stt_sku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "retailer_price" ADD CONSTRAINT "retailer_price_distributionPointId_fkey" FOREIGN KEY ("distributionPointId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "route_sections" ADD CONSTRAINT "route_sections_distributionPointsId_fkey" FOREIGN KEY ("distributionPointsId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "route_sections" ADD CONSTRAINT "route_sections_routeWiseMemosId_fkey" FOREIGN KEY ("routeWiseMemosId") REFERENCES "route_wise_memo"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "route_sections" ADD CONSTRAINT "route_sections_routeWiseSttsId_fkey" FOREIGN KEY ("routeWiseSttsId") REFERENCES "route_wise_stt"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "route_wise_memo" ADD CONSTRAINT "route_wise_memo_distributionPointId_fkey" FOREIGN KEY ("distributionPointId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
@@ -769,10 +836,13 @@ ALTER TABLE "route_wise_memo" ADD CONSTRAINT "route_wise_memo_businessDateId_fke
 ALTER TABLE "route_wise_memo" ADD CONSTRAINT "route_wise_memo_sttSkuId_fkey" FOREIGN KEY ("sttSkuId") REFERENCES "stt_sku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "route_wise_stt" ADD CONSTRAINT "route_wise_stt_distributionPointId_fkey" FOREIGN KEY ("distributionPointId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "route_wise_stt" ADD CONSTRAINT "route_wise_stt_businessDateId_fkey" FOREIGN KEY ("businessDateId") REFERENCES "business_date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "routes" ADD CONSTRAINT "routes_distributionPointsId_fkey" FOREIGN KEY ("distributionPointsId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "route_wise_stt" ADD CONSTRAINT "route_wise_stt_sttSkuId_fkey" FOREIGN KEY ("sttSkuId") REFERENCES "stt_sku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "sales_plan" ADD CONSTRAINT "sales_plan_pointId_fkey" FOREIGN KEY ("pointId") REFERENCES "distribution_points"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -784,10 +854,16 @@ ALTER TABLE "sales_summary_statement" ADD CONSTRAINT "sales_summary_statement_bu
 ALTER TABLE "sales_summary_statement" ADD CONSTRAINT "sales_summary_statement_sectionId_fkey" FOREIGN KEY ("sectionId") REFERENCES "section"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "sales_summary_statement" ADD CONSTRAINT "sales_summary_statement_retailerPriceId_fkey" FOREIGN KEY ("retailerPriceId") REFERENCES "retailer_price"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "shipment_orders" ADD CONSTRAINT "shipment_orders_distributionHouseId_fkey" FOREIGN KEY ("distributionHouseId") REFERENCES "distribution_house"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "shipment_orders" ADD CONSTRAINT "shipment_orders_shipmentSkuId_fkey" FOREIGN KEY ("shipmentSkuId") REFERENCES "ShipmentSku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "shipment_orders" ADD CONSTRAINT "shipment_orders_shipmentSkuId_fkey" FOREIGN KEY ("shipmentSkuId") REFERENCES "shipment_sku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "shipment_sku" ADD CONSTRAINT "shipment_sku_distributorPriceId_fkey" FOREIGN KEY ("distributorPriceId") REFERENCES "distributor_price"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "stock_management" ADD CONSTRAINT "stock_management_stockManagementSkuId_fkey" FOREIGN KEY ("stockManagementSkuId") REFERENCES "stock_management_sku"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -796,19 +872,22 @@ ALTER TABLE "stock_management" ADD CONSTRAINT "stock_management_stockManagementS
 ALTER TABLE "stock_management" ADD CONSTRAINT "stock_management_businessDateId_fkey" FOREIGN KEY ("businessDateId") REFERENCES "business_date"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "stt_sku" ADD CONSTRAINT "stt_sku_brandId_fkey" FOREIGN KEY ("brandId") REFERENCES "Brand"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "stt_sku" ADD CONSTRAINT "stt_sku_brandId_fkey" FOREIGN KEY ("brandId") REFERENCES "brand"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "stt_sku" ADD CONSTRAINT "stt_sku_familyId_fkey" FOREIGN KEY ("familyId") REFERENCES "Family"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "stt_sku" ADD CONSTRAINT "stt_sku_segmentId_fkey" FOREIGN KEY ("segmentId") REFERENCES "Segment"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "stt_sku" ADD CONSTRAINT "stt_sku_segmentId_fkey" FOREIGN KEY ("segmentId") REFERENCES "segment"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "stt_sku" ADD CONSTRAINT "stt_sku_retailerPriceId_fkey" FOREIGN KEY ("retailerPriceId") REFERENCES "retailer_price"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "territory" ADD CONSTRAINT "territory_areaId_fkey" FOREIGN KEY ("areaId") REFERENCES "area"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_OutletNameToRoutes" ADD CONSTRAINT "_OutletNameToRoutes_A_fkey" FOREIGN KEY ("A") REFERENCES "outlet_name"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_OutletToRouteSection" ADD CONSTRAINT "_OutletToRouteSection_A_fkey" FOREIGN KEY ("A") REFERENCES "outlet_name"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_OutletNameToRoutes" ADD CONSTRAINT "_OutletNameToRoutes_B_fkey" FOREIGN KEY ("B") REFERENCES "routes"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_OutletToRouteSection" ADD CONSTRAINT "_OutletToRouteSection_B_fkey" FOREIGN KEY ("B") REFERENCES "route_sections"("id") ON DELETE CASCADE ON UPDATE CASCADE;

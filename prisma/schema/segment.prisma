@@ -5,4 +5,6 @@ model Segment {
   updatedAt DateTime @updatedAt
   family    Family[]
   sttSkus   SttSku[]
+
+  @@map("segment")
 }

@@ -12,15 +12,15 @@ model FinalSubmit {
   sectionId      String
   section        Section           @relation(fields: [sectionId], references: [id])
 
-  roueteId String
-  route    Routes @relation(fields: [roueteId], references: [id])
+  routeSectionId String
+  route          RouteSection @relation(fields: [routeSectionId], references: [id])
 
   distributionPointId String
   distributionPoint   DistributionPoints @relation(fields: [distributionPointId], references: [id])
 
   @@index([businessDateId], name: "idx_final_submit_business_date_id")
   @@index([sectionId], name: "idx_final_submit_section_id")
-  @@index([roueteId], name: "idx_final_submit_route_id")
+  @@index([routeSectionId], name: "idx_final_submit_route_id")
   @@index([distributionPointId], name: "idx_final_submit_distribution_point_id")
   @@map("final_submit")
 }

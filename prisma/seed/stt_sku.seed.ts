@@ -5,6 +5,8 @@ import path from 'path';
 interface SttSkuData {
     name: string;
     brandId: string;
+    familyId: string;
+    segmentId: string;
     code: string;
     packSize: string;
 }
@@ -27,6 +29,8 @@ async function main() {
                 code: sku.code,
                 packSize: sku.packSize,
                 brandId: sku.brandId,
+                familyId: sku.familyId,
+                segmentId: sku.segmentId
             },
         });
     }

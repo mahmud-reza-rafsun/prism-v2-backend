@@ -23,7 +23,7 @@ async function main() {
         });
     }
 
-    console.log('Seeding completed successfully!');
+    console.log('family seeding completed successfully!');
 }
 
 main()

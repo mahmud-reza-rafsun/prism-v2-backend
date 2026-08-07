@@ -1,26 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { prisma } from "../../src/database/prisma";
-import { Role } from "@prisma/client";
 import { auth } from "../../src/lib/auth";
-
-
-type PointData = {
-    distributionHouseId: string;
-    points: {
-        name: string;
-        code: string;
-        address: string;
-        contact: string;
-        territoryId?: string;
-        user: {
-            name: string;
-            email: string;
-            password: string;
-            role: Role;
-        };
-    }[];
-};
+import { PointData } from "../../src/interface/point.interface";
 
 async function seedPoints() {
     const filePath = path.join(process.cwd(), "raw_data", "points2.json");

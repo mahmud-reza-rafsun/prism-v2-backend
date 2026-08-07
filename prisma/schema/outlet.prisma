@@ -1,4 +1,4 @@
-model OutletName {
+model Outlet {
   id                   String              @id @default(uuid())
   prismID              String              @unique
   partnerCode          String?
@@ -26,7 +26,8 @@ model OutletName {
   distributionPointsId String?
   sttSkuId             String
   distributionPoints   DistributionPoints? @relation(fields: [distributionPointsId], references: [id])
-  route                Routes[]            @relation("OutletNameToRoutes")
+  routeSection         RouteSection[]
 
+  @@index([distributionPointsId])
   @@map("outlet_name")
 }

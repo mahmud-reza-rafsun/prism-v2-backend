@@ -16,6 +16,7 @@ model RouteWiseMemo {
   distributionPoints  DistributionPoints @relation(fields: [distributionPointId], references: [id], onDelete: Restrict)
   businessDate        BusinessDate       @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
   sttSku              SttSku             @relation(fields: [sttSkuId], references: [id], onDelete: Restrict)
+  routeSection        RouteSection[]
 
   @@index([distributionPointId])
   @@index([businessDateId])

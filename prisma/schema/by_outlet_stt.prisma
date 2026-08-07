@@ -22,7 +22,11 @@ model ByOutletStt {
   updatedAt           DateTime          @updatedAt
   businessDateId      String
   sttSkuId            String
-  businessDate        BusinessDate      @relation(fields: [businessDateId], references: [id])
+  businessDate        BusinessDate      @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
+  sttSku              SttSku            @relation(fields: [sttSkuId], references: [id], onDelete: Restrict)
+  retailerPriceId     String?
+  retailerPrice       RetailerPrice?    @relation(fields: [retailerPriceId], references: [id], onDelete: Restrict)
 
+  @@index([businessDateId, sttSkuId, retailerPriceId])
   @@map("by_outlet_stt")
 }

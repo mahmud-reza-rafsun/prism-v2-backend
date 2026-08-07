@@ -9,4 +9,5 @@ model Family {
   skus      SttSku[]
 
   @@index([segmentId])
+  @@map("family")
 }

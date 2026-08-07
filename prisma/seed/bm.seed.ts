@@ -1,17 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { prisma } from "../../src/database/prisma";
-import { Role } from "@prisma/client";
 import { auth } from "../../src/lib/auth";
+import { UserData } from "../../src/interface/user.interface";
 
-type UserData = {
-    name: string;
-    email: string;
-    image?: string;
-    password: string;
-    role: Role;
-    distributionHouseId: string;
-};
+
 
 async function seedUsers() {
     const filePath = path.join(process.cwd(), "raw_data", "bm.json");

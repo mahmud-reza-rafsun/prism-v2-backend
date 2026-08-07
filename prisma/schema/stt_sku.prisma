@@ -9,14 +9,16 @@ model SttSku {
   family               Family                 @relation(fields: [familyId], references: [id], onDelete: Restrict)
   segmentId            String
   segment              Segment                @relation(fields: [segmentId], references: [id], onDelete: Restrict)
+  retailerPrice        RetailerPrice?         @relation(fields: [retailerPriceId], references: [id], onDelete: Restrict)
+  retailerPriceId      String?
   isActive             SttSkuStatus           @default(ACTIVE)
   ownPointDistribution OwnPointDistribution[]
   routeWiseMemo        RouteWiseMemo[]
   createdAt            DateTime               @default(now())
   updatedAt            DateTime               @updatedAt
+  routeWiseStts        RouteWiseStt[]
+  byOutletStts         ByOutletStt[]
 
-  @@index([segmentId])
-  @@index([familyId])
-  @@index([brandId])
+  @@index([segmentId, familyId, brandId, retailerPriceId])
   @@map("stt_sku")
 }

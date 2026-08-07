@@ -1,5 +1,5 @@
 export interface TSkuOrderItem {
-    shipmentSkuId: string;
+    shipmentSkuId: string; // Payload অনুযায়ী code/skuId আসছে
     quantity: number;
 }
 

@@ -7,5 +7,10 @@ model ShipmentSku {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  shipmentOrders ShipmentOrder[]
+  shipmentOrders     ShipmentOrder[]
+  distributorPrice   DistributorPrice? @relation(fields: [distributorPriceId], references: [id], onDelete: Restrict)
+  distributorPriceId String?
+
+  @@index([distributorPriceId])
+  @@map("shipment_sku")
 }

@@ -13,6 +13,7 @@ model DistributionHouse {
   byOutletStts       ByOutletStt[]
   users              User[]
   igt                AddNewIgt[]
+  distributorPrices  DistributorPrice[]
 
   area Area @relation(fields: [areaId], references: [id], onDelete: Restrict)
 

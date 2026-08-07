@@ -11,6 +11,6 @@ model SalesPlan {
   sttSkuId           String
   distributionPoints DistributionPoints @relation(fields: [pointId], references: [id])
 
-  @@unique([pointId, sttSkuId])
+  @@index([pointId, sttSkuId])
   @@map("sales_plan")
 }

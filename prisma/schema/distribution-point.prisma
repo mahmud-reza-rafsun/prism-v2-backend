@@ -11,12 +11,15 @@ model DistributionPoints {
   distributionHouse    DistributionHouse      @relation(fields: [distributionHouseId], references: [id], onDelete: Restrict)
   territory            Territory?             @relation(fields: [territoryId], references: [id], onDelete: Restrict)
   ownPointdistribution OwnPointDistribution[]
-  outlet               OutletName[]
-  routes               Routes[]
+  outlet               Outlet[]
+  routeSections        RouteSection[]
   salesPlans           SalesPlan[]
   routeWiseMemo        RouteWiseMemo[]
   users                User[]
   finalSubmits         FinalSubmit[]
+  routeWiseStts        RouteWiseStt[]
+  retailerPrices       RetailerPrice[]
 
+  @@index([territoryId, distributionHouseId])
   @@map("distribution_points")
 }

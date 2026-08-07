@@ -1,12 +1,17 @@
-model Routes {
+model RouteSection {
   id                   String             @id @default(uuid())
   routeNumber          Int                @default(0)
   distributionPointsId String
   createdAt            DateTime           @default(now())
   updatedAt            DateTime           @updatedAt
   distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id], onDelete: Restrict)
-  outlets              OutletName[]       @relation("OutletNameToRoutes")
+  outlets              Outlet[]
   finalSubmits         FinalSubmit[]
+  routeWiseMemosId     String
+  routeWiseSttsId      String
+  routeWiseMemo        RouteWiseMemo      @relation(fields: [routeWiseMemosId], references: [id], onDelete: Restrict)
+  routeWiseStts        RouteWiseStt       @relation(fields: [routeWiseSttsId], references: [id], onDelete: Restrict)
 
-  @@map("routes")
+  @@index([distributionPointsId])
+  @@map("route_sections")
 }

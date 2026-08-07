@@ -11,7 +11,7 @@ export const checkAuth = (...authRoles: Role[]) =>
 
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      //Session Token Verificationw
+      //Session Token Verification
       const sessionToken = cookieUtils.getCookie(
         req,
         "better-auth.session_token",
@@ -138,7 +138,7 @@ export const checkAuth = (...authRoles: Role[]) =>
           id: String(tokenData.userId || tokenData.id || ""),
           name: String(tokenData.name || ""),
           email: String(tokenData.email || ""),
-          role: (tokenData.role as Role) || Role.USER,
+          role: (tokenData.role as Role) || Role.ADMIN,
           distributionHouseId: String(tokenData.id || ""),
         };
       }
