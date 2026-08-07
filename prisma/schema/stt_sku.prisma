@@ -18,6 +18,7 @@ model SttSku {
   updatedAt            DateTime               @updatedAt
   routeWiseStts        RouteWiseStt[]
   byOutletStts         ByOutletStt[]
+  newShipments         NewShipment[]
 
   @@index([segmentId, familyId, brandId, retailerPriceId])
   @@map("stt_sku")
