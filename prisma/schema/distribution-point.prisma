@@ -19,6 +19,7 @@ model DistributionPoints {
   finalSubmits         FinalSubmit[]
   routeWiseStts        RouteWiseStt[]
   retailerPrices       RetailerPrice[]
+  byOutletStts         ByOutletStt[]
 
   @@index([territoryId, distributionHouseId])
   @@map("distribution_points")

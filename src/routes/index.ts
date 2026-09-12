@@ -9,6 +9,7 @@ import { outletRoutes } from "../modules/outlet/outlet.route";
 import { shipmentOrderRoutes } from "../modules/shipment-order/shipment-order.route";
 import { distributorPriceRoutes } from "../modules/distributorPrice/distributorPrice.route";
 import { newShipmentRoutes } from "../modules/new-shipment/new-shipment.route";
+import { shipmentDateRoute } from "../modules/shipmentDate/shipmentDate.route";
 
 const router = Router();
 
@@ -22,5 +23,6 @@ router.use("/create-outlet", outletRoutes);
 router.use("/shipment", shipmentOrderRoutes);
 router.use("/distributor-price", distributorPriceRoutes);
 router.use("/new-shipment", newShipmentRoutes);
+router.use("/shipment-date", shipmentDateRoute);
 
 export const apiRoutes = router;

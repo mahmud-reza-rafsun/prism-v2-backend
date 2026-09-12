@@ -1,6 +1,6 @@
 model DistributorPrice {
     id              String         @id @default(uuid())
-    price           Float
+    price           Float          @default(0.00)
     shipmentOrderId String?
     shipmentOrder   ShipmentOrder? @relation(fields: [shipmentOrderId], references: [id], onDelete: Restrict)
     updatedAt       DateTime       @updatedAt

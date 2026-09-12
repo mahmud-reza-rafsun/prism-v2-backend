@@ -1,17 +1,21 @@
 model RouteSection {
-  id                   String             @id @default(uuid())
-  routeNumber          Int                @default(0)
-  distributionPointsId String
-  createdAt            DateTime           @default(now())
-  updatedAt            DateTime           @updatedAt
-  distributionPoints   DistributionPoints @relation(fields: [distributionPointsId], references: [id], onDelete: Restrict)
-  outlets              Outlet[]
-  finalSubmits         FinalSubmit[]
-  routeWiseMemosId     String
-  routeWiseSttsId      String
-  routeWiseMemo        RouteWiseMemo      @relation(fields: [routeWiseMemosId], references: [id], onDelete: Restrict)
-  routeWiseStts        RouteWiseStt       @relation(fields: [routeWiseSttsId], references: [id], onDelete: Restrict)
+  id                     String                  @id @default(uuid())
+  routeNumber            Int                     @default(0)
+  distributionPointsId   String
+  createdAt              DateTime                @default(now())
+  updatedAt              DateTime                @updatedAt
+  distributionPoints     DistributionPoints      @relation(fields: [distributionPointsId], references: [id], onDelete: Restrict)
+  outlets                Outlet[]
+  routeWiseMemosId       String
+  routeWiseSttsId        String
+  byOutletStt            ByOutletStt             @relation(fields: [byOutletSttId], references: [id], onDelete: Restrict)
+  byOutletSttId          String
+  routeWiseMemo          RouteWiseMemo           @relation(fields: [routeWiseMemosId], references: [id], onDelete: Restrict)
+  routeWiseStts          RouteWiseStt            @relation(fields: [routeWiseSttsId], references: [id], onDelete: Restrict)
+  finalSubmitId          String
+  finalSubmit            FinalSubmit             @relation(fields: [finalSubmitId], references: [id], onDelete: Restrict)
+  salesSummaryStatements SalesSummaryStatement[]
 
-  @@index([distributionPointsId])
+  @@index([distributionPointsId, routeWiseMemosId, routeWiseSttsId])
   @@map("route_sections")
 }

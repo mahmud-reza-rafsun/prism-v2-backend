@@ -1,6 +1,6 @@
 model OwnPointDistribution {
   id                  String             @id @default(uuid()) @map("own_point_dist_id")
-  pointOnHandStock    Int                @default(0)
+  pointOnHandStock    Float              @default(0.00)
   transferableAmount  Int                @default(0)
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt

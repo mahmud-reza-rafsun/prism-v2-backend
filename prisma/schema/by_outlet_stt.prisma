@@ -1,32 +1,33 @@
 model ByOutletStt {
-  id                  String            @id @default(uuid())
+  id                  String             @id @default(uuid())
   region              String
   area                String
+  distributionHouse   DistributionHouse  @relation(fields: [distributionHouseId], references: [id])
+  territory           Territory          @relation(fields: [territoryId], references: [id])
+  distributionPoint   DistributionPoints @relation(fields: [distributionPointId], references: [id])
+  routeSections       RouteSection[]
   distributionHouseId String
-  distributionHouse   DistributionHouse @relation(fields: [distributionHouseId], references: [id])
   territoryId         String
-  territory           Territory         @relation(fields: [territoryId], references: [id])
-  point               String
-  route               String
-  retailerCode        String            @unique
+  distributionPointId String
+  retailerCode        String             @unique
   retailerName        String
   channel             String
   subChannel          String
   cluster             String
   clusterType         String
   tpg                 String
-  stt                 Int               @default(0)
-  memo                Int               @default(0)
-  total               Int               @default(0)
-  createdAt           DateTime          @default(now())
-  updatedAt           DateTime          @updatedAt
+  stt                 Int                @default(0)
+  memo                Int                @default(0)
+  total               Int                @default(0)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
   businessDateId      String
   sttSkuId            String
-  businessDate        BusinessDate      @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
-  sttSku              SttSku            @relation(fields: [sttSkuId], references: [id], onDelete: Restrict)
+  businessDate        BusinessDate       @relation(fields: [businessDateId], references: [id], onDelete: Restrict)
+  sttSku              SttSku             @relation(fields: [sttSkuId], references: [id], onDelete: Restrict)
   retailerPriceId     String?
-  retailerPrice       RetailerPrice?    @relation(fields: [retailerPriceId], references: [id], onDelete: Restrict)
+  retailerPrice       RetailerPrice?     @relation(fields: [retailerPriceId], references: [id], onDelete: Restrict)
 
-  @@index([businessDateId, sttSkuId, retailerPriceId])
+  @@index([businessDateId, sttSkuId, retailerPriceId, distributionPointId])
   @@map("by_outlet_stt")
 }

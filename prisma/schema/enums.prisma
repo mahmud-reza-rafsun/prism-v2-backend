@@ -54,3 +54,13 @@ enum IGTStatus {
   PENDING
   NO_PENDING
 }
+
+enum ShipmentSkuStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum ShipmentDateStatus {
+  TRUE
+  FALSE
+}

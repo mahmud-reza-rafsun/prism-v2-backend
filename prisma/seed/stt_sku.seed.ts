@@ -1,15 +1,7 @@
 import { prisma } from '../../src/database/prisma';
 import fs from 'fs';
 import path from 'path';
-
-interface SttSkuData {
-    name: string;
-    brandId: string;
-    familyId: string;
-    segmentId: string;
-    code: string;
-    packSize: string;
-}
+import { SttSkuData } from '../../src/interface/sku.interface';
 
 async function main() {
     const filePath = path.join(process.cwd(), 'raw_data', 'stt-sku.json');

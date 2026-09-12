@@ -1,7 +1,7 @@
 model BusinessDate {
   id                    String                  @id @default(uuid())
   businessDate          DateTime                @unique
-  isClosed              BusinessDateStatus      @default(FALSE)
+  isClosed              BusinessDateStatus      @default(TRUE)
   date                  DateTime                @default(now())
   createdAt             DateTime                @default(now())
   updatedAt             DateTime                @updatedAt

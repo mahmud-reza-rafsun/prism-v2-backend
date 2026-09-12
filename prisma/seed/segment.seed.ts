@@ -1,25 +1,29 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { prisma } from '../../src/database/prisma';
+import { SegmentData } from '../../src/interface/sku.interface';
 
 async function main() {
     const filePath = path.join(process.cwd(), 'raw_data', 'segment.json');
     const rawData = fs.readFileSync(filePath, 'utf-8');
-    const segments: { name: string }[] = JSON.parse(rawData);
+    const segments: SegmentData[] = JSON.parse(rawData);
 
     console.log('Seeding segments...');
 
     for (const segment of segments) {
         await prisma.segment.upsert({
             where: { name: segment.name },
-            update: {},
+            update: {
+                id: segment.id,
+            },
             create: {
+                id: segment.id,
                 name: segment.name,
             },
         });
     }
 
-    console.log('Seeding completed successfully!');
+    console.log('Segment Seeding completed successfully!');
 }
 
 main()

@@ -11,6 +11,7 @@ model ShipmentOrder {
   shipmentSkuId       String
   shipmentSku         ShipmentSku        @relation(fields: [shipmentSkuId], references: [id], onDelete: Restrict)
   distributorPrices   DistributorPrice[]
+  shipmentDate        ShipmentDate[]
 
   @@unique([shipmentSkuId, targetDate, distributionHouseId])
   @@index([shipmentSkuId, distributionHouseId])

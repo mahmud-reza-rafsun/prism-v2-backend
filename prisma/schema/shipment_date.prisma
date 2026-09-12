@@ -1,0 +1,10 @@
+model ShipmentDate {
+    id              String             @id @default(uuid())
+    shipmentDate    DateTime           @unique
+    isClosed        ShipmentDateStatus @default(FALSE)
+    isOffDate       ShipmentDateStatus @default(FALSE)
+    shipmentOrderId String?
+    shipmentOrder   ShipmentOrder?     @relation(fields: [shipmentOrderId], references: [id])
+
+    @@map("shipment_date")
+}
